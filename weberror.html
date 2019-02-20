@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv ="Content-Type" content="text/html; charset=utf-8">
+    <title>数据</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="css/financial/bank.css"/>
+    <link rel="stylesheet" type="text/css" href="css/dcalendar.picker.css"/>
+</head>
+<body>
+	<style>
+		::-webkit-scrollbar{
+		    display:none;
+		}
+	</style>
+<div class="contain" id="boxFather">
+    <!--默认宽高1366*768-->
+    <div class="s-top-bad">
+    	<div class="mainheader clearfix" id="boxSon">
+	        <div class="left">
+	        	<div class="khd-logo left"></div>
+	        	
+	        </div>
+	        <div class="tool right">
+	            
+	            
+	
+	            
+	            <li class="fourth"></li>
+	            <li>
+	                <img src="img/peizhi.png" alt="" />
+	                <a onclick="app.sendMessage('app_min_window')"><img src="img/suoxiao.png" alt="小" /></a>
+	                <a id="big"><img src="img/fd.png" alt="大" /></a>
+	                <a onclick="app.sendMessage('app_close_window')"><img src="img/cha.png" alt="x" /></a>
+	            </li>
+	
+	        </div>
+	        <div class="userinfo">
+	            <a href="#"><img src="img/zhxx.png"/>账号信息</a>
+	            <a href="#"><img id="spe" src="img/suo.png"/>锁定</a>
+	            <a href="#"><img src="img/out.png"/>退出账号</a>
+	            <img class="up" src="img/up.png"/>
+	        </div>
+	        <div id="div1" class="right"></div>
+	    </div>
+    </div>
+    <div style="width:350px;height: 160px;padding-top: 250px;margin: 0 auto;">
+    	<img style="margin-left: 55px;" src="img/cuowu.png" />
+    	<h4 style="text-align: center;">哎呀...你访问的页面似乎出了点问题！</h4>
+    	<p style="text-align: center;"><a href="#" style="color: #c2151f;text-decoration:underline"> 点击刷新... </a></p>
+    </div>
+</div>
+</body>
+
+<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/url.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" >
+//    function moveWindow()
+//    {	
+//
+//        app.sendMessage('app_move_window', 999, '-10;10');
+//    }
+//    function GetCurAppVersion()
+//    {
+//        app.sendMessage('app_get_version', 999, '', function(message, int_param){
+//            alert(message + "; " +int_param);
+//        });
+//    }
+//    function DownLoadFile()
+//    {
+//        app.sendMessage('app_download_file', 999, 'http://localhost/a.jpg', function(message, int_param, str_param){
+//            alert(message + int_param + str_param);
+//        });
+//    }
+</script>
+<!--<script src="js/bank.js" type="text/javascript" charset="utf-8"></script>-->
+
+</html>

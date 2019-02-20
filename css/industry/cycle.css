@@ -1,0 +1,698 @@
+/*整体*/
+body{
+    background-color: #f2f6f9;
+}
+/*::-webkit-scrollbar{*/
+    /*width: 8px;*/
+    /*height: 8px;*/
+    /*background-color: #9696966b;*/
+/*}*/
+
+a{
+    color: #000;
+}
+/*最上面导航*/
+.title{
+    width: 100%;
+    height: 48px;
+    position: absolute;
+    top: 0px;
+    z-index: 5;
+    background: #f2f6f9;
+    border-bottom: solid #0090f4 2px;
+}
+.title ul{
+    width: 300px;
+    height: 48px;
+}
+.title ul li{
+    float: left;
+    width: 90px;
+    height: 46px;
+    text-align: center;
+    line-height: 46px;
+    border-right: 1px solid #fff;
+    font-size: 12px;
+}
+.title ul li a{
+    color: #337ab7;
+}
+.title ul #first{
+    width: 68px;
+    background: #f2f6f9;
+}
+#currentName a{
+    color: #0597f4;
+}
+.fresh{
+    width: 16px;
+    height: 16px;
+    border: 1px solid #8C8C8C;
+    margin: 18px 12px;
+}
+.content{
+    position: absolute;
+    top: 48px;
+    bottom: 14px;
+    width: 100%;
+    /*height: 610px;*/
+    background: #f2f6f9;
+    padding: 14px 14px 0 14px;
+    overflow: auto;
+}
+/*头部*/
+.content-top{
+    width: 100%;
+    height: 22%;
+    min-height: 112px;
+    position: relative;
+}
+.content-topLeft{
+    width: 84%;
+    height: 94%;
+    min-height: 86px;
+    background: #fff;
+    border-radius: 4px;
+    padding: 18px;
+}
+.name{
+    //width: 38%;
+    height: 60px;
+    margin: 18px 20px 24px;
+    //font-size: 10px;
+}
+.topT{
+    width: 100%;
+    height: 49%;
+}
+.topC{
+    width: 100%;
+    margin: 12px 0 0;
+}
+.history{
+    width: 80%;
+}
+.history li{
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    background: #6ba8e840;
+    border: 10px;
+    margin-left: 4px;
+    cursor: pointer;
+}
+.btnEmpty{
+    cursor: pointer;
+}
+
+/*搜索部分*/
+.sea{
+    width: 290px;
+    height: 34px;
+    margin-left: 10px;
+}
+.sea input{
+    width: 230px;
+    height: 34px;
+    border: 1px solid #C0C0C0;
+    border-radius: 4px;
+}
+.sea button{
+    width: 34px;
+    height: 34px;
+    background: #2ea2f7;
+    border: none;
+    border-radius: 4px;
+}
+.foc{
+
+}
+.foc a{
+    color: #6ba8e8;
+}
+.foc span{
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    background: #6ba8e840;
+    border: 10px;
+}
+.sure{
+    width: 100px;
+    height: 32px;
+    background: #2fa3f8;
+    border: none;
+    border-radius: 4px;
+    color: #FFFFFF;
+    margin-left: 10px;
+}
+.indexBtn {
+    color: #fff;
+    background-color: #2da1f6;
+    border-color: #2da1f6;
+    position: relative;
+    margin-left: 14px;
+}
+.indexBox{
+    position: absolute;
+    left: 30%;
+    top: 52px;
+    width: 450px;
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #fff;
+    z-index: 1;
+}
+.indexTitle{
+    color: #fc9112;
+}
+/*标签勾选*/
+.indexList label {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    width: 32%;
+    border: 1px solid #dfdfdf;
+    margin-left: 2px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+}
+/**
+ * 按钮透明
+ * @type {String}
+*/
+.indexList label input[type="checkbox"] {
+    opacity: 0;
+}
+
+/**
+ * checkbox选中样式
+ * @type {String}
+ */
+.indexList label input[type="checkbox"]:checked + i {
+    border-color: blue;
+    color: blue;
+}
+
+/**
+ * i标签的大小
+ */
+.indexList label i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 24px;
+    font-style: normal;
+}
+
+/**
+ * 对勾√效果，使用border
+ * @type {[type]}
+ */
+
+.indexList label span:after {
+    opacity: 1;
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 15px;
+    background: transparent;
+    top: 10px;
+    right: 5px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-left: none;
+    -webkit-transform: rotate(35deg);
+    -moz-transform: rotate(35deg);
+    -o-transform: rotate(35deg);
+    -ms-transform: rotate(35deg);
+    transform: rotate(35deg);
+}
+
+/**
+ * 选中状态，span(三角形)样式
+ * @type {String}
+ */
+.indexList label input[type="checkbox"]:checked + i + span {
+    width: 0px;
+    height: 0px;
+    border-color: blue transparent;
+    border-width: 0px 0px 30px 30px;
+    border-style: solid;
+    position: absolute;
+    right: -1px;
+    top: 10px;
+    opacity: 1;
+}
+#index{
+    display: none;
+}
+.indexHeight{
+    height: 258px;
+    overflow-y: auto;
+    width: 100%;
+}
+#myTabContent{
+    width: 100%;
+    height: 310px;
+}
+#mointerHead tr th:nth-child(1){
+    /*width: 5%;*/
+    /*width: 34px;*/
+}
+#mointerHead tr th{
+    /*width: 10%;*/
+    /*width: 60px;*/
+    padding:0px;
+    height: 60px;
+    vertical-align: top;
+    /*line-height: 60px;*/
+}
+#indexOneTabContent{
+    margin-top: -24px;
+}
+#mointerHead tr th .btn {
+}
+#mointerBody tr td{
+    padding: 3px;
+    /*width: 10%;*/
+}
+#mointerBody tr td:nth-child(1){
+}
+#mointerBody tr td:nth-child(3){
+    min-width: 40px;
+}
+#mointerBody tr td:nth-child(4){
+    min-width: 50px;
+}
+#mointerBody tr td:nth-child(5){
+    min-width: 60px;
+}
+.cycleBody tr td:nth-child(7){
+    display: inline-block;
+    width: 68px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.bigBody tr td:nth-child(5){
+    display: inline-block;
+    width: 68px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.realtyBody tr td:nth-child(6){
+    display: inline-block;
+    width: 68px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#indexOne,#indexTwo{
+    width: 100%;
+    height: 310px;
+}
+
+.content-topRight{
+    width: 15%;
+    height: 94%;
+}
+.content-topRight p{
+    width: 100%;
+    height: 42%;
+    min-height: 48px;
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    /*line-height: 46px;*/
+    border-radius: 4px;
+	/*margin-bottom: 15px;*/
+}
+.content-topRight p a{
+    position: absolute;
+    top: 35%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.count{
+    border: 1px solid #2da1f6;
+}
+.count a{
+    color: #2da1f6;
+}
+.company{
+    border: 1px solid #4bbda4;
+}
+.company a{
+    color: #4bbda4;
+}
+
+.content-cen{
+    width: 100%;
+    height: 42%;
+    min-height: 340px;
+}
+.content-cenLeft{
+    width: 41%;
+    height: 99%;
+    min-height: 340px;
+    background: #fff;
+    border-radius: 4px;
+}
+/*Tab切换*/
+#myTab{
+    width: 100%;
+}
+.nav-tab{
+    width: 96%;
+    height: 436px;
+    margin: 2%;
+}
+/*修改bootstrop默认样式*/
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #6db0f7;
+    cursor: default;
+    background-color: #fff;
+    /* border: 1px solid #ddd; */
+    border-bottom: 4px solid #048ef4;
+    /* border-bottom-color: transparent; */
+}
+.month{
+    width: 158px;
+    height: 26px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 10px;
+    margin-right: 6px;
+}
+.month span{
+    display: inline-block;
+    width: 52px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 12px;
+    border-right: 1px solid #ccc;
+}
+.month span:nth-child(3){
+    border-right: none;
+}
+.monthActive{
+    background: #2ea2f7;
+}
+
+.content-cenRight{
+    width: 58%;
+    height: 99%;
+    min-height: 340px;
+    background: #fff;
+    border-radius: 4px;
+    position: relative;
+    overflow-x: auto;
+}
+.box{
+    width: 100%;
+    height: 360px;
+    overflow-y: auto;
+    background: #f2f6f9;
+    padding: 4px;
+}
+.navtitle{
+    height: 49px;
+    line-height: 49px;
+    border-bottom: 1px solid #eef2f5;
+}
+.navtitle span{
+    padding-left: 18px;
+    border-left: 4px solid #2ea2f7;
+    font-size: 16px;
+}
+.down,.print,.share{
+    width:80px;
+	height: 25px;
+	line-height: 25px;
+	background: #fa8e0f;
+	color: #FFFFFF;
+	text-align: center;
+	border: none;
+	border-radius: 20px;
+}
+.print{
+    background: url(../../img/dayin.png) #fff no-repeat 2px center;
+    color: #666666;
+    border: 1px solid #ccc;
+}
+.share{
+    background: url(../../img/share.png) #2ea2f7 no-repeat 2px center;
+}
+.cenRtable{
+    width: 100%;
+    height: 100%;
+    /*height: 250px;*/
+    overflow-y: auto;
+    overflow-x: auto;
+    scrollbar-base-color: #fff;
+    scrollbar-face-color: #fff;
+}
+.cenRtable table{
+    min-width: 600px;
+    /*height: 78px;*/
+    overflow-x: auto;
+    /*margin: 10px 1%;*/
+    font-size: 12px;
+}
+.cenRtable table thead{
+    font-weight: 200;
+}
+.page{
+    display: inline-block;
+    padding-left: 0;
+    margin: 0;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 0;
+    right: 1%;
+}
+.page li{
+    font-size: 12px;
+}
+
+
+.content-foot{
+    width: 100%;
+    height: 32%;
+    /*overflow: auto;*/
+    min-height: 210px;
+    background: #fff;
+    border-radius: 4px;
+    margin-top: 14px;
+    position: relative;
+}
+#xiazai4{
+    height: 66%;
+}
+.addBox{
+    width: 98%;
+    height: 100%;
+    /*height: 110px;*/
+    overflow-y: auto;
+    margin: 14px 1%;
+
+}
+.addBox .hang{
+    width: 100%;
+    height: 148px;
+}
+.addBox li{
+    width: 25%;
+    height: 148px;
+    float: left;
+    padding: 16px 2%;
+
+}
+.addBox .hang:nth-child(odd) >li:nth-child(odd){
+    background: #f1fcff;
+}
+.addBox .hang:nth-child(even) >li:nth-child(even){
+    background: #f1fcff;
+}
+
+.addBox-title{
+    color: #2ca6e0;
+    font-size: 16px;
+}
+.addBox-title img{
+    margin-right: 10px;
+}
+.addBox-con{
+    width: 100%;
+    /*height: 80px;*/
+    line-height: 20px;
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+    /*display: -webkit-box;*/
+    /*-webkit-line-clamp: 4;*/
+    /*-webkit-box-orient: vertical;*/
+    font-size: 12px;
+    color: #666666;
+    font-family: "微软雅黑";
+}
+.specia{
+	display: inline-block;
+    width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.conTop{
+    width: 100%;
+    height: 22px;
+    line-height: 22px;
+}
+#indexOneTab,#indexTwoTab{
+    width: 157px;
+    height: 25px;
+    border: 1px solid #ebebeb;
+    border-radius: 4px;
+    margin-top: -36px;
+    margin-right: 16px;
+}
+#indexOneTab li,#indexTwoTab li{
+	font-size: 12px;
+    width: 50px;
+    height: 22px;
+}
+#indexOneTab>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #2fa3f8;
+    height: 23px;
+}
+#indexTwoTab>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #67bce1;
+}
+#indexOneTab li a,#indexTwoTab li a{
+    position: relative;
+    display: block;
+    padding: 0px;
+    text-align: center;
+}
+.tdpointer{
+    cursor: pointer;
+}
+.headCount:nth-child(2){
+    display: none;
+}
+#mointerBody tr td:nth-child(2){
+    display: none;
+}
+.priceQuarter{
+    width: 170px;
+    height: 24px;
+    background: #fff;
+    border-radius: 4px;
+    border-color: #d0d0d0;
+}
+.speciaIndex{
+    display: inline-block;
+    height: 22px;
+    margin-top: 12px;
+}
+#priceQuarter option{
+    font-size: 12px;
+}
+#speciaIndex{
+    font-size: 12px;
+}
+.s-input{
+	width: 220px;
+	height: 32px;
+	padding: 0 0 0 10px;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	outline:none;
+	border: #d0d0d0;
+	-webkit-box-shadow: 0px 0px 3px #757575;
+    box-shadow: 0px 0px 3px #757575;
+    -moz-border-radius: 3px;
+}
+.s-button{
+	width: 69px;
+	height: 34px;
+	border: none;
+	background-color: #259bf1;
+	-webkit-border-top-right-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	margin-left: -3px;
+}
+#talkDown{
+    font-style: normal;
+}
+/*企业绩效评价*/
+
+.modalTop{
+    width: 100%;
+    height: 52px;
+    background: #fff;
+    border-radius: 4px;
+    padding: 8px;
+}
+#industryName{
+    width: 152px;
+    height: 32px;
+    padding: 0 0 0 0px;
+}
+.modalTable{
+    width: 100%;
+    height: 300px;
+    margin-top: 4px;
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 4px;
+}
+.navTitle {
+    height: 46px;
+    line-height: 46px;
+    border-bottom: 1px solid #eef2f5;
+}
+.titleLine {
+    padding-left: 18px;
+    border-left: 4px solid #2ea2f7;
+    font-size: 16px;
+}
+#tool {
+    padding-right: 20px;
+}
+#tool span {
+    width: 84px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 4px;
+    margin-right: 2px;
+    display: inline-block;
+    cursor: pointer;
+}
+.out {
+    display: inline-block;
+    background: url(../../img/industry/out.png) no-repeat 10px center;
+    border: 1px solid #f3736d;
+    color: #f3736d;
+}
+#print {
+    background: url(../../img/industry/print.png) no-repeat 10px center;
+    border: 1px solid #53b4dd;
+    color: #53b4dd;
+}
+
+
+

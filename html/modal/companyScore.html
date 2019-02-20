@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>企业评分模型</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/modal/companyScore.css"/>
+</head>
+<body>
+    <div class="title clearfix">
+        <ul class="left">
+            <li id="first"><a href="../../home.html">首页</a></li>
+            <li id="currentParName"><a href="../../modalIndex.html">模型</a></li>
+            <li id="currentName" class="activeTitle">企业评分模型</li>
+        </ul>
+        <img class="fresh right" src="../../img/shuaxin.png"/>
+    </div>
+    <div class="center">
+        <div class="cenTop clearfix">
+            <div class="name left">
+                <p class="left">名称查询:</p>
+                <p class="sea left">
+                    <input type="search" name="请输入关键字进行搜索" id="seName"/>
+                    <button id="senameSeach" data-toggle="modal" data-target="#searchModal"><img src="../../img/censearch.png"/></button>
+                </p>
+                <!-- 模态框（Modal） -->
+                <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="searchModalLabel">搜索到如下机构</h4>
+                            </div>
+                            <div class="modal-body box">
+                                <div class="modalTable">
+                                    <table class="table table-striped">
+                                        <tbody id="orgList">
+                                        <!--<tr>-->
+                                            <!--<td>1.</td>-->
+                                            <!--<td>中国工商银行</td>-->
+                                            <!--<td><button class="seaLook">查看</button></td>-->
+                                        <!--</tr>-->
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">确认</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tool right">
+                <div class="moda left">
+                    <span>模型：</span>
+                    <select id="compny" style="width: 120px;">
+                        <!--<option value="">银行评分模型</option>-->
+                    </select>
+                </div>
+                <div class="year left">
+                    <span>年份：</span>
+                    <input id="mydatepicker" type="text" runat="server" value="2016"  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate" style=" width:120px;"/>
+                </div>
+                <button class="sure right" id="allSure">确定</button>
+            </div>
+        </div>
+        <div class="cenMain">
+            <div class="navtitle"><span>企业名称-</span><a id="comTitle">银行评分模型</a></div>
+            <div class="navtop right">
+                <button class="intro" data-toggle="modal" data-target="#myModal">评级指标说明</button>
+                <!-- 模态框（Modal） -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">指标说明</h4>
+                            </div>
+                            <div class="modal-body box">
+                                <div class="modalTitle">人民币(万元)</div>
+                                <div class="modalTable">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>评级指标</th>
+                                            <th>指标说明</th>
+                                            <th>指标值</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="intro">
+                                        <!--<tr>-->
+                                            <!--<td>1.资产规模</td>-->
+                                            <!--<td>该指标主要是规模因素</td>-->
+                                            <!--<td></td>-->
+                                        <!--</tr>-->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <button class="down">下载数据</button>
+            </div>
+            <div class="tableBox">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>评分要素</th>
+                        <th>评分指标</th>
+                        <th>权重</th>
+                        <th>满分</th>
+                        <th>得分</th>
+                        <th>排序</th>
+                    </tr>
+                    </thead>
+
+                    <tbody id="tableContent">
+                    <div class="isNoData">暂无数据</div>
+                    <!--<tr>-->
+                        <!--<td>一、机构类型和竞争力</td>-->
+                        <!--<td><p>1.资产规模</p><p>2.市场地位</p><p>3.区域经济</p></td>-->
+                        <!--<td><p>10%</p><p>16%</p><p>5%</p></td>-->
+                        <!--<td>21.00</td>-->
+                        <!--<td></td>-->
+                        <!--<td><a href="finaGradAsc.html">20/1300</a></td>-->
+                    <!--</tr>-->
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="../../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/My97DatePicker/WdatePicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/url.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/modal/companyScore.js" type="text/javascript" charset="utf-8"></script>
+</html>

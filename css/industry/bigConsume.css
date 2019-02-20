@@ -1,0 +1,19 @@
+#mointerBody tr td{
+    padding: 3px;
+    min-width: 50px;
+}
+#mointerBody tr td:nth-child(1){
+    min-width: 40px;
+}
+#mointerBody tr td:nth-child(3) {
+    min-width: 54px;
+}
+#mointerBody tr td:nth-child(11){
+    min-width: 50px;
+}
+#mointerBody tr td:nth-child(13){
+    min-width: 50px;
+}
+#mointerBody tr td:nth-child(14){
+    min-width: 50px;
+}

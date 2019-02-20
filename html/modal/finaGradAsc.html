@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>金融机构评分结果排序</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/pagination.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/modal/finalGradAsc.css"/>
+</head>
+<body>
+    <div class="title clearfix">
+        <ul class="left">
+            <li id="first">首页</li>
+            <li id="currentParName"><a href="../../modalIndex.html">模型</a></li>
+            <li id="currentName" class="activeTitle">金融机构评分结果排序</li>
+        </ul>
+        <img class="fresh right" src="../../img/shuaxin.png"/>
+    </div>
+    <div class="center">
+        <div class="cenTop clearfix">
+            <!--<select class="left" id="compny" style="width: 120px; ">-->
+                <!--<option value="">银行</option>-->
+            <!--</select>-->
+            <select class="left" id="select" style="width: 120px; ">
+                <!--<option value="">行业</option>-->
+            </select>
+            <input id="mydatepicker" type="text" runat="server" value="2016" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;"/>
+            <button class="sure right" id="searchAll">确定</button>
+        </div>
+        <div class="cenMain">
+            <div class="navtitle"><span>金融机构评分结果排序</span></div>
+            <!--表格信息-->
+            <div class="TableBox">
+                <table id="Table" class="table table-striped tablesorter">
+                    <thead id="BoxTitle">
+                    <!--<tr>-->
+                        <!--<th>序号</th>-->
+                        <!--<th>企业名称</th>-->
+                        <!--<th class="headerSortUp sorter">财务和监管指标</th>-->
+                        <!--<th class="headerSortUp sorter">调整扣分项</th>-->
+                        <!--<th class="headerSortUp sorter">公司治理与内部控制</th>-->
+                        <!--<th class="headerSortUp sorter">机构类型和竞争力</th>-->
+                        <!--<th class="headerSortUp sorter">主营业务和风险管理</th>-->
+                    <!--</tr>-->
+                    </thead>
+                    <tbody id="BoxTable">
+                    <!--<tr>-->
+                        <!--<td>1</td>-->
+                        <!--<td><a href="#">中国工商银行</a></td>-->
+                        <!--<td>2356578</td>-->
+                        <!--<td>15.00</td>-->
+                        <!--<td>14.00</td>-->
+                        <!--<td>38.65</td>-->
+                        <!--<td>93.15</td>-->
+                    <!--</tr>-->
+
+                    </tbody>
+                </table>
+                <div class="isNoData">暂无数据</div>
+                <div class="page pagination right" id="Page">
+            </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script src="../../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/My97DatePicker/WdatePicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery.pagination.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/url.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/modal/finalGradAsc.js" type="text/javascript" charset="utf-8"></script>
+</html>

@@ -1,0 +1,19 @@
+/*高管信息*/
+.info p:nth-child(2) {
+    height: 26px;
+}
+.mbtype{
+    height: 60px;
+}
+/*报告下载*/
+#report {
+    height: 460px;
+    overflow: auto;
+}
+/*.bankcon{*/
+    /*position: relative;*/
+/*}*/
+/*.center{*/
+    /*position: absolute;*/
+    /*top: 0px;*/
+/*}*/

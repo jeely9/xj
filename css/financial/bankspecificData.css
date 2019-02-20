@@ -1,0 +1,941 @@
+b{
+    font-weight: normal;
+}
+/*右侧最上面导航*/
+.titlt{
+    width: 100%;
+    height: 48px;
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    background: #f2f6f9;
+    border-bottom: solid #0090f4 2px;
+}
+.titlt ul{
+    width: 300px;
+    height: 48px;
+}
+.titlt ul li{
+    float: left;
+    width: 90px;
+    height: 46px;
+    text-align: center;
+    line-height: 46px;
+    border-right: 1px solid #fff;
+//background: url() #FFFFFF no-repeat right center;
+}
+.titlt ul  #first{
+    width: 68px;
+    background: #f2f6f9;
+}
+.fresh{
+    width: 16px;
+    height: 16px;
+    border: 1px solid #8C8C8C;
+    margin: 18px 12px;
+}
+.activeTitle a{
+    color: #0597f4;
+}
+
+.bankcon{
+    width: 100%;
+    position: absolute;
+    top: 48px;
+    bottom: 14px;
+    overflow: auto;
+    background: #f2f6f9;
+    padding: 14px 14px 0 14px;
+}
+.cen{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+.Bnav{
+    width: 100%;
+    height: 100%;
+    min-height: 680px;
+    background: #FFFFFF;
+    border-radius: 3px;
+}
+.Bnav-title{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: solid 1px #eef2f5;
+}
+/*银行注册信息*/
+.nav-top{
+    width: 97%;
+    height: 66px;
+    margin: 0 auto;
+    margin-top: 17px;
+    -webkit-box-shadow: #ebebeb 0px 0px 10px;
+    line-height: 66px;
+    padding-left: 35px;
+}
+
+
+.nav-top p{
+    color: #999999;
+    font-size: 14px;
+}
+.nav-top p b{
+    margin-right: 4px;
+}
+.nav-top .bankName{
+    color: #5d5d5d;
+    font-size: 16px;
+}
+.nav-top .tip{
+    border: 1px solid #048ef4;
+    color: #048ef4;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 1px 10px;
+}
+.nav-top .style{
+    background: #f2f6fe;
+    border-radius: 4px;
+    padding: 3px 10px;
+    font-size: 12px;
+    color: #008af5;
+}
+.nav-top .style span{
+    font-size: 14px;
+}
+.nav-top .style .level{
+    display: inline-block;
+    width: 34px;
+    height: 12px;
+    border-right: 2px solid #008af5;
+    text-align: center;
+    line-height: 12px;
+}
+
+.nav-top p span{
+    /*margin-right: 12px;*/
+}
+.nav-top p span .addr{
+    color: #42b8d3;
+}
+.nav-top p span b{
+    color: #686868;
+}
+.nav-top .Onedownload{
+    display: inline-block;
+    width: 78px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background: url(../../img/download.png) #f68b45 no-repeat 3px center;
+    /*margin-left: 6px;*/
+}
+/*列表中的功能区*/
+.nav-topIcon{
+    height: 40px;
+    line-height: 40px;
+}
+
+.nav-topIcon .print,.download{
+    font-size: 12px;
+    border: 1px solid #C0C0C0;
+    color: #C0C0C0;
+    padding: 4px 15px;
+    cursor: pointer;
+}
+.nav-topIcon .download{
+    border: 1px solid #f68b45;
+    color: #FFFFFF;
+    background: #f68b45;
+    margin-left: 6px;
+    cursor: pointer;
+}
+
+
+/*Tab切换*/
+#myTab{
+    width: 100%;
+    border-bottom: 1px solid #f2f6f9;
+}
+.nav-tab{
+    width: 97%;
+    height: 436px;
+    margin: 0 auto;
+    margin-top: 17px;
+}
+/*修改bootstrop默认样式*/
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #048ef4;
+    cursor: default;
+    background-color: #fff;
+    border-bottom: 4px solid #048ef4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+/*注册信息表格*/
+.registerTable{
+    width: 100%;
+    height: 440px;
+    overflow: scroll;
+    overflow-x: auto;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: #ebebeb;
+} /* 滚动条的滑轨背景颜色 */
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+} /* 滑块颜色 */
+
+
+.registerTable table{
+    width: 100%;
+    height: 302px;
+    border: 1px solid #EEEEEE;
+    border-top: 4px solid #a6a6a6
+}
+.registerTable table tr{
+    width: 100%;
+    text-align: center;
+    line-height: 44px;
+}
+.registerTable table tr:nth-child(2){
+    text-align: center;
+    line-height: 116px;
+}
+.registerTable table tr td{
+    border: 1px solid #EEEEEE;
+    text-align: center;
+    text-align: center;
+    line-height: 26px;
+}
+
+.registerTable table tr td:nth-child(odd){
+    background: #fcfcfc;
+    width: 14%;
+}
+
+/*股东信息*/
+#partner{
+    height: 460px;
+    overflow-y: auto;
+}
+.newpartner{
+    min-height: 293px;
+    width: 100%;
+}
+.tbl{
+    width: 63%;
+}
+/*.tbl p{*/
+/*height: 40px;*/
+/*line-height: 40px;*/
+/*text-align: center;*/
+/*}*/
+.newtip{
+    width: 20px;
+    height: 16px;
+    background: #7c6aff;
+    color: #FFFFFF;
+}
+.partnerinfo{
+    font-size: 14px;
+    color: #7c6aff;
+    margin: 0 4px;
+}
+.downlist{
+    width: 70px;
+    height: 20px;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    background: #f38b00;
+    color: #FFFFFF;
+    margin-top: 10px;
+}
+
+
+.echr{
+//width: 34%;
+//height: 400px;
+
+}
+
+.oldpartner1,.oldpartner2{
+    width: 100%;
+}
+.oldtitlle,.oldpartnertable,.oldpartnertable2{
+    width: 64%;
+}
+#old1,#old2{
+    width: 100%;
+}
+
+/*高管信息*/
+.leader{
+    width: 100%;
+    height:460px;
+    overflow-y: auto;
+}
+
+.leader .info{
+    width: 22%;
+    height: 252px;
+    margin: 1%;
+    -webkit-box-shadow: #b3deff 0px 0px 10px;
+    padding: 20px;
+    float: left;
+    font-size: 12px;
+}
+
+.leader .info-text{
+    height: 180px;
+}
+.info p{
+    text-align: center;
+    color: #333333;
+}
+.info p span{
+    color: #808080;
+    font-size: 12px;
+}
+.info p .name{
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+}
+.info p:nth-child(1){
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+
+}
+.info p:nth-child(2){
+    height: 16px;
+
+}
+.info p:nth-child(3){
+    height: 30px;
+
+}
+.info p:nth-child(4){
+    width: 100%;
+    height: 70px;
+    line-height: 22px;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+}
+.more{
+    width: 128px;
+    height: 30px;
+    border-radius: 20px;
+    line-height: 30px;
+    text-align: center;
+    background: #ffad4d;
+    color: #ffffff;
+    border: none;
+    margin-left: 10px;
+}
+.mbox{
+    width:98%;
+    margin: 1%;
+
+}
+.mboxL{
+    width: 34%;
+    height: 210px;
+    background: #e3f7ff;
+    color: #333333;
+}
+.mboxL p{
+    height: 40px;
+//line-height: 40px;
+    text-align: center;
+}
+#myModalLabel .mboxL .mbname{
+    color: #90b9f0;
+}
+.mboxR{
+    width: 64%;
+    margin-left: 1%;
+    height:210px;
+}
+.mboxR p{
+    line-height: 10px;
+}
+#myModal .mboxR .mbintro{
+    letter-spacing: 2px;
+    height: 260px;
+    line-height: 1;
+}
+#modal_context{
+    height:300px;
+
+}
+
+/*财务报表*/
+#money{
+    height: 460px;
+    overflow-y: auto;
+}
+.money-nav{
+    width: 98%;
+    margin: 2%
+}
+.money-nav .table tr td:nth-child(1){
+    min-width: 200px;
+}
+.moneytitle{
+    background: #7bc7ff;
+    color: #FFFFFF;
+    border-radius: 10px;
+}
+#reportType,#cashReport,#profitReport{
+    width: 90px;
+}
+.finadata,.monterdata{
+    width: 100%;
+    height: 600px;
+    overflow-y: auto;
+}
+.finadata-title,.monterdata-title{
+    width: 100%;
+    height: 40px;
+//text-align: center;
+    line-height: 40px;
+}
+.finadata-title .data-name,.monterdata-title .data-name{
+    width: 70%;
+    display: inline-block;
+}
+
+.data-time,.data-unit{
+    width: 76px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    color: #008AF5;
+    border: 1px solid #008AF5;
+    border-radius: 20px;
+    display: inline-block;
+}
+.data-down{
+    display: inline-block;
+    width: 90px;
+    height: 18px;
+    text-align: center;
+    line-height: 18px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    background: url(../../img/download.png) #f38b00  no-repeat 3px center;
+    cursor: pointer;
+}
+/*财务报表*/
+#myTab2 li p{
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#myTab2 li:nth-child(1){
+    height: 40px;
+}
+.nav-pills>li.active>p, .nav-pills>li.active>p:focus, .nav-pills>li.active>p:hover {
+    color: #fff;
+    background-color: #337ab7;
+}
+/*资产负债表*/
+.asset-title{
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 18px;
+
+}
+.asset-title span{
+    display: inline-block;
+
+}
+.pareoport{
+    width: 70px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    background: #cf9de3;
+    color: #FFFFFF;
+    font-size:12px;
+    border-radius: 20px;
+
+}
+.assetRight span{
+    margin-left: 6px;
+}
+.asset-time,.asset-down,.yearreport,.unit{
+    width: 60px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    color: #8db2e4;
+    border: 1px solid #8db2e4;
+    border-radius: 20px;
+    font-size: 12px;
+
+}
+.asset-time{
+
+    background: #8db2e4;
+//background: url(../img/cal.png) #8db2e4 no-repeat left center;
+    color: #fff;
+}
+.asset-time img{
+    width: 15px;
+    height: 15px;
+}
+.asset-down{
+    width: 90px;
+    color: #fff;
+    background: url(../../img/download.png) #f38b00  no-repeat 3px center;
+    cursor: pointer;
+}
+/*监管指标*/
+#supervision{
+    height: 460px;
+    overflow-y: auto;
+}
+#supervision table tr th:nth-child(1){
+    width: 50%;
+}
+#supervision table tr td:nth-child(1){
+    width: 50%;
+}
+.Wdate{
+    width: 80px;
+    height: 24px;
+    border: 1px solid #8db2e4;
+}
+.sure {
+    width: 50px;
+    height: 24px;
+    line-height: 24px;
+    background: #2fa3f8;
+    border: none;
+    border-radius: 4px;
+    color: #FFFFFF;
+}
+.superversion-title{
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 12px;
+    color: #d9c2fc;
+}
+.superversion-title span,.superversion-title2 span{
+    display: inline-block;
+}
+.supv-time,.supv-dw,.supv-down{
+    width: 64px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    color: #8db2e4;
+    border: 1px solid #8db2e4;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-left: 6px;
+}
+.supv-time{
+    background: #8db2e4;
+    color: #fff;
+}
+.supv-time img{
+    width: 15px;
+    height: 15px;
+}
+
+.supv-down{
+    width: 90px;
+    color: #fff;
+    background: url(../../img/download.png) #f38b00  no-repeat 3px center;
+    border: none;
+    cursor: pointer;
+}
+.superversion-title2{
+    width: 100%;
+    height: 10px;
+    text-align: center;
+    line-height: 10px;
+    font-size: 12px;
+    color: #d9c2fc;
+}
+/*经营情况*/
+#manage{
+    width: 100%;
+    height: 460px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.manger-title{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.manger-title p span{
+    display: inline-block;
+    width: 70px;
+    height: 24px;
+    line-height: 24px;
+    color: #8db2e4;
+    border: 1px solid #8db2e4;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-left: 4px;
+}
+.manger-title p .manger-down{
+    width: 90px;
+    color: #fff;
+    background: url(../../img/download.png) #f68b45  no-repeat 3px center;
+    border: none;
+    cursor: pointer;
+}
+.manger-nav-top{
+    width: 100%;
+    min-height: 323px;
+    margin-bottom: 14px;
+}
+.manger-nav-bottom{
+    width: 100%;
+    height: 266px;
+}
+.manger-nav-topL{
+    -webkit-box-shadow: #ebebeb 0px 0px 10px;
+    width: 43%;
+    min-height: 323px;
+}
+.manger-nav-topR{
+    -webkit-box-shadow: #ebebeb 0px 0px 10px;
+    width: 56%;
+    min-height: 323px;
+}
+.manger-nav-bottomL,.manger-nav-bottomR{
+    width: 49.45555%;
+    height: 100%;
+    -webkit-box-shadow: #ebebeb 0px 0px 10px;
+}
+.nav-title{
+    width: 100%;
+    height: 52px;
+    line-height: 52px;
+    padding-left: 22px;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 16px;
+    color: #454545;
+}
+.nav-topRtable{
+    margin-left: 14px;
+    margin-top: 10px;
+width: 51%;
+    margin: 22px 0px 22px 22px;
+}
+.companyType{
+    border-bottom: 1px solid #ebebeb;
+    text-align: center;
+    height: 64px;
+}
+.companyType .comTyL,.companyType .comTyR{
+    width: 50%;
+//display: inline-block;
+    color: #d2d2d2;
+    height: 100%;
+}
+.companyType .comTyL{
+    border-right: 1px solid #ebebeb;
+
+}
+.companyType .bankT{
+    height: 30px;
+    color: #d7b2ff;
+}
+.companyType .comTyTop{
+    height: 34px;
+    line-height: 34px;
+}
+.netnum{
+    color: #f79b5f;
+}
+.companyIntro{
+    margin: 20px;
+    height: 98px;
+    line-height: 26px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+.comMoreBox {
+    line-height: 26px;
+    background: #fff;
+    position: relative;
+    left: 0px;
+    top: 4px;
+    border: 1px solid #ccc;
+    text-align: justify;
+    text-justify: inter-ideograph;
+    padding: 12px;
+    top: 0px;
+    -webkit-box-shadow: 0px 0px 7px #eeeeee;
+    box-shadow: 0px 0px 7px #eeeeee;
+    -moz-border-radius: 3px;
+    padding: 15px 20px 15px 20px;
+    border-radius: 5px;
+    text-align: justify;
+    height: 200px;
+    overflow: auto;
+}
+.comMoreBox1 {
+    line-height: 24px;
+    background: #fff;
+    border: 1px solid #ccc;
+    text-align: justify;
+    text-justify: inter-ideograph;
+    position: relative;
+    padding: 12px;
+    left: 0;
+    top: 8px;
+    height: 200px;
+    overflow: auto;
+}
+.companyMore{
+    color: #8db2e4;
+    cursor: pointer;
+    margin-left: 90%;
+}
+.nav-box{
+    margin: 24px;
+}
+.navB-title{
+    height: 24px;
+}
+.navB-con{
+    height: 100px;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+.navB-tool span{
+    margin-left: 4px;
+    display: inline-block;
+    width: 64px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    color: #8db2e4;
+    border: 1px solid #8db2e4;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.manger-nav-bottom .navB-down{
+    width: 90px;
+    color: #fff;
+    background: url(../../img/download.png) #f68b45  no-repeat 3px center;
+    border: none;
+}
+/*业务结构*/
+#business{
+    width: 100%;
+    height: 460px;
+    overflow-y: auto;
+}
+.business-title{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.business-title p span{
+    display: inline-block;
+    width: 70px;
+    height: 24px;
+    line-height: 24px;
+    color: #8db2e4;
+    border: 1px solid #8db2e4;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-left: 4px;
+}
+.business-title p .business-down{
+    width: 90px;
+    color: #fff;
+    background: url(../../img/download.png) #f68b45  no-repeat 3px center;
+    border: none;
+    cursor: pointer;
+}
+.business-navOne{
+    width: 100%;
+    height:374px;
+}
+.business-navOne tr th:nth-child(4){
+    width: 16%;
+}
+.business-navOneL,.business-navOneR{
+    width:48%;
+    height:100%;
+    margin-left: 1%;
+    border: 2px solid #ccc;
+}
+.businessTable-title{
+    width: 98%;
+    height: 28px;
+    line-height: 28px;
+    border-bottom: 1px solid #ccc;
+    margin-left: 4px;
+}
+.businessTable{
+    width: 98%;
+    height:254px;
+    margin: 1%;
+    overflow: auto;
+}
+.business-navTwo,.business-navThree,.business-navFour{
+    width: 100%;
+    height: 406px;
+    overflow: hidden;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    margin-top: 16px;
+}
+.business-navTwo tr td:nth-child(5){
+    width: 16%;
+}
+.business-navTable{
+    margin: 14px;
+    width: 47%;
+}
+.business-navEchars{
+    width: 49%;
+    height: 400px;
+}
+.business-navEcharsL,.business-navEcharsR,.bussAreapieL,.bussAreapieR{
+    /*width: 100%;*/
+    /*height: 200px;*/
+}
+
+/*融资情况*/
+#financing{
+    width:100%;
+    height:460px;
+    overflow-y: auto;
+}
+.finacTitle{
+    width: 90px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 20px;
+    color: #fff;
+    background: url(../../img/download.png) #f68b45  no-repeat 3px center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    margin-left: 100px;
+
+}
+.nav-topIcon button{
+    margin-top: 10px;
+}
+.finacTableL,.finacTableR{
+    width: 48%;
+    height:222px;
+    margin: 1%;
+}
+.finacTableL table tr td,.finacTableR table tr td{
+    width: 25%;
+    text-align: center;
+}
+.finacTableL table tr td:nth-child(odd){
+    background: #fcfcfc;
+}
+.finacTableR table tr td:nth-child(odd){
+    background: #fcfcfc;
+}
+
+/*报告下载*/
+#report{
+    height:460px;
+    /*overflow: hidden;*/
+    overflow-y: auto;
+}
+.reportTable{
+    width: 98%;
+    margin: 1%;
+}
+.reportOrign{
+    display: inline-block;
+    width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.reportDown,.reportPreview{
+    display: inline-block;
+    width: 80px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    background: #fa8d0e;
+    color: #fff;
+    border-radius: 20px;
+    margin-left: 4px;
+    cursor: pointer;
+}
+.reportPreview{
+    background: #0fd4a3;
+}
+.reportpage{
+    /*margin: 0;*/
+    /*position: absolute;*/
+    /*bottom: 2px;*/
+    /*right: 30px;*/
+    margin: 0;
+    position: relative;
+    top: 2px;
+    right: 30px;
+}
+.nav-topEchars{
+    width: 53%;
+}
+.s-ygttz{
+    width: 44%;
+}
+.s-ygb{
+    margin-bottom: 0px;
+}
+
+.s-jtsjtop{
+    font-size: 16px;
+    padding-left: 24px;
+    border-left: 4px solid #2ea2f7;
+}

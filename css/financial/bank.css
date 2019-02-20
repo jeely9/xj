@@ -1,0 +1,376 @@
+/*右侧最上面导航*/
+.titlt{
+    width: 100%;
+    height: 48px;
+    position: absolute;
+    top: 0px;
+    z-index: 5;
+    background: #f2f6f9;
+    border-bottom: solid #0090f4 2px;
+}
+ .titlt ul{
+    width: 300px;
+    height: 48px;
+}
+.titlt ul li{
+    float: left;
+    width: 90px;
+    height: 46px;
+    text-align: center;
+    line-height: 46px;
+    border-right: 1px solid #fff;
+}
+ .titlt ul  #first{
+    width: 68px;
+    background: #f2f6f9;
+}
+.activeTitle a{
+    color: #0597f4;
+}
+.fresh{
+    width: 16px;
+    height: 16px;
+    border: 1px solid #8C8C8C;
+    margin: 18px 12px;
+}
+
+
+
+
+/*右侧标题部分*/
+.cen-top{
+	padding: 18px;
+    width: 100%;
+    height: 54px;
+    /*min-height: 69px;*/
+    background: #FFFFFF;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+/*搜索部分*/
+.sea{
+	width: 290px;
+	height: 34px;
+	margin-left: 10px;
+}
+.sea input{
+	width: 230px;
+	height: 34px;
+	border: 1px solid #C0C0C0;
+	border-radius: 4px;
+}
+.sea button{
+	width: 34px;
+	height: 34px;
+	background: #2ea2f7;
+	border: none;
+	border-radius: 4px;
+}
+.foc{
+	margin: 12px 0 0;
+}
+.foc a{
+	color: #6ba8e8;
+}
+
+.imgcal{
+	position: absolute;
+	top: 3px;
+	right: 0px;
+	background: #fff;
+}
+.sure{
+    width: 100px;
+    height: 32px;
+    background: #2fa3f8;
+    border: none;
+    border-radius: 4px;
+    color: #FFFFFF;
+    margin-left: 10px;
+}
+.cen{
+    height: 100%;
+}
+.nav{
+	width: 100%;
+    height: 100%;
+    overflow: auto;
+	/*height: 550px;*/
+    /*height: 520px;*/
+	background: #FFFFFF;
+	border-radius: 4px;
+    /*position: relative;*/
+}
+.navtitle{
+	height: 48px;
+	line-height: 48px;
+	border-bottom: 1px solid #eef2f5;
+}
+.navtitle span{
+	font-size: 16px;
+    padding-left: 18px;
+    border-left: 4px solid #2ea2f7;
+}
+.navtop{
+	width: 100%;
+	height: 54px;
+	padding: 12px 18px 0;
+    position: relative;
+}
+.navtop button{
+	//float: left;
+	//display: inline-block;
+}
+.choose{
+	width:80px;
+	height: 30px;
+	line-height: 30px;
+	background: #2fa3f8;
+	color: #FFFFFF;
+	text-align: center;
+	border: none;
+	margin-right: 60%;
+	border-radius: 4px;
+}
+.down,.print,.share{
+	width:80px;
+	height: 25px;
+	line-height: 25px;
+	background: #fa8e0f;
+	color: #FFFFFF;
+	text-align: center;
+	border: none;
+	border-radius: 20px;
+}
+.down a,.print a,.share a{
+    color: #fff;
+}
+.print{
+	background:#00bd85;
+}
+.share{
+	background: url(../../img/share.png) #ff7376 no-repeat 2px center;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #2da1f6;
+    border-color: #2da1f6;
+}
+.indexBox{
+    position: absolute;
+    top: 46px;
+    width:50%;
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #fff
+}
+.indexTitle{
+    color: #fc9112;
+}
+/*标签勾选*/
+.indexList label {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    width: 32%;
+    border: 1px solid #dfdfdf;
+    margin-left: 2px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+}
+/**
+ * 按钮透明
+ * @type {String}
+*/
+.indexList label input[type="checkbox"] {
+    opacity: 0;
+}
+
+/**
+ * checkbox选中样式
+ * @type {String}
+ */
+.indexList label input[type="checkbox"]:checked + i {
+    border-color: blue;
+    color: blue;
+}
+
+/**
+ * i标签的大小
+ */
+.indexList label i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 24px;
+    font-style: normal;
+}
+
+/**
+ * 对勾√效果，使用border
+ * @type {[type]}
+ */
+
+.indexList label span:after {
+    opacity: 1;
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 15px;
+    background: transparent;
+    top: 10px;
+    right: 5px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-left: none;
+    -webkit-transform: rotate(35deg);
+    -moz-transform: rotate(35deg);
+    -o-transform: rotate(35deg);
+    -ms-transform: rotate(35deg);
+    transform: rotate(35deg);
+}
+
+/**
+ * 选中状态，span(三角形)样式
+ * @type {String}
+ */
+.indexList label input[type="checkbox"]:checked + i + span {
+    width: 0px;
+    height: 0px;
+    border-color: blue transparent;
+    border-width: 0px 0px 30px 30px;
+    border-style: solid;
+    position: absolute;
+    right: -1px;
+    top: 10px;
+    opacity: 1;
+}
+#index{
+    display: none;
+}
+.indexHeight{
+    height: 258px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+/*表格*/
+.bankTableBox{
+    width: 100%;
+    /*height: 380px;*/
+    overflow-x: auto;
+    overflow-y: auto;
+}
+.isNoData{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+#bankTable{
+    min-width: 1120px;
+    overflow-x: auto;
+}
+#bankTable td{
+    min-width: 220px;
+}
+#bankTable tr td:nth-child(1){
+    min-width: 50px;
+}
+.tdpointer{
+    cursor: pointer;
+}
+.bankTableBox  table tr th{
+    cursor: pointer;
+}
+.headerSortUp{
+    background: url(../../img/asc.gif) no-repeat right;
+    /*display: none;*/
+}
+
+.headerSortDown{
+    background: url(../../img/desc.gif) no-repeat right;
+
+}
+
+
+.bankpage{
+    position: relative;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+}
+#bankBoxTitle tr th:nth-child(2){
+    display: none;
+}
+#bankBoxTable tr td:nth-child(2){
+    display: none;
+}
+#bankBoxTable tr td:nth-child(3){
+    width: 220px;
+}
+#bankBoxTable tr td:nth-child(1){
+    width: 50px;
+}
+.bankcontainer , .fundcontainer , .rentcontainer , .safecontainer , .secucontainer , .trustcontainer{
+    background: #f2f6f9;
+    width: 100%;
+    padding: 14px 14px 0 14px;
+    position: absolute;
+    top: 48px;
+    bottom: 14px;
+    z-index: 10;
+    overflow: auto;
+	/*height: 830px;*/
+}
+.s-input{
+	width: 170px;
+	height: 32px;
+	padding: 0 0 0 10px;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	outline:none;
+	border: #d0d0d0;
+	-webkit-box-shadow: 0px 0px 3px #757575;
+    box-shadow: 0px 0px 3px #757575;
+    -moz-border-radius: 3px;
+}
+.s-button{
+	width: 69px;
+	height: 34px;
+	border: none;
+	background-color: #259bf1;
+	-webkit-border-top-right-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	margin-left: -3px;
+}
+#city select{
+	width: 300px;
+	height: 32px;
+	padding: 0 0 0 5px;
+	border-radius: 4px;
+	outline:none;
+	border: #d0d0d0;
+	-webkit-box-shadow: 0px 0px 3px #757575;
+    box-shadow: 0px 0px 3px #757575;
+    -moz-border-radius: 3px;
+    margin-right: 5px;
+}
+

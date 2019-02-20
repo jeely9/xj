@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html style="">
+<head>
+    <meta http-equiv ="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>数据</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="css/financial/bank.css"/>
+    <link rel="stylesheet" type="text/css" href="css/dcalendar.picker.css"/>
+</head>
+<body>
+<div class="contain" id="boxFather">
+    <!--默认宽高1366*768-->
+    <!--<div class="s-top-bad">-->
+    <div class="mainheader clearfix" id="boxSon">
+	        <div class="left">
+	        	<div class="khd-logo left"></div>
+	        	<input type="search" name="" required="" placeholder="全局搜索"><img class="sstp" src="img/topsearch.png" class="topsea"/>
+	        </div>
+	        <div class="tool right">
+	            <li>
+	                <img src="img/bell.png"/>
+	                <span class="news">0</span>
+	            </li>
+	            <li class="user"><span id="userName">试用客户</span>
+                    <!--<img src="img/down.png"/>-->
+                </li>
+                <li class="third"><span id="serivice" data-toggle="modal" data-target="#searchModal">服务</span>
+                    <!--<img src="img/down.png"/>-->
+                </li>
+                <li class="third" id = "openDownloadPath"><span>下载</span>
+                    <!--<img src="img/down.png"/>-->
+                </li>
+                <!-- 模态框（Modal） -->
+                <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="searchModalLabel">服务信息</h4>
+                            </div>
+                            <div class="modal-body box">
+                                <div class="modalTable">
+                                    <h5>1、您已获得锐思克大数据分析系统非独家的软件使用许可，该软件使用许可包括为您开立账号、安装调试、维护升级等服务内容。</h5>
+                                    <h5>2、我们将为您提供数据服务，将我们整理加工的数据、分析模型和研究报告及时传送给您。</h5>
+                                    <h5>3、我们还将为您提供通用管理系统服务，如您有特殊服务需求的，请与我们联系，我们将竭诚为您提供优质、高效的个性服务。</h5>
+                                    <h5>4、如果您有任何商务问题，或您想开立新账号等任何商务合作，请与我们的专属顾问联系。</h5>
+                                    <h5>5、您可通过如下方式与我们取得联系</h5>
+                                    <h5>Tel：021-55891368     Email：market@risksyun.com；</h5>
+                                    <h5>也可以登陆我们的官网 www.risksyun.com或搜索微信公众号“析鲸信息”，与我们取得联系。</h5>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">确认</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <li class="fourth" id="help">帮助
+                    <!--<img src="img/down.png"/>-->
+                </li>
+	            <li>
+	                <img src="img/peizhi.png" alt="" />
+	                <a onclick="app.sendMessage('app_min_window')"><img src="img/suoxiao.png" alt="小" /></a>
+	                <a id="big"><img src="img/fd.png" alt="大" /></a>
+	                <a onclick="app.sendMessage('app_close_window')"><img src="img/cha.png" alt="x" /></a>
+	            </li>
+	
+	        </div>
+	        <div class="userinfo">
+	            <a href="#"><img src="img/zhxx.png"/>账号信息</a>
+	            <a href="#"><img id="spe" src="img/suo.png"/>锁定</a>
+	            <a href="#"><img src="img/out.png"/>退出账号</a>
+	            <img class="up" src="img/up.png"/>
+	        </div>
+	        <div id="div1" class="right"></div>
+	    </div>
+    <!--</div>-->
+    <div class="center clearfix">
+        <div class="cen-l left">
+            <div class="cen-l-top">
+                <p>
+                    <span class="topInfo"><a href="index.html" class="now">数据</a></span>
+                    <span class="topInfo"><a href="modalIndex.html" id="modal" target="menuFrame">模型</a></span>
+                    <span class="topInfo"><a href="researchReport.html" target="menuFrame">研究报告</a></span>
+                    <span class="topInfo"><a href="#">管理系统</a></span>
+                </p>
+            </div>
+            <div class="menu" id="accordion">
+                <ul class="">
+                    <li class="">
+                        <span><img src="img/hgjj.png"/></span>
+                        <a data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseOne" target="menuFrame">宏观经济
+                        </a>
+                        <span class="jia">+</span>
+                    </li>
+                    <li id="collapseOne" class="panel-collapse collapse">
+                        <ul class="panel-body finance s-panel">
+                            <li class="area active"><a href="html/area/allCountry.html" target="menuFrame"><span>全国</span><b class="tipsx"></b></a></li>
+                            <li class="area"><a href="html/area/eastNorth.html" target="menuFrame"><span>东北地区</span><b class="tipsx"></b></a></li>
+                            <li class="area"><a href="html/area/east.html" target="menuFrame"><span>东部地区</span><b class="tipsx"></b></a></li>
+                            <li class="area"><a href="html/area/center.html" target="menuFrame"><span>中部地区</span><b class="tipsx"></b></a></li>
+                            <li class="area"><a href="html/area/west.html" target="menuFrame"><span>西部地区</span><b class="tipsx"></b></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <span><img src="img/hyfx.png"/></span>
+                        <a data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseTwo" target="menuFrame">行业风险<span class="tipfx" id="indusTotal"></span></a>
+                        <span class="jia">+</span>
+                    </li>
+                    <li id="collapseTwo" class="panel-collapse collapse">
+                        <ul class="panel-body industry s-panel">
+                            <li class="indust active"><a href="html/industry/cycle.html" target="menuFrame"><span>周期性</span><b class="tipsx" id="tipCycle"></b></a></li>
+                            <li class="indust"><a href="html/industry/realty.html" target="menuFrame"><span>房地产</span><b class="tipsx" id="tipRealty"></b></a></li>
+                            <li class="indust"><a href="html/industry/public.html" target="menuFrame"><span>公共品</span><b class="tipsx" id="tipPublic"></b></a></li>
+                            <li class="indust"><a href="html/industry/bigConsume.html" target="menuFrame"><span>大消费</span><b class="tipsx" id="tipBig"></b></a></li>
+                            <li class="indust"><a href="html/industry/finance.html" target="menuFrame"><span>金融贸易</span><b class="tipsx" id="tipFin"></b></a></li>
+                            <li class="indust"><a href="html/industry/modernService.html" target="menuFrame"><span>现代服务业</span><b class="tipsx" id="tipMoser"></b></a></li>
+                            <li class="indust"><a href="html/industry/strategic.html" target="menuFrame"><span>战略性</span><b class="tipsx" id="tipBStrategic"></b></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <span><img src="img/jrjg.png"/></span>
+                        <a data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseThree" target="menuFrame">金融机构<span class="tipfx" id="tipFinancial"></span>
+                        </a>
+                        <span class="jia">+</span>
+                    </li>
+                    <li id="collapseThree" class="panel-collapse collapse">
+                        <ul class="panel-body finance s-panel">
+                            <li class="finactive active"><a href="html/financial/bank.html" target="menuFrame"><span>银行</span><b class="tipsx" id="tipBank">10</b></a></li>
+                            <li class="finactive"><a href="html/financial/security.html" target="menuFrame"><span>证券</span><b class="tipsx" id="tipZq">10</b></a></li>
+                            <li class="finactive"><a href="html/financial/safe.html" target="menuFrame"><span>保险</span><b class="tipsx" id="tipBX">10</b></a></li>
+                            <li class="finactive"><a href="html/financial/trust.html" target="menuFrame"><span>信托</span><b class="tipsx" id="tipXt">10</b></a></li>
+                            <li class="finactive"><a href="html/financial/rent.html" target="menuFrame"><span>租赁</span><b class="tipsx" id="tipZl">10</b></a></li>
+                            <li class="finactive"><a href="html/financial/fund.html" target="menuFrame"><span>基金</span><b class="tipsx" id="tipJj">10</b></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="">
+                    <li class="">
+                        <span><img src="img/fcxm.png"/></span>
+                        <a data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseFour" target="menuFrame">房产项目
+                        </a>
+                        <span class="jia">+</span>
+                    </li>
+                    <li id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            正在建设中……
+                        </div>
+                    </li>
+                </ul>
+                <ul class="">
+                    <li class="">
+                        <span><img src="img/fzss.png"/></span>
+                        <a data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseFive" target="menuFrame">发债上市
+                        </a>
+                        <span class="jia">+</span>
+                    </li>
+                    <li id="collapseFive" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            正在建设中……
+                        </div>
+                    </li>
+                </ul>
+                <ul class="">
+                    <li class="">
+                        <span><img src="img/zxqy.png"/></span>
+                        <a data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseSix" target="menuFrame">中小企业
+                        </a>
+                        <span class="jia">+</span>
+                    </li>
+                    <li id="collapseSix" class="panel-collapse collapse">
+                        <div class="panel-body">
+                           正在建设中……
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="mainContents" class="cen-r">
+            <iframe src="home.html" id="mainiframe" name="menuFrame" frameborder="0" scrolling="no" target="_self" style="width: 100%;overflow:auto;"></iframe>
+            <!--<div class="footer">-->
+            	<!--<div class="left">-->
+            		<!--<a href="#"><img src="img/help.png"/>帮助</a>-->
+	                <!--<a href="#"><img src="img/kefu.png"/>在线客服</a>-->
+	                <!--<a href="#"><img src="img/tel.png"/>021-55891368</a>-->
+            	<!--</div>-->
+            	<!--<div class="right" style="margin-right: 70px;">-->
+            		<!--<span class="fcopy">版权归上海析鲸信息科技有限公司所有&emsp;</span>-->
+                    <!--<span class="version">版本号:<span class="versionNum"></span></span>-->
+            	<!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <div class="footer">
+        <div class="left">
+            <a href="#"><img src="img/help.png"/>帮助</a>
+            <a href="#"><img src="img/kefu.png"/>在线客服</a>
+            <a href="#"><img src="img/tel.png"/>021-55891368</a>
+        </div>
+        <div class="right" style="margin-right: 70px;">
+            <span class="fcopy">版权归上海析鲸信息科技有限公司所有&emsp;</span>
+            <span class="version">版本号:<span class="versionNum"></span></span>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/url.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+//    function changeFrameHeight(){
+//        var ifm= document.getElementById("mainiframe");
+//        ifm.height=document.documentElement.clientHeight-40+"px";
+////        ifm.height=ifm.contentWindow.document.body.scrollHeight+"px";
+//        console.log(ifm.height);
+//    }
+//    window.onresize=function(){
+//        changeFrameHeight();
+//    }
+//    $(function(){
+//        changeFrameHeight();
+//    });
+</script>
+</html>

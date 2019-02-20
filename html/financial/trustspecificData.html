@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>信托具体数据注册信息</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/financial/bankspecificData.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/financial/securityspecificData.css" />
+    <!--<link rel="stylesheet" type="text/css" href="../../css/financial/safespecificData.css" />-->
+    <link rel="stylesheet" type="text/css" href="../../css/financial/trustspecificData.css" />
+</head>
+
+<body>
+<div class="titlt">
+    <ul class="left">
+        <li id="first"><a href="../../home.html">首页</a></li>
+        <li id="currentParName"><a href="bank.html">金融机构</a></li>
+        <li id="currentName" class="activeTitle"><a href="javascript:void(0)">信托</a></li>
+    </ul>
+</div>
+<div class="bankcon">
+    <!--<div class="center">-->
+        <div class="cen">
+            <div class="Bnav">
+                <div class="Bnav-title">
+                    <span class="s-jtsjtop">信托企业具体数据</span>
+                </div>
+                <div class="nav-top clearfix">
+                    <ul>
+                        <p>
+                            <b class="bankName"></b>
+                            <b class="tip"></b>
+                            <b class="style">股票代码<span class="bankNum"></span></b>
+                            <span class="faddr">
+                                <!--<a href="www.gtfund.com" target="_Blank">www.gtfund.com</a>-->
+                            </span>
+                            <!--<span class="Onedownload right">一键下载</span>-->
+                        </p>
+                    </ul>
+                </div>
+                <!--Tab-->
+                <div class="nav-tab">
+                    <ul id="myTab" class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#register" data-toggle="tab">注册信息</a>
+                        </li>
+                        <li>
+                            <a href="#partner" data-toggle="tab">股东信息</a>
+                        </li>
+                        <li>
+                            <a href="#leader" data-toggle="tab">高管信息</a>
+                        </li>
+                        <li>
+                            <a href="#money" data-toggle="tab">财务报表</a>
+                        </li>
+                        <li>
+                            <a href="#supervision" data-toggle="tab">监管指标</a>
+                        </li>
+                        <li>
+                            <a href="#manage" data-toggle="tab">经营情况</a>
+                        </li>
+                        <li>
+                            <a href="#business" data-toggle="tab">业务结构</a>
+                        </li>
+                        <li>
+                            <a href="#financing" data-toggle="tab">融资情况</a>
+                        </li>
+                        <li>
+                            <a href="#report" data-toggle="tab">报告下载</a>
+                        </li>
+
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                        <!--注册信息-->
+                        <div class="tab-pane fade in active" id="register">
+                            <ul class="nav-topIcon right">
+                                <span class="print" onclick="PrintTable('#xiazai3')">打印</span><span id="testDown2" class="download">下载报告</span>
+                                <!--<span class="bankshare">分享到 :<a href="#" class="qq"><img src="../../img/qqN.jpg"/></a>-->
+																	<!--<a href="#"><img src="../../img/weiboN.jpg"/></a>-->
+																	<!--<a href="#"><img src="../../img/kjN.jpg"/></a>-->
+																	<!--<a href="#"><img src="../../img/weixinN.jpg"/></a>-->
+                                <!--</span>-->
+                            </ul>
+                            <div class="registerTable">
+                                <table class="table table-bordered" id="xiazai3">
+                                    <tbody>
+                                    <tr>
+                                        <td>统一社会信用代码</td>
+                                        <td class="seCreditCode"></td>
+                                        <td>法定代表人</td>
+                                        <td class="legalRepresentative"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>注册资本</td>
+                                        <td><span class="regmoney"></span>万元人民币</td>
+                                        <td>成立时间</td>
+                                        <td class="settime"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>企业类型</td>
+                                        <td class="seType"></td>
+                                        <td>经营期限</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>登记状态</td>
+                                        <td class="specialW" colspan="3"><span class="regzt">办理人民币存款</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>经营范围</td>
+                                        <td class="specialW" colspan="3"><span class="scopeOfBusiness">办理人民币存款、贷款、结算业务办理人民币存款、贷款、结算业务办理人民币存款、贷款、结算业务办理人民币存款、贷款、结算业务办理人民币存款、贷款、结算业务办理人民币存款、贷款、结算业务</span></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>主导产品或主营业务</td>
+                                        <td colspan="3"><span class="mainBusiness"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>员工人数</td>
+                                        <td><span class="staffNumber"></span>人</td>
+                                        <td>所属集团</td>
+                                        <td><span></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>办公地址</td>
+                                        <td colspan="3"><span class="seRegisteredAddress">北京市</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>联系电话</td>
+                                        <td><span class="bankPhone"></span></td>
+                                        <td>邮政编码</td>
+                                        <td><span class="bankpostCode"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>公司网址</td>
+                                        <td><span class="bankWeb"></span></td>
+                                        <td>电子邮箱</td>
+                                        <td><span class="bankEmail"></span></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--股东信息-->
+                        <div class="tab-pane fade" id="partner">
+                            <ul class="nav-topIcon right">
+                                <span class="print" onclick="PrintTable('#xiazai4')">打印</span><span id="partnerDown" class="download">下载报告</span>
+                                <!--<span class="bankshare">分享到 :<a href="#" class="qq"><img src="../../img/qqN.jpg"/></a>-->
+																	<!--<a href="#"><img src="../../img/weiboN.jpg"/></a>-->
+																	<!--<a href="#"><img src="../../img/kjN.jpg"/></a>-->
+																	<!--<a href="#"><img src="../../img/weixinN.jpg"/></a>-->
+                                <!--</span>-->
+                            </ul>
+                            <div id="xiazai4">
+                            	<div class="newpartner">
+                                    <div class="tbl left clearfix">
+                                        <p class="left"><span class="newtip">new</span><span class="partnerinfo">最新十大股东信息</span><span>变更时间:<span class="newdate"></span></span>
+                                        </p>
+                                        <!--<p class="downlist right">下载列表</p>-->
+                                        <div class="newpartnertable">
+                                            <table id="tb_newpartner" class="table table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th style="width:10%">序号</th>
+                                                    <th style="width:30%">股东名称</th>
+                                                    <th>出资金额(万元人民币)</th>
+                                                    <th>出资占比</th>
+                                                    <th>股东背景</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr id="trtemplate">
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="echr right" id="newpartnerpie" style="width: 290px;height:400px;"></div>
+                                </div>
+                                <div class="oldpartner1">
+                                    <div class="oldtitlle clearfix" data-toggle="collapse" data-target="#old1">
+                                        <p class="left"><span class="newtip">old</span><span class="partnerinfo">历史十大股东信息</span><span>变更时间:<span class="olddate1"></span></span>
+                                        </p>
+                                        <!--<p class="downlist right">下载列表</p>-->
+                                    </div>
+                                    <div class="clearfix  collapse" id="old1">
+                                        <div class="oldpartnertable left">
+                                            <table id="otb_newpartner1" class="table table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th style="width:10%">序号</th>
+                                                    <th style="width:30%">股东名称</th>
+                                                    <th>出资金额(万元人民币)</th>
+                                                    <th>出资占比</th>
+                                                    <th>股东背景</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr id="trtemplate1">
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="echr1 right" id="oldpartnerpie1" style="width: 290px;height:400px;"></div>
+                                    </div>
+                                </div>
+                                <div class="oldpartner2">
+                                    <div class="oldtitlle clearfix" data-toggle="collapse" data-target="#old2">
+                                        <p class="left"><span class="newtip">old</span><span class="partnerinfo">历史十大股东信息</span><span>变更时间:<span class="olddate2"></span></span>
+                                        </p>
+                                        <!--<p class="downlist right">下载列表</p>-->
+                                    </div>
+                                    <div class="clearfix  collapse" id="old2">
+                                        <div class="oldpartnertable2 left">
+                                            <table id="otb_newpartner2" class="table table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th style="width:10%">序号</th>
+                                                    <th style="width:30%">股东名称</th>
+                                                    <th>出资金额(万元人民币)</th>
+                                                    <th>出资占比</th>
+                                                    <th>股东背景</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr id="trtemplate2">
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="echr2 right" id="oldpartnerpie2" style="width: 290px;height:400px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--高管信息-->
+                        <div class="tab-pane fade leader" id="leader">
+                            <div class="info">
+                                <p><span class="name">古树</span><span class="birthdata">1967-08</span></p>
+                                <p>职位：<span class="prome">行长</span></p>
+                                <p>入职日期：<span class="workdata">2016-12</span></p>
+                                <p>简历简介：<span class="intro"></span></p>
+                                <button class="more" data-toggle="modal" data-target="#myModal">了解详情</button>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">高管信息</h4>
+                                    </div>
+                                    <div class="modal-body report_body">
+                                        <div id="modal_context" class="mbox clearfix">
+                                            <div class="mboxL left">
+                                                <p><span class="mbname" style="color: #90b9f0">深思</span><span class="mbbirth" style="color: #90b9f0">1960-8</span></p>
+                                                <p class="mbtype">独立董事</p>
+                                                <p>本届任期：<span class="mbdata">2016-06-24至2018-12-20</span></p>
+                                            </div>
+                                            <div class="mboxR right">
+                                                <p class="mbintro">深思，男，中国国籍，硕士学历深思，男，中国国籍</p>
+                                                <p>此简历更新于<span class="mbupdata">2017-04-07</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--财务报表-->
+                        <div class="tab-pane fade" id="money">
+                            <div class="money-nav">
+                                <ul id="myTab2" class="nav nav-pills moneytitle">
+                                    <li class="active">
+                                        <p href="#finasummary" data-toggle="tab">财务摘要</p>
+                                    </li>
+                                    <li>
+                                        <a href="#asset" data-toggle="tab">资产负债表</a>
+                                    </li>
+                                    <li>
+                                        <a href="#profit" data-toggle="tab">利润表</a>
+                                    </li>
+                                    <li>
+                                        <a href="#cashflow" data-toggle="tab">项目资产负债表</a>
+                                    </li>
+                                    <li>
+                                        <a href="#projectProfit" data-toggle="tab">项目利润表</a>
+                                    </li>
+                                </ul>
+                                <div id="" class="tab-content">
+                                    <div class="tab-pane fade in active" id="finasummary">
+                                        <div class="finadata">
+                                            <div class="finadata-title">
+                                                <span class="data-name">主要财务数据</span>
+                                                <!--<span class="data-time">时间</span>-->
+                                                <select id="MainDate" name="MainDate" class="data-time">
+                                                    <option value="0" selected = "selected">时间</option>
+                                                    <option value="1">三期</option>
+                                                    <option value="2">五期</option>
+                                                    <option value="3">十期</option>
+                                                </select>
+                                                <select id="MainDateUnit" class="data-unit">
+                                                    <option value="0" selected = "selected">元</option>
+                                                    <option value="1">万元</option>
+                                                    <option value="2">亿元</option>
+                                                </select>
+                                                <span id="finaDown" class="data-down">下载报表</span>
+                                                <div class="finadata-table">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                        <tr id="mainTableTitle"></tr>
+                                                        </thead>
+                                                        <tbody id="mainTable"></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="monterdata">
+                                            <div class="monterdata-title">
+                                                <span class="data-name">银行核心监测数据</span>
+                                                <!--<span class="data-time">时间</span>-->
+                                                <select id="MonitorDate" name="MonitorDate" class="data-time">
+                                                    <option value="0" selected = "selected">时间</option>
+                                                    <option value="1">三期</option>
+                                                    <option value="2">五期</option>
+                                                    <option value="3">十期</option>
+                                                </select>
+                                                <select id="MonitorDateUnit" class="data-unit">
+                                                    <option value="0" selected = "selected">元</option>
+                                                    <option value="1">万元</option>
+                                                    <option value="2">亿元</option>
+                                                </select>
+                                                <span class="data-down">下载报表</span>
+                                                <div class="monterdata-table">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                        <tr id="monitorTableTitle">
+                                                            <!--<th>名称</th>-->
+                                                            <!--<th>2016-12-31</th>-->
+                                                            <!--<th>2015-12-31</th>-->
+                                                            <!--<th>2014-12-31</th>-->
+                                                            <!--<th>2013-12-31</th>-->
+                                                            <!--<th>2012-12-31</th>-->
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody id="monitorTable">
+                                                        <!--<tr>-->
+                                                        <!--<td>总资产</td>-->
+                                                        <!--<td></td>-->
+                                                        <!--<td></td>-->
+                                                        <!--<td></td>-->
+                                                        <!--<td></td>-->
+                                                        <!--<td></td>-->
+                                                        <!--</tr>-->
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="asset">
+                                        <div class="asset-title clearfix">
+                                            <div class="assetLeft left">
+                                                <!--<span>工商银行</span>-->
+                                                <!--[<span>601398.SH</span>]-->
+                                                <!-- -<span>资产负债表</span>-->
+                                                <!--<span class="pareoport">母公司报表</span>-->
+                                            </div>
+                                            <div class="assetRight right">
+                                                <!--<span class="asset-time"><img src="../../img/cal.png"/>时间</span>-->
+                                                <select id="reportType" class="yearreport">
+                                                    <option value="0" selected = "selected">合并报表</option>
+                                                    <option value="1">母公司报表</option>
+                                                </select>
+                                                <select id="assetDate" name="assetDate" class="asset-time">
+                                                    <option value="0" selected = "selected">五期</option>
+                                                    <option value="1">三期</option>
+                                                    <option value="2">十期</option>
+                                                </select>
+                                                <select id="assetType" class="yearreport">
+                                                    <option value="0" selected = "selected">年报</option>
+                                                    <option value="1">季报</option>
+                                                </select>
+                                                <select id="assetUnit" class="unit">
+                                                    <option value="0" selected = "selected">元</option>
+                                                    <option value="1">万元</option>
+                                                    <option value="2">亿元</option>
+                                                </select>
+                                                <span id="assetDown" class="asset-down">下载报表</span>
+                                            </div>
+                                        </div>
+                                        <div class="asset-table">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                <tr id="assetTableTitle">
+                                                    <!--<th>名称</th>-->
+                                                    <!--<th>2016-12-31</th>-->
+                                                    <!--<th>2015-12-31</th>-->
+                                                    <!--<th>2014-12-31</th>-->
+                                                    <!--<th>2013-12-31</th>-->
+                                                    <!--<th>2012-12-31</th>-->
+                                                </tr>
+                                                </thead>
+                                                <tbody id="assetTable">
+                                                <!--<tr>-->
+                                                <!--<td>报表来源</td>-->
+                                                <!--<td>季报</td>-->
+                                                <!--<td>年报</td>-->
+                                                <!--<td>季报</td>-->
+                                                <!--<td>中报</td>-->
+                                                <!--<td>中报</td>-->
+                                                <!--</tr>-->
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="profit">
+                                        <div class="asset-title clearfix">
+                                            <div class="assetLeft left">
+                                                <!--<span>工商银行</span>-->
+                                                <!--[<span>601398.SH</span>]-->
+                                                <!-- -<span>利润表</span>-->
+                                                <!--<span class="pareoport">母公司报表</span>-->
+                                            </div>
+                                            <div class="assetRight right">
+                                                <!--<span class="asset-time"><img src="../../img/cal.png"/>时间</span>-->
+                                                <select id="profitReport" class="yearreport">
+                                                    <option value="0" selected = "selected">合并报表</option>
+                                                    <option value="1">母公司报表</option>
+                                                </select>
+                                                <select id="profitDate" name="profitDate" class="asset-time">
+                                                    <option value="0" selected = "selected">五期</option>
+                                                    <option value="1">三期</option>
+                                                    <option value="2">十期</option>
+                                                </select>
+                                                <select id="profitType" class="yearreport">
+                                                    <option value="0" selected = "selected">年报</option>
+                                                    <option value="1">季报</option>
+                                                </select>
+                                                <select id="profitUnit" class="unit">
+                                                    <option value="0" selected = "selected">元</option>
+                                                    <option value="1">万元</option>
+                                                    <option value="2">亿元</option>
+                                                </select>
+                                                <span id="profitDown" class="asset-down">下载报表</span>
+                                            </div>
+                                        </div>
+                                        <div class="asset-table">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                <tr id="profitTableTitle"></tr>
+                                                </thead>
+                                                <tbody id="profitTable"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="cashflow">
+                                        <div class="asset-title clearfix">
+                                            <div class="assetLeft left">
+                                                <!--<span>工商银行</span>-->
+                                                <!--[<span>601398.SH</span>]-->
+                                                <!-- -<span>现金流量表</span>-->
+                                                <!--<span class="pareoport">母公司报表</span>-->
+                                            </div>
+                                            <div class="assetRight right">
+                                                <!--<span class="asset-time"><img src="../../img/cal.png"/>时间</span>-->
+                                                <select id="cashReport" class="yearreport">
+                                                    <option value="0" selected = "selected">合并报表</option>
+                                                    <option value="1">母公司报表</option>
+                                                </select>
+                                                <select id="cashflowDate" name="cashflowDate" class="asset-time">
+                                                    <option value="0" selected = "selected">五期</option>
+                                                    <option value="1">三期</option>
+                                                    <option value="2">十期</option>
+                                                </select>
+                                                <select id="cashflowType" class="yearreport">
+                                                    <option value="0" selected = "selected">年报</option>
+                                                    <option value="1">季报</option>
+                                                </select>
+                                                <select id="cashUnit" class="unit">
+                                                    <option value="0" selected = "selected">元</option>
+                                                    <option value="1">万元</option>
+                                                    <option value="2">亿元</option>
+                                                </select>
+                                                <span id="cashflowDown" class="asset-down">下载报表</span>
+                                            </div>
+                                        </div>
+                                        <div class="asset-table">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                <tr id="cashflowTableTitle"></tr>
+                                                </thead>
+                                                <tbody id="cashflowTable"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="projectProfit">
+                                        <div class="asset-title clearfix">
+                                            <div class="assetLeft left">
+                                                <!--<span>工商银行</span>-->
+                                                <!--[<span>601398.SH</span>]-->
+                                                <!-- -<span>现金流量表</span>-->
+                                                <!--<span class="pareoport">母公司报表</span>-->
+                                            </div>
+                                            <div class="assetRight right">
+                                                <!--<span class="asset-time"><img src="../../img/cal.png"/>时间</span>-->
+                                                <select id="projectReport" class="yearreport">
+                                                    <option value="0" selected = "selected">合并报表</option>
+                                                    <option value="1">母公司报表</option>
+                                                </select>
+                                                <select id="projectProfitDate" name="cashflowDate" class="asset-time">
+                                                    <option value="0" selected = "selected">五期</option>
+                                                    <option value="1">三期</option>
+                                                    <option value="2">十期</option>
+                                                </select>
+                                                <select id="projectProfitType" class="yearreport">
+                                                    <option value="0" selected = "selected">年报</option>
+                                                    <option value="1">季报</option>
+                                                </select>
+                                                <select id="projectProfitUnit" class="unit">
+                                                    <option value="0" selected = "selected">元</option>
+                                                    <option value="1">万元</option>
+                                                    <option value="2">亿元</option>
+                                                </select>
+                                                <span id="projectProfitDown" class="asset-down">下载报表</span>
+                                            </div>
+                                        </div>
+                                        <div class="asset-table">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                <tr id="projectProfitTableTitle"></tr>
+                                                </thead>
+                                                <tbody id="projectProfitTable"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--监管指标-->
+                        <div class="tab-pane fade" id="supervision">
+                            <div class="superversion-title">
+                                <p class="left">
+                                    <span class="supv-name" id="supvName1"></span>
+                                </p>
+                                <p class="right">
+                                    <input id="supYear" type="text" runat="server" value="2016" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate"/>
+                                    <button class="sure" id="search">确定</button>
+                                    <select id="supervisionUnit" class="unit supv-dw">
+                                        <option value="0" selected = "selected">元</option>
+                                        <option value="1">万元</option>
+                                        <option value="2">亿元</option>
+                                    </select>
+                                    <span id="superDown" class="supv-down">下载数据</span>
+                                </p>
+
+                            </div>
+                            <div class="superversion-table">
+                                <table class="table table-bordered">
+                                    <thead>
+                                    <tr class="superTitle"></tr>
+                                    </thead>
+                                    <tbody id="supervList"></tbody>
+                                </table>
+                            </div>
+                            <div class="panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="superversion-title2">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapsetwo">
+                                            <p class="left">
+                                                <span class="supv-name" id="supvName2"></span>
+                                            </p>
+
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapsetwo" class="panel-collapse collapse">
+                                    <div class="superversion-table">
+                                        <table class="table table-bordered">
+                                            <thead><tr class="superTitle"></tr></thead>
+                                            <tbody id="supervList1"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="superversion-title2">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThr">
+                                            <p class="left">
+                                                <span class="supv-name" id="supvName3"></span>
+                                            </p>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThr" class="panel-collapse collapse">
+                                    <div class="superversion-table">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                            <tr class="superTitle"></tr>
+                                            </thead>
+                                            <tbody id="supervList2"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="superversion-title2">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapsefou">
+                                            <p class="left">
+                                                <span class="supv-name" id="supvName4"></span>
+                                            </p>
+
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapsefou" class="panel-collapse collapse">
+                                    <div class="superversion-table">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                            <tr class="superTitle"></tr>
+                                            </thead>
+                                            <tbody id="supervList3"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--经营情况-->
+                        <div class="tab-pane fade" id="manage">
+                            <div class="manger-title">
+                                <p class="right">
+                                    <!--报告期:<span>2016.12.3</span>-->
+                                    <input id="manageYear" type="text" runat="server" value="2016" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate"/>
+                                    <button class="sure" id="manageSearch">确定</button>
+                                    <span id="mangerDown" class="manger-down">下载数据</span>
+                                </p>
+                            </div>
+                            <div class="manger-nav">
+                                <div class="manger-nav-top clearfix">
+                                    <div class="manger-nav-topL left">
+                                        <p class="nav-title">公司简介</p>
+                                        <div class="companyType clear">
+                                            <div class="comTyL left">
+                                                <p class="comTyTop">信托背景分类</p>
+                                                <p class="bankT"></p></div>
+                                            <div class="comTyR right">
+                                                <p class="comTyTop">业务品种</p>
+                                                <p class="netnum"></p>
+                                            </div>
+                                        </div>
+                                        <div class="companyBox">
+                                            <p class="companyIntro" id="comInfo">
+                                            </p>
+                                            <span class="companyMore" id="comMore" data-toggle="collapse" data-target="#comMoreBox">更多</span>
+                                            <div id="comMoreBox" class="comMoreBox collapse out"></div>
+                                        </div>
+                                    </div>
+                                    <div class="manger-nav-topR right">
+                                        <p class="nav-title">员工构成</p>
+                                        <div class="nav-topRtable left">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                <tr>
+                                                    <th>名称</th>
+                                                    <th>人数</th>
+                                                    <th>占比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>博士</td>
+                                                    <td class="docNum"></td>
+                                                    <td class="docRat"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>硕士</td>
+                                                    <td class="graNum"></td>
+                                                    <td class="graRat"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>本科</td>
+                                                    <td class="ungraNum"></td>
+                                                    <td class="ungraRat"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>大专</td>
+                                                    <td class="juniorNum"></td>
+                                                    <td class="juniorRat"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>高中及其他</td>
+                                                    <td class="heightNum"></td>
+                                                    <td class="heightRat"></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="nav-topEchars right" id="managerpie"></div>
+                                    </div>
+                                </div>
+                                <div class="manger-nav-bottom clearfix">
+                                    <div class="manger-nav-bottomL left">
+                                        <div class="nav-title">经营分析</div>
+                                        <div class="nav-box">
+                                            <p class="navB-title"></p>
+                                            <p class="navB-con" id="analyNav"></p>
+                                            <p class="navB-tool">
+                                                <span class="companyMore"  data-toggle="collapse" data-target="#comMoreBox1">查看更多</span>
+                                                <span class="navB-down">下载</span>
+                                            </p>
+                                            <p id="comMoreBox1" class="comMoreBox1 collapse out"></p>
+                                        </div>
+
+                                    </div>
+                                    <div class="manger-nav-bottomR right">
+                                        <div class="nav-title">风险管理</div>
+                                        <div class="nav-box">
+                                            <p class="navB-title"></p>
+                                            <p class="navB-con" id="riskNav"></p>
+                                            <p class="navB-tool">
+                                                <span class="companyMore"  data-toggle="collapse" data-target="#comMoreBox2">查看更多</span>
+                                                <span class="navB-down">下载</span>
+                                            </p>
+                                            <p id="comMoreBox2" class="comMoreBox1 collapse out"></p>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--业务结构-->
+                        <div class="tab-pane fade" id="business">
+                            <div class="business-title">
+                                <p class="right">
+                                    <!--报告期 <span>2016.12.3</span>-->
+                                    <input id="businessYear" type="text" runat="server" value="2016" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate"/>
+                                    <button class="sure" id="businessSearch">确定</button>
+                                    <span id="businessDown" class="business-down">下载数据</span>
+                                </p>
+                            </div>
+
+                            <div class="trustbusinessTableOne clearfix">
+                                <div class="trustbusinessTableOneL left">
+                                    <ul id="trustTabOneL" class="nav nav-tabs">
+                                        <li class="active">
+                                            <a href="#moneyUse" data-toggle="tab">固有资产运用</a>
+                                        </li>
+                                        <li>
+                                            <a href="#moneyFb" data-toggle="tab">固有资产分布</a>
+                                        </li>
+                                    </ul>
+                                    <div id="trustTabOneLContent" class="tab-content">
+                                        <div class="tab-pane fade in active" id="moneyUse">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th>资产运用</th>
+                                                    <th>金额</th>
+                                                    <th>占比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="use"></tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane fade" id="moneyFb">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th>资产分布</th>
+                                                    <th>金额</th>
+                                                    <th>占比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="fB">
+                                                <!--<tr>-->
+                                                    <!--<td>货币资产</td>-->
+                                                    <!--<td></td>-->
+                                                    <!--<td></td>-->
+                                                <!--</tr>-->
+                                                <!--<tr>-->
+                                                    <!--<td>贷款及应收款</td>-->
+                                                    <!--<td></td>-->
+                                                    <!--<td></td>-->
+                                                <!--</tr>-->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="trustbusinessTableOneR right">
+                                    <ul id="trustTabOneR" class="nav nav-tabs">
+                                        <li class="active">
+                                            <a href="#moneyUseR" data-toggle="tab">信托资产运用</a>
+                                        </li>
+                                        <li>
+                                            <a href="#moneyFbR" data-toggle="tab">信托资产分布</a>
+                                        </li>
+                                    </ul>
+                                    <div id="trustTabOneRContent" class="tab-content">
+                                        <div class="tab-pane fade in active" id="moneyUseR">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th>资产运用</th>
+                                                    <th>金额</th>
+                                                    <th>占比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="useR"></tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane fade" id="moneyFbR">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th>资产分布</th>
+                                                    <th>金额</th>
+                                                    <th>占比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="fBR">
+                                                <!--<tr>-->
+                                                    <!--<td>货币资产</td>-->
+                                                    <!--<td></td>-->
+                                                    <!--<td></td>-->
+                                                <!--</tr>-->
+                                                <!--<tr>-->
+                                                    <!--<td>贷款及应收款</td>-->
+                                                    <!--<td></td>-->
+                                                    <!--<td></td>-->
+                                                <!--</tr>-->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trustbusinessTableTwo">
+                                <div class="trustbusinessTableTwo-title">信托资产资产管理情况</div>
+                                <div class="trustbusinessTableTwo-nav">
+                                    <ul id="trustbusinessTableTwo" class="nav nav-pills moneytitle">
+                                        <li class="active">
+                                            <p href="#trustTwo1" data-toggle="tab">信托资产</p>
+                                        </li>
+                                        <li>
+                                            <a href="#trustTwo2" data-toggle="tab">主动管理型<br/>信托资产</a>
+                                        </li>
+                                        <li>
+                                            <a href="#trustTwo3" data-toggle="tab">被动管理型<br/>信托资产</a>
+                                        </li>
+                                        <li>
+                                            <a href="#trustTwo4" data-toggle="tab">已清算结束<br/>信托项目</a>
+                                        </li>
+                                        <li>
+                                            <a href="#trustTwo5" data-toggle="tab">已清算结束的主动管理型<br/>信托项目</a>
+                                        </li>
+                                        <li>
+                                            <a href="#trustTwo6" data-toggle="tab">已清算结束的被动管理型<br/>信托项目</a>
+                                        </li>
+                                        <li>
+                                            <a href="#trustTwo7" data-toggle="tab">新增信托项目</a>
+                                        </li>
+                                    </ul>
+                                    <div  class="tab-content">
+                                        <div class="tab-pane fade in active clearfix" id="trustTwo1">
+                                            <table class="trustTwotable table table-striped left">
+                                                <thead>
+                                                <tr>
+                                                    <th>资产运用</th>
+                                                    <th>金额</th>
+                                                    <th>占比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="Two1"></tbody>
+                                            </table>
+                                            <div class="trustTwoE trustTwo1Echar right" id="echarTwo1"></div>
+                                        </div>
+                                        <div class="tab-pane fade clearfix" id="trustTwo2">
+                                            <table class="trustTwotable table table-striped left">
+                                                <thead>
+                                                <tr>
+                                                    <th>资产运用</th>
+                                                    <th>金额</th>
+                                                    <th>占比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="Two2"></tbody>
+                                            </table>
+                                            <div class="trustTwoE trustTwo2Echar right" id="echarTwo2"></div>
+                                        </div>
+                                        <div class="tab-pane fade clearfix" id="trustTwo3">
+                                            <table class="trustTwotable table table-striped left">
+                                                <thead>
+                                                <tr>
+                                                    <th>资产运用</th>
+                                                    <th>金额</th>
+                                                    <th>占比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="Two3"></tbody>
+                                            </table>
+                                            <div class="trustTwoE trustTwo3Echar right" id="echarTwo3"></div>
+                                        </div>
+                                        <div class="tab-pane fade clearfix" id="trustTwo4">
+                                            <table class="trustTwotable table table-striped left">
+                                                <thead>
+                                                <tr>
+                                                    <th>资产运用</th>
+                                                    <th>金额</th>
+                                                    <th>占比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="Two4"></tbody>
+                                            </table>
+                                            <div class="trustTwoE trustTwo4Echar right" id="echarTwo4"></div>
+                                        </div>
+                                        <div class="tab-pane fade clearfix" id="trustTwo5">
+                                            <table class="trustTwotable table table-striped left">
+                                                <thead>
+                                                <tr>
+                                                    <th>资产运用</th>
+                                                    <th>金额</th>
+                                                    <th>占比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="Two5"></tbody>
+                                            </table>
+                                            <div class="trustTwoE trustTwo5Echar right" id="echarTwo5"></div>
+                                        </div>
+                                        <div class="tab-pane fade clearfix" id="trustTwo6">
+                                            <table class="trustTwotable table table-striped left">
+                                                <thead>
+                                                <tr>
+                                                    <th>资产运用</th>
+                                                    <th>金额</th>
+                                                    <th>占比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="Two6"></tbody>
+                                            </table>
+                                            <div class="trustTwoE trustTwo6Echar right" id="echarTwo6"></div>
+                                        </div>
+                                        <div class="tab-pane fade clearfix" id="trustTwo7">
+                                            <table class="trustTwotable table table-striped left">
+                                                <thead>
+                                                    <tr>
+                                                        <th>资产运用</th>
+                                                        <th>项目个数</th>
+                                                        <th>合计金额(元)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="Two7"></tbody>
+                                            </table>
+                                            <div class="trustTwoE trustTwo7Echar right" id="echarTwo7"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trustbusinessTableThree">
+                                <div class="trustbusinessTableThree-title">固有业务投资情况</div>
+                                <div class="trustbusinessTableThree-cen clearfix">
+                                    <div class="trustbusinessTableThree-cenL left">
+                                        <div class="trustbusinessTableThree-cenLTitle">投资品种</div>
+                                        <table class="trustThreeTable table table-striped">
+                                            <tbody id="tzStyle"></tbody>
+                                        </table>
+                                    </div>
+                                    <div class="trustbusinessTableThree-cenR right">
+                                        <ul id="trustbusinessTableThree" class="nav nav-pills moneytitle">
+                                            <li class="active">
+                                                <a href="#trustThree1" data-toggle="tab">固有长期股权投资前五名</a>
+                                            </li>
+                                            <li>
+                                                <a href="#trustThree2" data-toggle="tab">固有贷款前五名</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade in active" id="trustThree1">
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>企业名称</th>
+                                                        <th>占被投资企业权益的比例</th>
+                                                        <th>主要经营活动</th>
+                                                        <th>投资权益</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody id="tzFive"></tbody>
+                                                </table>
+                                            </div>
+                                            <div class="tab-pane fade" id="trustThree2">
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>企业名称</th>
+                                                        <th>占被投资企业权益的比例</th>
+                                                        <th>主要经营活动</th>
+                                                        <th>投资权益</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody id="dkFive"></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--融资情况-->
+                        <div class="tab-pane fade" id="financing">
+                            <div class="nav-topIcon right clearfix">
+                                <button class="sure left" data-toggle="modal" data-target="#financingMore">详情</button>
+                                <!-- 模态框（Modal） -->
+                                <div class="modal fade" id="financingMore" tabindex="-1" role="dialog" aria-labelledby="financingLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="provinceMoreLabel">融资详情</h4>
+                                            </div>
+                                            <div class="modal-body box">
+                                                <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy-MM-dd'})" class="Wdate" style="width: 140px"/>
+                                                <button class="sure">确定</button>
+                                                <div class="modalTable">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>债券简称</th>
+                                                            <th>债券代码</th>
+                                                            <th>发债品种</th>
+                                                            <th>起息日</th>
+                                                            <th>到期日</th>
+                                                            <th>发行期限</th>
+                                                            <th>当前剩余规模(亿元)</th>
+                                                            <th>发行规模</th>
+                                                            <th>票面利率</th>
+                                                            <th>债券信用评级</th>
+                                                            <th>信用评级机构</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal">确认</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="financDown left" class="finacTitle">下载报表</div>
+                            </div>
+                            <div class="finacTable clearfix">
+                                <div class="finacTableL left">
+                                    <table class="table table-bordered">
+                                        <tbody id="market"></tbody>
+                                    </table>
+
+                                </div>
+                                <div class="finacTableR right">
+                                    <table class="table table-bordered">
+                                        <tbody id="bond"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--报告下载-->
+                        <div class="tab-pane fade" id="report">
+                            <div class="reportTable">
+                                <table class="table table-striped table-responsive">
+                                    <thead>
+                                    <tr>
+                                        <th>序号</th>
+                                        <th style="">报告名称</th>
+                                        <th style="">类型</th>
+                                        <th style="">年份</th>
+                                        <th style="">操作</th>
+                                        <th style="">报告来源</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody id="reportTbody">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="reportpage pagination right" id="reportPage">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    <!--</div>-->
+</div>
+</body>
+<script src="../../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/My97DatePicker/WdatePicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/url.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/financial/trustspecificData.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-migrate-1.2.1.min.js"></script>
+<script src="../../js/jquery.jqprint-0.3.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('#myTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#myTab2 a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#trustTabOneL a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#trustTabOneR a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#trustbusinessTableTwo a').click(function(e){
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#trustbusinessTableThree a').click(function(e){
+            e.preventDefault();
+            $(this).tab('show');
+        });
+    })
+    //局部打印
+    function PrintTable(select) {
+      $(select).jqprint({
+        debug: false, //如果是true则可以显示iframe查看效果（iframe默认高和宽都很小，可以再源码中调大），默认是false
+        importCSS: true, //true表示引进原来的页面的css，默认是true。（如果是true，先会找$("link[media=print]")，若没有会去找$("link")中的css文件）
+        printContainer: true, //表示如果原来选择的对象必须被纳入打印（注意：设置为false可能会打破你的CSS规则）。
+        operaSupport: false//表示如果插件也必须支持歌opera浏览器，在这种情况下，它提供了建立一个临时的打印选项卡。默认是true
+      });
+    }
+</script>
+
+</html>

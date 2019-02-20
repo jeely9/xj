@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+	</head>
+	<body>
+		<div class="container" onclick="moveWindow()">
+			<div class="cleft left"></div>
+			<div class="cright right">
+				<div class="box">
+					<p class="wel">welcome</p>
+					<h2 class="title">锐思克系统登录</h2>
+                    <!--<form id="loginForm" runat="server">-->
+					<p class="intext">账号 <input id="mail" type="text" class="num" placeholder="请输入邮箱"/></p>
+					<p class="inpsw">密码
+						<input id="psw" type="password" class="psw psw_dd" placeholder="请输入密码"/>
+						<input id="psw2" type="text" class="psw psw_wz" style="display:none;" placeholder="请输入密码"/>
+						<!--<span class="right">-->
+							<a class="eyes_box right" style="position: absolute;" data-show="1" href="javascript:void(0);"><img src="img/psw.png"/></a>
+						<!--</span>-->
+					</p>
+					<p class="info">
+						<input type="checkbox" name="checkbox" id="rmbUser" value="" class="left"/> <span class="left">记住密码</span>
+						<a href="#" class="forg right">忘记密码?</a>
+					</p>
+					<input type="submit" id="login" value="登录" class="login"/>
+                    <!--</form>-->
+					<h5 class="copy">上海析鲸信息科技有限公司</h5>
+				</div>
+				<div class="logincz" style="height: 30px;width:310px;position: absolute;top:0px;">
+					<ul>
+						<li><a onclick="app.sendMessage('app_close_window')"><img src="img/login-gb.png"/></a></li>
+						<li><a onclick="app.sendMessage('app_min_window')"><img src="img/login-zxh.png"/></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <!--<script src="js/md5.js" type="text/javascript" charset="utf-8"></script>-->
+    <script src="js/url.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/login.js" type="text/javascript" charset="utf-8"></script>
+</html>

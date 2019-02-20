@@ -1,0 +1,205 @@
+/*右侧最上面导航*/
+.titlt{
+    width: 100%;
+    height: 48px;
+    position: absolute;
+    top: 0px;
+    z-index: 5;
+    background: #f2f6f9;
+    border-bottom: solid #0090f4 2px;
+}
+.titlt ul{
+    width: 300px;
+    height: 48px;
+}
+.titlt ul li{
+    float: left;
+    width: 90px;
+    height: 46px;
+    text-align: center;
+    line-height: 46px;
+    border-right: 1px solid #fff;
+}
+.titlt ul  #first{
+    width: 68px;
+    background: #f2f6f9;
+}
+.activeTitle a{
+    color: #0597f4;
+}
+.fresh{
+    width: 16px;
+    height: 16px;
+    border: 1px solid #8C8C8C;
+    margin: 18px 12px;
+}
+/*中间*/
+.countryContainer{
+    background: #f2f6f9;
+    width: 100%;
+    padding: 14px 14px 0 14px;
+    position: absolute;
+    top: 48px;
+    bottom: 14px;
+    /*z-index: 10;*/
+    overflow: auto;
+}
+.cen{
+    height: 100%;
+}
+.top{
+    width: 100%;
+    height: 80%;
+    min-height: 622px;
+    margin-bottom: 9px;
+}
+.bottom{
+    width: 100%;
+    height: 20%;
+    background: #fff;
+    min-height: 230px;
+    overflow-y: auto;
+}
+.topLeft{
+    width: 30%;
+    height: 100%;
+}
+.topRight{
+    width: 69%;
+    height: 100%;
+    margin-left: 9px;
+    background: #fff;
+}
+.topLeftTop,.topLeftBottom{
+    width: 100%;
+    height: 49%;
+    background: #fff;
+    min-height: 296px;
+}
+.topLeftTop{
+    margin-bottom:9px;
+}
+.navtitle{
+    height: 46px;
+    line-height: 46px;
+    border-bottom: 1px solid #eef2f5;
+}
+.navtitle span {
+    padding-left: 18px;
+    border-left: 4px solid #2ea2f7;
+    font-size: 16px;
+}
+.titleLine{
+    padding-left: 18px;
+    border-left: 4px solid #2ea2f7;
+    font-size: 16px;
+}
+.priceQuarter{
+    width: 100px;
+    height: 24px;
+    background: #fff;
+    border-radius: 4px;
+    border-color: #d0d0d0;
+}
+.speciaIndex{
+    display: inline-block;
+    height: 22px;
+    margin-top: 12px;
+}
+#priceQuarter option{
+    font-size: 12px;
+}
+#speciaIndex{
+    font-size: 12px;
+}
+#indexOneTab{
+    width: 157px;
+    height: 25px;
+    border: 1px solid #ebebeb;
+    border-radius: 4px;
+    margin-top: -36px;
+    margin-right: 16px;
+}
+#indexOneTab li,#indexTwoTab li{
+    font-size: 12px;
+    width: 50px;
+    height: 22px;
+    line-height: 22px;
+}
+#indexOneTab>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #2fa3f8;
+    height: 23px;
+}
+#indexTwoTab>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #67bce1;
+}
+#indexOneTab li a,#indexTwoTab li a{
+    position: relative;
+    display: block;
+    padding: 0px;
+    text-align: center;
+}
+.navTable{
+    margin: 1%;
+    height: 90%;
+    min-width: 674px;
+    min-height: 500px;
+    overflow: auto;
+}
+.navTable table{
+    min-width: 714px;
+    min-height: 528px;
+    overflow: auto;
+    font-size: 12px;
+}
+.addBox{
+    width: 98%;
+    height: 100%;
+    min-height: 230px;
+    overflow-y: auto;
+    margin: 14px 1%;
+
+}
+.addBox .hang{
+    width: 100%;
+    height: 72px;
+    padding-top: 16px;
+    padding-left: 20px;
+    color: #666666;
+}
+.addBox .hang:nth-child(odd){
+    background: #f1fcff;
+}
+.pagination{
+    margin: 0;
+}
+.curTime{
+    color: #000;
+}
+.hang span{
+    display: inline-block;
+}
+.hang .boxName{
+    width: 8%;
+    font-size: 14px;
+}
+.hang .boxContent{
+    width: 88%;
+    /*margin-left: 60px;*/
+    line-height: 24px;
+    font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,397 @@
+/*整体*/
+body{
+    background-color: #f2f6f9;
+}
+/*::-webkit-scrollbar{*/
+/*width: 8px;*/
+/*height: 8px;*/
+/*background-color: #9696966b;*/
+/*}*/
+
+a{
+    color: #000;
+}
+/*最上面导航*/
+.title{
+    width: 100%;
+    height: 48px;
+    background: #f2f6f9;
+    border-bottom: solid #0090f4 2px;
+}
+.title ul{
+    width: 300px;
+    height: 48px;
+}
+.title ul li{
+    float: left;
+    width: 90px;
+    height: 46px;
+    text-align: center;
+    line-height: 46px;
+    border-right: 1px solid #fff;
+    font-size: 12px;
+//background: url() #FFFFFF no-repeat right center;
+}
+.title ul  #first{
+    width: 68px;
+    background: #f2f6f9;
+}
+.title ul li a{
+    color: #337ab7;
+}
+#currentName a{
+    color: #0597f4;
+}
+.fresh{
+    width: 16px;
+    height: 16px;
+    border: 1px solid #8C8C8C;
+    margin: 18px 12px;
+}
+.header{
+    width: 100%;
+    height: 52px;
+    /*height: 64px;*/
+}
+.headerL img{
+    margin-top: 4px;
+}
+.headerL p{
+    margin-left: 6px;
+    height: 26px;
+    line-height: 26px;
+    font-weight: 600;
+}
+
+.headerR{
+    font-size: 12px;
+}
+/*.box{*/
+    /*width: 628px;*/
+    /*background: #fff;*/
+    /*border: 1px solid #DED7D1;*/
+    /*overflow: hidden;*/
+    /*!*position: relative;*!*/
+    /*margin: 15px;*/
+/*}*/
+/*#myTab{*/
+    /*width: 628px;*/
+    /*left: -628px;*/
+    /*position: absolute;*/
+/*}*/
+/*.piclist {*/
+    /*position:absolute;*/
+    /*left:0px;*/
+    /*top:0px;*/
+/*}.swaplist {*/
+     /*position:absolute;*/
+     /*left:-2000px;*/
+     /*top:0px;*/
+ /*}*/
+/*.og_prev, .og_next {*/
+    /*width:30px;*/
+    /*height:60px;*/
+    /*position:absolute;*/
+    /*top:117px;*/
+    /*z-index:99;*/
+    /*cursor:pointer;*/
+/*}*/
+/*.og_prev {*/
+    /*background-position:0 0;*/
+    /*left:0px;*/
+/*}*/
+/*.og_next {*/
+    /*background-position:-30px 0;*/
+    /*right:0px;*/
+/*}*/
+#myTab .breadcrumb{
+    background: #f2f6f9;
+    padding: 8px 0px;
+}
+#myTab>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #0597f4;
+    background-color: #f2f6f9;
+}
+#myTabContent{
+    background: #fff;
+    width: 100%;
+    /*height: 540px;*/
+    position: absolute;
+    top: 132px;
+    bottom: 14px;
+    overflow-y: auto;
+}
+.areaTab{
+    background: #fafbfd;
+    border-bottom: none;
+}
+.nav-tabs{
+    border-bottom: none;
+}
+.areaTab li a{
+    font-weight: 500;
+    font-size: 12px;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #0597f4;
+    cursor: default;
+    background-color: #fff;
+    border-top: 4px solid #0597f4;
+    font-weight: 500;
+    border-right: none;
+    border-left: none;
+    border-bottom-color: transparent;
+}
+.areaTabContent{
+    width: 98%;
+    height: 100%;
+    min-height: 540px;
+    margin: 18px 1%;
+}
+.conTop{
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+}
+.conTop ul{
+    margin-right: 6px;
+}
+.yearList{
+    width: 138px;
+    height: 32px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.yearList li{
+    width: 44px;
+    height: 32px;
+}
+.yearList>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #67bce1;
+}
+.yearList li a{
+    position: relative;
+    display: block;
+    padding: 0px;
+    text-align: center;
+    cursor: pointer;
+}
+.sure{
+    width: 80px;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+    background: #2da1f6;
+    color: #fff;
+    border-radius: 4px;
+    margin-top: -6px;
+    margin-left: 10px;
+    border: none;
+    margin-right: 20px;
+}
+/*导出打印*/
+.tool span{
+    width: 80px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 4px;
+    margin-right: 2px;
+    display: inline-block;
+    cursor: pointer;
+}
+.out{
+    display: inline-block;
+    background: url("../../img/industry/out.png") no-repeat 10px center;
+    border: 1px solid #f3736d;
+    color: #f3736d;
+}
+.print{
+    background: url("../../img/industry/print.png") no-repeat 10px center;
+    border: 1px solid #53b4dd;
+    color: #53b4dd;
+}
+.copy{
+    background: url("../../img/industry/copy.png") no-repeat 10px center;
+    border: 1px solid #fdb42c;
+    color: #fdb42c;
+}
+.share{
+    background: url("../../img/industry/share.png") no-repeat 10px center;
+    border: 1px solid #33b8b8;
+    color: #33b8b8;
+}
+.conContent{
+    width: 100%;
+    height: 100%;
+}
+.conContentL{
+    width: 59%;
+    height: 100%;
+    overflow: auto;
+}
+.conContentR{
+    width: 39%;
+    height: 100%;
+    min-height: 500px;
+    overflow-x: hidden;
+}
+.nameCen{
+    padding-left: 20px;
+    height: 42px;
+    line-height: 42px;
+    background: #fcfcfc;
+}
+
+/*行业百强排名*/
+#areaHundred{
+    height: 634px;
+    /* overflow-y: auto; */
+    /*overflow: hidden;*/
+}
+.gradeConent{
+    width: 98%;
+    height: 100%;
+    min-height:598px;
+    margin: 18px 1%;
+    padding-top: 20px;
+}
+.gradeConent table tr th,.gradeConent table tr td{
+    text-align: center;
+}
+.addUp{
+    color: #0597f4;
+}
+#gradeFirstBody tr td:nth-child(2){
+    width: 34%;
+}
+#gradeFirstBody tr td:nth-child(6){
+    width: 17%;
+}
+.gradeWeb{
+    display: inline-block;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#gradeFirstBody .gradeWeb  a{
+    display: inline-block;
+    width: 200px;
+}
+#gradeTabContent{
+    width: 98%;
+    height: 100%;
+    min-height:598px;
+    margin: 18px 1%;
+    display: none;
+}
+.gradeTop{
+    width: 100px;
+    height: 32px;
+    line-height: 32px;
+}
+.ljValBackList{
+    padding-top: 40px;
+}
+.liVal-top{
+    width: 92px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    background: #33b8b8 url("../../img/industry/ksh.png") no-repeat 10px center;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.liVal-table{
+    width: 100%;
+    margin-top: 16px;
+}
+.liVal-topBack{
+    width: 92px;
+    height: 32px;
+    text-align: center;
+    border: 1px solid #33b8b8;
+    line-height: 32px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #33b8b8;
+    cursor: pointer;
+}
+.reportDown{
+    display: inline-block;
+    width: 80px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    background: #fa8d0e;
+    color: #fff;
+    border-radius: 20px;
+    margin-left: 4px;
+    cursor: pointer;
+}
+.areaIndustryBox{
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    overflow-y: auto;
+}
+#billboardList{
+    width: 100%;
+    height: 100%;
+    min-height: 534px;
+    overflow-y: auto;
+}
+#billboardBody tr td{
+    width: 25%;
+}
+.gradeBillboardLeft{
+    width: 42%;
+    height: 100%;
+    overflow: hidden;
+}
+.gradeBillboardR{
+    width: 56%;
+    height: 100%;
+    overflow: hidden;
+}
+.billboardEchar{
+    width: 100%;
+    height: 400px;
+}
+.platformList{
+    width: 100%;
+    height: 100%;
+    min-height: 534px;
+    overflow-y: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

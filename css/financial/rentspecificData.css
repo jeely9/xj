@@ -1,0 +1,49 @@
+/*业务结构*/
+
+.business-CenOne{
+    margin-bottom: 10px;
+    height: 400px;
+}
+.business-CenTwo{
+    height: 400px;
+}
+.business-CenOneEchars{
+    width: 34%;
+    border: solid 2px #fcfcfc;
+    border-radius: 10px;
+}
+.business-CenOneEchars-title,.busCenOneTable1-title{
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    border-bottom: 1px solid #ccc;
+    padding-left: 15px;
+}
+
+.busCenOneTable1,.busCenOneTable2{
+    width: 32%;
+    height: 100%;
+    border: solid 2px #fcfcfc;
+    border-radius: 10px;
+    margin-left: 8px;
+}
+
+.busCenOneTable1-con,.busCenOneTable2-con,.business-CenTwoR-con{
+    width: 96%;
+    height: 86%;
+    margin: 2%;
+    border: 1px solid #ddd;
+    overflow: auto;
+}
+.business-CenTwoL{
+    width: 34%;
+    border: solid 2px #fcfcfc;
+    border-radius: 10px;
+}
+
+.business-CenTwoR{
+    width: 64%;
+    height: 100%;
+    border: solid 2px #fcfcfc;
+    border-radius: 10px;
+}

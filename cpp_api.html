@@ -1,0 +1,770 @@
+﻿<html>
+
+<head>
+  <script src="./js/jquery-3.2.1.min.js"></script>
+  <!-- 局部打印 需要先引入jquery -->
+  <script src="./js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="./js/jquery.jqprint-0.3.js"></script>
+  <!-- 复制 需要先引入jquery -->
+  <script src="./js/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+    function moveWindow() {
+      app.sendMessage('app_move_window', 999, '-10;10');
+    }
+    function GetCurAppVersion() {
+      app.sendMessage('app_get_version', 999, '', function (message, int_param) {
+        alert(message + "; " + int_param);
+      });
+    }
+    function DownLoadFile() {
+      app.sendMessage('app_download_file', 1, 'http://localhost/a.jpg', function (message, int_param, str_param) {
+        alert(message + int_param + str_param);
+      });
+
+    }
+
+    function GetCurAppPath() {
+      app.sendMessage('app_get_version', 1, '', function (message, int_param, str_param) {
+        alert(message + "; " + int_param + "; " + str_param);
+      });
+    }
+
+    function OpenDebug() {
+      app.sendMessage('app_show_dev_tool');
+    }
+    //局部打印
+    function PrintTable(select) {
+      $(select).jqprint({
+        debug: false, //如果是true则可以显示iframe查看效果（iframe默认高和宽都很小，可以再源码中调大），默认是false
+        importCSS: true, //true表示引进原来的页面的css，默认是true。（如果是true，先会找$("link[media=print]")，若没有会去找$("link")中的css文件）
+        printContainer: true, //表示如果原来选择的对象必须被纳入打印（注意：设置为false可能会打破你的CSS规则）。
+        operaSupport: false//表示如果插件也必须支持歌opera浏览器，在这种情况下，它提供了建立一个临时的打印选项卡。默认是true
+      });
+    }
+    //复制
+    function InitClipboard(selectBtn, selectTarget, text="") {
+      var clipboard = new Clipboard(select, {
+        target: function () {
+          return document.getElementById(selectTarget);
+        }
+      });
+      clipboard.on('success', function (e) {
+        alert("成功复制" + text + "至剪贴板");
+        e.clearSelection();
+      });
+      clipboard.on('error', function (e) {
+        alert("复制失败");
+        e.clearSelection();
+      });
+
+      return clipboard;
+    }
+    var clipboard = InitClipboard('#copyBtn', "#print");
+  </script>
+
+  <style type="text/css">
+    
+    /*元素不能被选中*/
+    .selectDisable {
+      -webkit-user-select: none;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>RisksCEF C++ API</h1>
+  <button onclick="OpenDebug()">打开 调试窗口</button>
+  <h3 class="selectDisable">窗口相关</h3>
+  <button class="selectDisable" onclick="app.sendMessage('app_close_window')">关闭窗口</button>
+  <button class="selectDisable" onclick="app.sendMessage('app_min_window')">最小化窗口</button>
+  <button class="selectDisable" onclick="app.sendMessage('app_max_window')">最大化窗口</button>
+  <button class="selectDisable" onclick="app.sendMessage('app_restore_window')">恢复窗口</button>
+  <button class="selectDisable" onclick="moveWindow()">移动窗口</button>
+
+  <br/>
+  <div class="selectDisable">
+    <h3>升级相关</h3>
+    <button onclick="GetCurAppVersion()">得到当前程序版本</button>
+    <button onclick="DownLoadFile()">下载文件</button>
+    <button onclick="app.sendMessage('app_get_update_dll', 2000)">升级</button>
+    <button onclick="app.sendMessage('app_run_exe', 5, 'cefsimple.exe')">执行程序</button>
+    <button onclick="GetCurAppPath()">当前程序所在目录</button>
+  </div>
+  <br/>
+
+  <h3>打印相关</h3>
+  <button onclick="app.sendMessage('app_print_html')">打印窗口</button>
+
+  <script type="text/javascript">
+
+
+  </script>
+  <button onclick="PrintTable('#print')">JS打印Table</button>
+  <button id="copyBtn">JS复制Table</button>
+  <div id="print">
+    <table>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+      <tr>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+        <td>print</td>
+      </tr>
+
+    </table>
+  </div>
+</body>
+
+</html>

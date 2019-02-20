@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>租赁</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/financial/bank.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/dcalendar.picker.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/pagination.css"/>
+</head>
+<body>
+<div class="titlt">
+    <ul class="left">
+        <li id="first"><a href="../../home.html">首页</a></li>
+        <li id="currentParName"><a href="bank.html">金融机构</a></li>
+        <li id="currentName" class="activeTitle"><a href="javascript:void(0)">租赁</a></li>
+    </ul>
+</div>
+<div class="rentcontainer">
+    <div class="cen">
+        <div class="cen-top clearfix">
+            <div class="left">
+                <span>名称查询：</span>
+                    <input class="s-input" type="search" placeholder="请输入关键字进行搜索..." id="sename"/>
+                    <button class="s-button" id="senameSeach"><img src="../../img/censearch.png"/></button>
+                <!--<p class="foc">-->
+                <!--<span>我的关注：</span>-->
+                <!--<a href="#">中国农业银行</a>-->
+                <!--<a href="#">中心银行</a>-->
+                <!--<a href="#">长江证券</a>-->
+                <!--<a href="#">渤海银行</a>-->
+                <!--</p>-->
+            </div>
+            <div class="right">
+                <span>所属区域：</span>
+                <span id="city">
+                    <select id="province" style="width: 90px; ">
+                        <option value="">--选择省份--</option>
+                    </select>
+                    <select id="citys" style="width: 90px; ">
+                        <option value="">--选择城市--</option>
+                    </select>
+                    <select id="county" style="width: 90px; ">
+                        <option value="">--选择地区--</option>
+                    </select>
+                </span>
+                <span>年份：</span>
+                <!--<img src="../img/cal.png" class="imgcal"/>-->
+                <!--<input id='mydatepicker' type='text'/>-->
+                <input id="mydatepicker" type="text" runat="server" value="2016"  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate" style=" width:80px;"/>
+            	<button class="sure" id="allsearch">确定</button>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="navtitle"><span>金融机构-租赁</span></div>
+            <div class="navtop clearfix">
+                <button class="btn btn-primary left" id="indexBank">指标选择▼</button>
+                <p class="right">
+                    <button class="down glyphicon glyphicon-save" id="testDown">下载数据</button>
+                    <button class="print glyphicon glyphicon-print" onclick="PrintTable('#xiazai1')">打印</button>
+                    <!--<button class="share">分享</button>-->
+                </p>
+                <div id="index" class="indexBox">
+                    <div class="indexTitle">指标名称:</div>
+                    <div class="indexList">
+                        <label>
+                            <input type="checkbox" value="">
+                            <i>电子票</i><span></span>
+                        </label>
+                        <label>
+                            <input type="checkbox" checked="" value="">
+                            <i>会议提醒</i><span></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!--表格信息-->
+            <div class="bankTableBox" id="xiazai1">
+                <div class="isNoData">暂无数据</div>
+                <table id="bankTable" class="table table-striped table-responsive sortable-theme-bootstrap" data-sortable>
+                    <thead id="bankBoxTitle">
+                    <!--<tr>-->
+                    <!--&lt;!&ndash;<th>序号</th>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<th>机构名称</th>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<th>总资产</th>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<th>核心一级资本净额(亿元)</th>&ndash;&gt;-->
+                    <!--</tr>-->
+                    </thead>
+                    <tbody id="bankBoxTable">
+                    <!--<tr>-->
+                    <!--<td>1</td>-->
+                    <!--<td><a href="bankspecificData.html">中国工商银行</a></td>-->
+                    <!--<td>2356578</td>-->
+                    <!--<td>1572343245</td>-->
+                    <!--</tr>-->
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bankpage pagination right" id="bankPage">
+                <!--<li><a href="#">&laquo;</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <!--<li><a href="#">&raquo;</a></li>-->
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</div>
+</body>
+
+<script src="../../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/My97DatePicker/WdatePicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery.pagination.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/url.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/financial/rent.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-migrate-1.2.1.min.js"></script>
+<script src="../../js/jquery.jqprint-0.3.js"></script>
+<script type="text/javascript">
+    //局部打印
+    function PrintTable(select) {
+      $(select).jqprint({
+        debug: false, //如果是true则可以显示iframe查看效果（iframe默认高和宽都很小，可以再源码中调大），默认是false
+        importCSS: true, //true表示引进原来的页面的css，默认是true。（如果是true，先会找$("link[media=print]")，若没有会去找$("link")中的css文件）
+        printContainer: true, //表示如果原来选择的对象必须被纳入打印（注意：设置为false可能会打破你的CSS规则）。
+        operaSupport: false//表示如果插件也必须支持歌opera浏览器，在这种情况下，它提供了建立一个临时的打印选项卡。默认是true
+      });
+    }
+</script>
+</html>

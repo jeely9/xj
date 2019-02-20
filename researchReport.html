@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>研究报告</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/researchReport.css"/>
+    <link rel="stylesheet" type="text/css" href="css/pagination.css"/>
+</head>
+<body>
+    <div class="title clearfix">
+        <ul class="left">
+            <li id="first"><a href="home.html">首页</a></li>
+            <li id="currentParName"><a href="modalIndex.html" class="activeTitle">研究报告</a></li>
+        </ul>
+        <img class="fresh right" src="img/shuaxin.png"/>
+    </div>
+    <div class="center">
+        <div class="cen-top" style="display: block;">
+            <div class="cen-top-title">研究报告</div>
+            <p class="sea">
+                <input type="search" name="请输入关键字" id="seName"/>
+                <button id="senameSeach" data-toggle="modal" data-target="#searchModal"><img src="img/censearch.png"/></button>
+            </p>
+            <div class="hot">热门搜索:互联网、石油、金融</div>
+            <div class="schoose">
+                <select id="compny" style="width: 120px;" class="left">
+                    <!--<option value="0">按行业找报告</option>-->
+                </select>
+                <select id="area" style="width: 120px;" class="left">
+                    <!--<option value="0">按地区找报告</option>-->
+                </select>
+                <!--<select id="hy" style="width: 120px;" class="left">-->
+                    <!--<option value="">析鲸行业</option>-->
+                <!--</select>-->
+                <button class="sure right" id="indexSure">筛选</button>
+            </div>
+        </div>
+        <div class="slideBtn">收起</div>
+        <div class="lists">
+        </div>
+        <div class="pagination right" id="bankPage">
+            <!--<li class="active"><a href="#">1</a></li>-->
+            <!--<li><a href="#">2</a></li>-->
+            <!--<li><a href="#">3</a></li>-->
+            <!--<li><a href="#">4</a></li>-->
+            <!--<li><a href="#">5</a></li>-->
+        </div>
+    </div>
+</body>
+<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.pagination.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/url.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/researchReport.js" type="text/javascript" charset="utf-8"></script>
+</html>

@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>战略性详细页面</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/industry/cycleSpecificData.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/industry/history.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/industry/resetadd.css"/>
+</head>
+<body>
+<div class="title clearfix">
+    <ul class="left">
+        <li id="first"><a href="../../home.html">首页</a></li>
+        <li id="currentParName"><a href="cycle.html">行业风险</a></li>
+        <li id="currentName" class="activeTitle"><a href="javascript:void(0)">战略性</a></li>
+    </ul>
+    <img class="fresh right" src="../../img/shuaxin.png"/>
+</div>
+<div class="header clearfix">
+    <div class="headerL left">
+        <img class="left" src="../../img/industry/home.png" alt="正在加载"><p class="right">周期性 - <span class="currentIndusName"></span></p>
+    </div>
+    <div class="headerR right">
+        <ul id="myTab" class="breadcrumb nav-pills">
+            <li class="active"><a href="#mointer" data-toggle="tab">核心监测数据</a></li>
+            <li><a href="#move" data-toggle="tab">运行信息</a></li>
+            <li><a href="#price" data-toggle="tab">价格库存</a></li>
+            <li><a href="#upDown" data-toggle="tab">上下游影响</a></li>
+            <li><a href="#indus" data-toggle="tab">行业投融资</a></li>
+            <li><a href="#money" data-toggle="tab">财务表现</a></li>
+            <li><a href="#danger" data-toggle="tab">风险特征</a></li>
+            <li><a href="#grade" data-toggle="tab">行业百强排名</a></li>
+        </ul>
+
+    </div>
+
+</div>
+<!--中间部分-->
+<div id="myTabContent" class="center tab-content">
+    <!--核心监测数据-->
+    <div class="tab-pane fade in active" id="mointer">
+        <ul id="myTab1" class="nav nav-tabs">
+            <li class="active"><a href="#lj" data-toggle="tab">累计值/累计增长</a></li>
+            <li><a href="#zc" data-toggle="tab">行业政策</a></li>
+            <li><a href="#dp" data-toggle="tab">行业风险点评</a></li>
+        </ul>
+        <div id="myTabContent1" class="tab-content">
+            <div class="tab-pane fade in active" id="lj">
+                <div class="conTop clearfix">
+                    <ul id="myTab11" class="nav nav-pills left">
+                        <li class="active"><a href="#ljVal" data-toggle="tab">累计值</a></li>
+                        <li><a href="#ljAdd" data-toggle="tab">累计增长</a></li>
+                    </ul>
+                    <input id="ljTime1" type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy-MM'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                    <span class="left" style="margin-left: 2px;">-</span>
+                    <input id="ljTime2" type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy-MM'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                    <span style="margin-left: 14px;font-weight: 400;">单位:亿元</span>
+                    <button class="sure" id="mointerSure">确定</button>
+
+                </div>
+                <div id="myTabContent11" class="tab-content">
+                    <div class="tab-pane fade in active" id="ljVal">
+                        <div class="listData">
+                            <p class="tool right">
+                                <span id="accountValDown" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai3')">打印</span>
+                                <span class="copy">复制</span>
+                                <!--<span class="share">分享</span>-->
+                                <span class="liVal-top right" id="valLook">可视化</span>
+                            </p>
+                            <div class="liVal-table">
+                                <table class="table table-striped tablesorter" id="xiazai3">
+                                    <thead id="valTitle"></thead>
+                                    <tbody id="valBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--可视化-->
+                    <div class="ljValBackList" style="display: none;position: relative;">
+                        <div class="liVal-topBack right" id="backList">返回列表</div>
+                        <div class="echars clearfix">
+                            <div class="echarsL left">
+                                <ul id="echarsTab" class="nav nav-tabs">
+                                    <li class="active">
+                                        <a href="#productOne" data-toggle="tab" id="productOneName">产品1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#productTwo" data-toggle="tab" id="productTwoName">产品2</a>
+                                    </li>
+                                </ul>
+                                <div id="echarsTabContent" class="tab-content">
+                                    <div class="tab-pane fade in active" id="productOne">
+                                        <div class="mixL" id="mixL"></div>
+                                    </div>
+                                    <div class="tab-pane fade" id="productTwo">
+                                        <div class="mixL" id="mixL2"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="echarsR right">
+                                <div class="nameCen" id="productThreeName">新增产能</div>
+                                <div class="mixR" id="mixR"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--累计增长-->
+                    <div class="tab-pane fade" id="ljAdd">
+                        <p class="tool right">
+                            <span id="accountAddDown" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai3')">打印</span>
+                            <span class="copy">复制</span>
+                            <!--<span class="share">分享</span>-->
+                        </p>
+                        <div class="listData">
+                            <div class="liVal-table">
+                                <table class="table table-striped tablesorter">
+                                    <thead id="addTitle"></thead>
+                                    <tbody id="addBody"></tbody>
+                                </table>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="zc">
+                <div class="zcTop clearfix">
+                    <div class="num left">
+                        <select name="" id="zcNum" class="priceQuarter left">
+                            <option value="5">5条</option>
+                            <option value="10">10条</option>
+                            <option value="20">20条</option>
+                            <option value="0">全部</option>
+                        </select>
+                    </div>
+                    <p class="tool right">
+                        <span id="policyOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai4')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div class="zcTitle">行业政策扶持程度<span class="zcSpecial"></span></div>
+                <div class="zcTable">
+                    <table class="table table-striped" id="xiazai4">
+                        <thead>
+                        <tr>
+                            <th>出台时间</th>
+                            <th>出台部门</th>
+                            <th>事件名称</th>
+                            <th>主要内容及影响</th>
+                            <th>政策性质</th>
+                            <th>影响程度</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="zcBody"></tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="dp">
+                <div class="zcTop clearfix">
+                    <div class="num left">
+                        <input id="dpTime1" type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy-MM'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        <span class="left" style="margin-left: 2px;">-</span>
+                        <input id="dpTime2" type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy-MM'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        <button class="sure" id="dpSure">确定</button>
+                    </div>
+                    <p class="tool right">
+                        <span id="tipOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai5')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div class="main">
+                    <div class="history">
+                        <div class="history-date" id="xiazai5">
+                            <ul>
+                                <h2>
+                                    <span class="name currentIndusName">煤炭</span>
+                                    <b id="dpYear">2017</b>
+                                </h2>
+                                <ul id="hisBox">
+                                    <li>
+                                        <h3><span>2017</span><b>10月</b></h3>
+                                        <div>
+                                            <dt>本月煤炭产量较上月明显增加，1-9月产量累计增速达到5.7%，坑口煤价普遍走低贸易商
+                                                观望需求明显减弱，产地库存上升，产成品存货
+                                                1-9月产量累计增速达到5.7%，坑口煤价普遍走低贸易商观望需求明显减弱，产地库存上升，产成品存货
+                                            </dt>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h3><span>2017</span><b>9月</b></h3>
+                                        <div>
+                                            <dt>本月煤炭产量较上月明显增加，1-9月产量累计增速达到5.7%，坑口煤价普遍走低贸易
+                                                商观望需求明显减弱，产地库存上升，产成品存货1-9月产量累计增速达到5.7%，坑口煤价普遍走低贸易
+                                                商观望需求明显减弱，产地库存上升，产成品存货
+                                            </dt>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h3><span>2017</span><b>8月</b></h3>
+                                        <div>
+                                            <dt>本月煤炭产量较上月明显增加，1-9月产量累计增速达到5.7%，坑口煤
+                                                价普遍走低贸易商观望需求明显减弱，产地库存上升，产成品存货
+                                            </dt>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--运行信息-->
+    <div class="tab-pane fade" id="move">
+        <ul id="runInfoTab" class="nav nav-tabs">
+            <li class="active"><a href="#runInfoAll" data-toggle="tab">总量值</a></li>
+            <li><a href="#runInfoAdd" data-toggle="tab">增长率</a></li>
+        </ul>
+        <div id="runInfoTabContent" class="tab-content">
+            <!--总量值-->
+            <div class="tab-pane fade in active" id="runInfoAll">
+                <div class="conTop clearfix">
+                    <ul id="runInfoTab1" class="nav nav-pills left">
+                        <li><a href="#allThird" data-toggle="tab">3期</a></li>
+                        <li class="active"><a href="#allFive" data-toggle="tab">5期</a></li>
+                        <li><a href="#allTen" data-toggle="tab">10期</a></li>
+                    </ul>
+                    <span style="margin-left: 14px;font-weight: 400;">单位:亿元</span>
+                    <p class="tool right">
+                        <span id="runAllOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai6')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div id="runInfoTabContent11" class="tab-content">
+                    <div class="tab-pane fade" id="allThird">
+                        <div class="allLeft left">
+                            <table class="table table-bordered" id="xiazai6">
+                                <thead id="allThirdHeader"></thead>
+                                <tbody id="allThirdBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <ul id="echarTab" class="nav nav-tabs">
+                                <li class="active"><a href="#oneAll" data-toggle="tab" id="oneAllThirdName1"></a></li>
+                                <li><a href="#twoAll" data-toggle="tab" id="oneAllThirdName2"></a></li>
+                                <li style="float: right;"></li>
+                            </ul>
+                            <div id="echarTabContent" class="tab-content">
+                                <div class="tab-pane fade in active" id="oneAll">
+                                    <div class="nameOne" id="nameOne"></div>
+                                    <div class="nameCen" id="oneAllThirdName3">交货值/营业收入</div>
+                                    <div class="nameTwo" id="nameTwo"></div>
+
+                                </div>
+                                <div class="tab-pane fade" id="twoAll">
+                                    <div class="nameOne" id="twoAllNameOne"></div>
+                                    <!--<div class="nameCen">交货值/营业收入</div>-->
+                                    <!--<div class="nameTwo" id="twoAllNameTwo"></div>-->
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade in active clearfix" id="allFive">
+                        <div class="allLeft left">
+                            <table class="table table-bordered">
+                                <thead id="allFiveHeader"></thead>
+                                <tbody id="allFiveBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <ul id="echarTabFive" class="nav nav-tabs">
+                                <li class="active"><a href="#oneAllFive" data-toggle="tab" id="oneAllFiveName1"></a></li>
+                                <li><a href="#twoAllFive" data-toggle="tab" id="oneAllFiveName2"></a></li>
+                                <li style="float: right;"></li>
+                            </ul>
+                            <div id="echarTabContentFive" class="tab-content">
+                                <div class="tab-pane fade in active" id="oneAllFive">
+                                    <div class="nameOne" id="nameOneFive"></div>
+                                    <div class="nameCen" id="oneAllFiveName3">交货值/营业收入</div>
+                                    <div class="nameTwo" id="nameTwoFive"></div>
+
+                                </div>
+                                <div class="tab-pane fade" id="twoAllFive">
+                                    <div class="nameOne" id="twoAllNameOneFive"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="allTen">
+                        <div class="allLeft left">
+                            <table class="table table-bordered">
+                                <thead id="allTenHeader"></thead>
+                                <tbody id="allTenBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <ul id="echarTabTen" class="nav nav-tabs">
+                                <li class="active"><a href="#oneAllTen" data-toggle="tab" id="oneAllTenName1"></a></li>
+                                <li><a href="#twoAllTen" data-toggle="tab" id="oneAllTenName2"></a></li>
+                                <li style="float: right;"></li>
+                            </ul>
+                            <div id="echarTabContentTen" class="tab-content">
+                                <div class="tab-pane fade in active" id="oneAllTen">
+                                    <div class="nameOne" id="nameOneTen"></div>
+                                    <div class="nameCen" id="oneAllTenName3">交货值/营业收入</div>
+                                    <div class="nameTwo" id="nameTwoTen"></div>
+
+                                </div>
+                                <div class="tab-pane fade" id="twoAllTen">
+                                    <div class="nameOne" id="twoAllNameOneTen"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--增长率-->
+            <div class="tab-pane fade" id="runInfoAdd">
+                <div class="conTop clearfix">
+                    <ul id="runInfoAddTab1" class="nav nav-pills left">
+                        <li><a href="#addThird" data-toggle="tab">3期</a></li>
+                        <li class="active"><a href="#addFive" data-toggle="tab">5期</a></li>
+                        <li><a href="#addTen" data-toggle="tab">10期</a></li>
+                    </ul>
+                    <p class="tool right">
+                        <span id="runAddOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai7')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div id="runInfoAddTabContent11" class="tab-content">
+                    <div class="tab-pane fade" id="addThird">
+                        <div class="allLeft left">
+                            <table class="table table-bordered" id="xiazai7">
+                                <thead id="addThirdHeader"></thead>
+                                <tbody id="addThirdBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="currentIndusName"></span>行业增长率</div>
+                            <div class="line" id="thirdLine"></div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade in active clearfix" id="addFive">
+                        <div class="allLeft left">
+                            <table class="table table-bordered">
+                                <thead id="addFiveHeader"></thead>
+                                <tbody id="addFiveBody"></table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="currentIndusName"></span>行业增长率</div>
+                            <div class="line" id="FiveLine"></div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="addTen">
+                        <div class="allLeft left">
+                            <table class="table table-bordered">
+                                <thead id="addTenHeader"></thead>
+                                <tbody id="addTenBody"></table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="currentIndusName"></span>行业增长率</div>
+                            <div class="line" id="TenLine"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--价格库存-->
+    <div class="tab-pane fade" id="price">
+        <ul id="priceTab" class="nav nav-tabs">
+            <li class="active"><a href="#priceGoods" data-toggle="tab">产品价格</a></li>
+            <li><a href="#repertory" data-toggle="tab">产品库存</a></li>
+            <li><a href="#transport" data-toggle="tab">产品运输</a></li>
+        </ul>
+        <div id="priceTabContent" class="tab-content">
+            <!--产品价格-->
+            <div class="tab-pane fade in active" id="priceGoods">
+                <div class="conTop clearfix">
+                    <select name="" id="priceQuarter" class="priceQuarter left">
+                        <option value="0">月度</option>
+                        <option value="1">年度</option>
+                    </select>
+                    <ul id="priceTab1" class="nav nav-pills left">
+                        <li class="active"><a href="#priceSix" data-toggle="tab">6期</a></li>
+                        <li><a href="#priceTwo" data-toggle="tab">12期</a></li>
+                        <li><a href="#priceTwenty" data-toggle="tab">24期</a></li>
+                    </ul>
+                    <p class="tool right">
+                        <span id="priceOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai8')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div id="priceTabContent11" class="tab-content">
+                    <div class="tab-pane fade in active clearfix" id="priceSix">
+                        <div class="allLeft left">
+                            <table class="table table-bordered" id="xiazai8">
+                                <thead id="priceSixHead"></thead>
+                                <tbody id="priceSixBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="currentIndusName"></span>价格走势图</div>
+                            <div class="line" id="priceSixLine"></div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="priceTwo">
+                        <div class="allLeft left">
+                            <table class="table table-bordered">
+                                <thead id="priceTwoHead"></thead>
+                                <tbody id="priceTwoBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="currentIndusName"></span>价格走势图</div>
+                            <div class="line" id="priceTwoLine"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="priceTwenty">
+                        <div class="allLeft left">
+                            <table class="table table-bordered">
+                                <thead id="priceTwentyHead"></thead>
+                                <tbody id="priceTwentyBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="currentIndusName"></span>价格走势图</div>
+                            <div class="line" id="priceTwentyLine"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--产品库存-->
+            <div class="tab-pane fade" id="repertory">
+                <div class="conTop clearfix">
+                    <select name="" id="repertoryQuarter" class="priceQuarter left">
+                        <option value="0">月度</option>
+                        <option value="1">年度</option>
+                    </select>
+                    <ul id="repertoryTab1" class="nav nav-pills left">
+                        <li class="active"><a href="#repertorySix" data-toggle="tab">6期</a></li>
+                        <li><a href="#repertoryTwo" data-toggle="tab">12期</a></li>
+                        <li><a href="#repertoryTwenty" data-toggle="tab">24期</a></li>
+                    </ul>
+                    <p class="tool right">
+                        <span id="repertOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai9')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div id="repertoryTabContent11" class="tab-content">
+                    <div class="tab-pane fade in active clearfix" id="repertorySix">
+                        <div class="allLeft left">
+                            <table class="table table-bordered" id="xiazai9">
+                                <thead id="repertorySixHead"></thead>
+                                <tbody id="repertorySixBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="currentIndusName"></span>库存图</div>
+                            <div class="line" id="repertorySixLine"></div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="repertoryTwo">
+                        <div class="allLeft left">
+                            <table class="table table-bordered">
+                                <thead id="repertoryTwoHead"></thead>
+                                <tbody id="repertoryTwoBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="currentIndusName"></span>库存图</div>
+                            <div class="line" id="repertoryTwoLine"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="repertoryTwenty">
+                        <div class="allLeft left">
+                            <table class="table table-bordered">
+                                <thead id="repertoryTwentyHead"></thead>
+                                <tbody id="repertoryTwentyBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="currentIndusName"></span>库存图</div>
+                            <div class="line" id="repertoryTwentyLine"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--产品运输-->
+            <div class="tab-pane fade" id="transport">
+                <div class="conTop clearfix">
+                    <select name="" id="transportQuarter" class="priceQuarter left">
+                        <option value="0">月度</option>
+                        <option value="1">年度</option>
+                    </select>
+                    <ul id="transportTab1" class="nav nav-pills left">
+                        <li class="active"><a href="#transportSix" data-toggle="tab">6期</a></li>
+                        <li><a href="#transportTwo" data-toggle="tab">12期</a></li>
+                        <li><a href="#transportTwenty" data-toggle="tab">24期</a></li>
+                    </ul>
+                    <p class="tool right">
+                        <span id="transportOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai10')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div id="transportTabContent11" class="tab-content">
+                    <div class="tab-pane fade in active clearfix" id="transportSix">
+                        <div class="allLeft left">
+                            <table class="table table-bordered" id="xiazai10">
+                                <thead id="transportSixHead"></thead>
+                                <tbody id="transportSixBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="currentIndusName"></span>运输图</div>
+                            <div class="line" id="transportSixLine"></div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="transportTwo">
+                        <div class="allLeft left">
+                            <table class="table table-bordered">
+                                <thead id="transportTwoHead"></thead>
+                                <tbody id="transportTwoBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="currentIndusName"></span>运输图</div>
+                            <div class="line" id="transportTwoLine"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="transportTwenty">
+                        <div class="allLeft left">
+                            <table class="table table-bordered">
+                                <thead id="transportTwentyHead"></thead>
+                                <tbody id="transportTwentyBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="currentIndusName"></span>运输图</div>
+                            <div class="line" id="transportTwentyLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--上下游影响-->
+    <div class="tab-pane fade" id="upDown">
+        <ul id="upDownTab" class="nav nav-tabs">
+            <li class="active"><a href="#upDownCompare" data-toggle="tab">上下游影响比较</a></li>
+            <li><a href="#upInfluence" data-toggle="tab">上游影响</a></li>
+            <li><a href="#downInfluence" data-toggle="tab">下游影响</a></li>
+            <li><a href="#replaceInfluence" data-toggle="tab">替代品影响</a></li>
+        </ul>
+        <div id="upDownTabContent" class="tab-content">
+            <!--上游影响比较-->
+            <div class="tab-pane fade in active" id="upDownCompare">
+                <div class="conTop clearfix">
+                    <ul id="upDownCompareTab" class="nav nav-pills left">
+                        <li><a href="#upDownCompareThird" data-toggle="tab">3期</a></li>
+                        <li class="active"><a href="#upDownCompareFive" data-toggle="tab">5期</a></li>
+                        <li><a href="#upDownCompareTen" data-toggle="tab">10期</a></li>
+                    </ul>
+                    <p class="tool right">
+                        <span id="upDownOut" class="out">导出</span><span class="print">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div id="upDownCompareTabContent" class="tab-content">
+                    <div class="tab-pane fade clearfix" id="upDownCompareThird">
+                        <div class="allLeft left">
+                            <table class="table table-bordered">
+                                <thead id="upDownCompareThirdHead"></thead>
+                                <tbody id="upDownCompareThirdBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="upDownIndusName"></span>行业上下游影响</div>
+                            <div class="line" id="upDownCompareThirdLine"></div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade in active" id="upDownCompareFive">
+                        <div class="allLeft left">
+                            <table class="table table-bordered">
+                                <thead id="upDownCompareFiveHead"></thead>
+                                <tbody id="upDownCompareFiveBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="upDownIndusName"></span>行业上下游影响</div>
+                            <div class="line" id="upDownCompareFiveLine"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="upDownCompareTen">
+                        <div class="allLeft left">
+                            <table class="table table-bordered">
+                                <thead id="upDownCompareTenHead"></thead>
+                                <tbody id="upDownCompareTenBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="upDownIndusName"></span>行业上下游影响</div>
+                            <div class="line" id="upDownCompareTenLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--上游影响-->
+            <div class="tab-pane fade" id="upInfluence">
+                <div class="conTop clearfix">
+                    <ul id="upTab" class="nav nav-pills left">
+                        <li><a href="#upThird" data-toggle="tab">3期</a></li>
+                        <li class="active"><a href="#upFive" data-toggle="tab">5期</a></li>
+                        <li><a href="#upTen" data-toggle="tab">10期</a></li>
+                    </ul>
+                    <p class="tool right">
+                        <span id="upOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai11')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div id="upTabContent" class="tab-content">
+                    <div class="tab-pane fade clearfix" id="upThird">
+                        <div class="allLeft left">
+                            <table class="table table-bordered" id="xiazai11">
+                                <thead id="upThirdHead"></thead>
+                                <tbody id="upThirdBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="currentIndusName"></span>行业上游影响</div>
+                            <div class="line" id="upThirdLine"></div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade in active" id="upFive">
+                        <div class="allLeft left">
+                            <table class="table table-bordered">
+                                <thead id="upFiveHead"></thead>
+                                <tbody id="upFiveBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="currentIndusName"></span>行业上游影响</div>
+                            <div class="line" id="upFiveLine"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="upTen">
+                        <div class="allLeft left">
+                            <table class="table table-bordered">
+                                <thead id="upTenHead"></thead>
+                                <tbody id="upTenBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="currentIndusName"></span>行业上游影响</div>
+                            <div class="line" id="upTenLine"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--下游影响-->
+            <div class="tab-pane fade" id="downInfluence">
+                <div class="conTop clearfix">
+                    <ul id="downTab" class="nav nav-pills left">
+                        <li><a href="#downThird" data-toggle="tab">3期</a></li>
+                        <li class="active"><a href="#downFive" data-toggle="tab">5期</a></li>
+                        <li><a href="#downTen" data-toggle="tab">10期</a></li>
+                    </ul>
+                    <p class="tool right">
+                        <span id="downOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai12')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div id="downTabContent" class="tab-content">
+                    <div class="tab-pane fade" id="downThird">
+                        <div class="allLeft left">
+                            <table class="table table-bordered" id="xiazai12">
+                                <thead id="downThirdHead"></thead>
+                                <tbody id="downThirdBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="currentIndusName"></span>行业下游影响</div>
+                            <div class="line" id="downThirdLine"></div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade in active clearfix" id="downFive">
+                        <div class="allLeft left">
+                            <table class="table table-bordered">
+                                <thead id="downFiveHead"></thead>
+                                <tbody id="downFiveBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="currentIndusName"></span>行业下游影响</div>
+                            <div class="line" id="downFiveLine"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="downTen">
+                        <div class="allLeft left">
+                            <table class="table table-bordered">
+                                <thead id="downTenHead"></thead>
+                                <tbody id="downTenBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen"><span class="currentIndusName"></span>行业下游影响</div>
+                            <div class="line" id="downTenLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--替代品影响-->
+            <div class="tab-pane fade" id="replaceInfluence">
+                <div class="conTop clearfix">
+                    <ul id="replaceTab" class="nav nav-pills left">
+                        <li><a href="#replaceThird" data-toggle="tab">3期</a></li>
+                        <li class="active"><a href="#replaceFive" data-toggle="tab">5期</a></li>
+                        <li><a href="#replaceTen" data-toggle="tab">10期</a></li>
+                    </ul>
+                    <p class="tool right">
+                        <span id="replaceOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai13')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div id="replaceTabContent" class="tab-content">
+                    <div class="tab-pane fade" id="replaceThird">
+                        <div class="allLeft left">
+                            <table class="table table-bordered" id="xiazai13">
+                                <thead id="replaceThirdHead"></thead>
+                                <tbody id="replaceThirdBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen">替代品影响图</div>
+                            <div class="line" id="replaceThirdLine"></div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade in active clearfix" id="replaceFive">
+                        <div class="allLeft left">
+                            <table class="table table-bordered">
+                                <thead id="replaceFiveHead"></thead>
+                                <tbody id="replaceFiveBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen">替代品影响图</div>
+                            <div class="line" id="replaceFiveLine"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="replaceTen">
+                        <div class="allLeft left">
+                            <table class="table table-bordered">
+                                <thead id="replaceTenHead"></thead>
+                                <tbody id="replaceTenBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen">替代品影响图</div>
+                            <div class="line" id="replaceTenLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--行业投融资-->
+    <div class="tab-pane fade" id="indus">
+        <ul id="myTab1c" class="nav nav-tabs">
+            <li class="active"><a href="#hytz" data-toggle="tab">行业投资</a></li>
+            <li><a href="#xzcn" data-toggle="tab">新增产能</a></li>
+            <li><a href="#scrz" data-toggle="tab">资本市场融资</a></li>
+        </ul>
+        <div id="indusTabContent" class="tab-content">
+            <!--行业投资-->
+            <div class="tab-pane fade in active" id="hytz">
+                <div class="conTop clearfix">
+                    <ul id="indusInfoTab1" class="nav nav-pills left">
+                        <li><a href="#allThird1" data-toggle="tab">3期</a></li>
+                        <li class="active"><a href="#allFive1" data-toggle="tab">5期</a></li>
+                        <li><a href="#allTen1" data-toggle="tab">10期</a></li>
+                    </ul>
+                    <span style="margin-left: 14px;font-weight: 400;">单位:亿元</span>
+                    <p class="tool right">
+                        <span id="indusInfoOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai14')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div id="indusInfoTabContent11" class="tab-content">
+                    <div class="tab-pane fade" id="allThird1">
+                        <div class="s-dyggh">
+                            <div class="left s-hytrz">
+                                <div class="nameCen">固定资产投资</div>
+                                <table class="table table-bordered" id="xiazai14">
+                                    <thead id="investThird1Head"></thead>
+                                    <tbody id="investThird1Body"></tbody>
+                                </table>
+                            </div>
+                            <div class="s-xgd1h right">
+                                <div class="nameCen">固定资产投资图</div>
+                                <div class="echarsa" id="zctz"></div>
+                            </div>
+                        </div>
+                        <div class="s-dyggh">
+                            <div class="left s-hytrz">
+                                <div class="nameCen">固定资产投资资金来源构成</div>
+                                <table class="table table-bordered">
+                                    <thead id="sourceThird1Head"></thead>
+                                    <tbody id="sourceThird1Body"></tbody>
+                                </table>
+                            </div>
+                            <div class="s-xgd1h right">
+                                <div class="nameCen">固定资产投资资金来源构成</div>
+                                <div class="echarsa" id="zclygc"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade in active clearfix" id="allFive1">
+                        <div class="s-dyggh">
+                            <div class="left s-hytrz">
+                                <div class="nameCen">固定资产投资</div>
+                                <table class="table table-bordered">
+                                    <thead id="investFive1Head"></thead>
+                                    <tbody id="investFive1Body"></tbody>
+                                </table>
+                            </div>
+                            <div class="s-xgd1h right">
+                                <div class="nameCen">固定资产投资图</div>
+                                <div class="echarsa" id="zctz5"></div>
+                            </div>
+                        </div>
+                        <div class="s-dyggh">
+                            <div class="left s-hytrz">
+                                <div class="nameCen">固定资产投资资金来源构成</div>
+                                <table class="table table-bordered">
+                                    <thead id="sourceFive1Head"></thead>
+                                    <tbody id="sourceFive1Body"></tbody>
+                                </table>
+                            </div>
+                            <div class="s-xgd1h right">
+                                <div class="nameCen">固定资产投资资金来源构成</div>
+                                <div class="echarsa" id="zclygc5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="allTen1">
+                        <div class="s-dyggh">
+                            <div class="left s-hytrz">
+                                <div class="nameCen">固定资产投资</div>
+                                <table class="table table-bordered">
+                                    <thead id="investTen1Head"></thead>
+                                    <tbody id="investTen1Body"></tbody>
+                                </table>
+                            </div>
+                            <div class="s-xgd1h right">
+                                <div class="nameCen">固定资产投资图</div>
+                                <div class="echarsa" id="zctz10"></div>
+                            </div>
+                        </div>
+                        <div class="s-dyggh">
+                            <div class="left s-hytrz">
+                                <div class="nameCen">固定资产投资资金来源构成</div>
+                                <table class="table table-bordered">
+                                    <thead id="sourceTen1Head"></thead>
+                                    <tbody id="sourceTen1Body"></tbody>
+                                </table>
+                            </div>
+                            <div class="s-xgd1h right">
+                                <div class="nameCen">固定资产投资资金来源构成</div>
+                                <div class="echarsa" id="zclygc10"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--新增产能-->
+            <div class="tab-pane fade in" id="xzcn">
+                <div class="conTop clearfix">
+                    <ul id="xzcnInfoTab1" class="nav nav-pills left">
+                        <li><a href="#allThird11" data-toggle="tab">3期</a></li>
+                        <li class="active"><a href="#allFive11" data-toggle="tab">5期</a></li>
+                        <li><a href="#allTen11" data-toggle="tab">10期</a></li>
+                    </ul>
+                    <span style="margin-left: 14px;font-weight: 400;">单位:亿元</span>
+                    <p class="tool right">
+                        <span id="zxcnOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai15')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div id="xzcnInfoTabContent11" class="tab-content">
+                    <div class="tab-pane fade" id="allThird11">
+                        <div class="allLeft left">
+                            <div class="nameCen">新增产能</div>
+                            <table class="table table-bordered" id="xiazai15">
+                                <thead id="allThird11Head"></thead>
+                                <tbody id="allThird11Body"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen">新增产能图</div>
+                            <ul id="proTabT" class="nav nav-tabs">
+                                <li class="active">
+                                    <a href="#proTabTOne" data-toggle="tab" class="proOneName" id="proTabTOneName"></a>
+                                </li>
+                                <li>
+                                    <a href="#proTabTTwo" data-toggle="tab" class="proTwoName" id="proTabTTwoName"></a>
+                                </li>
+                            </ul>
+                            <div id="proTabTContent" class="tab-content">
+                                <div class="tab-pane fade in active" id="proTabTOne">
+                                    <div class="echarsa" id="xzcnThird"></div>
+                                </div>
+                                <div class="tab-pane fade" id="proTabTTwo">
+                                    <div class="echarsa" id="xzcnThird2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade in active clearfix" id="allFive11">
+                        <div class="allLeft left">
+                            <div class="nameCen">新增产能</div>
+                            <table class="table table-bordered">
+                                <thead id="allFive11Head"></thead>
+                                <tbody id="allFive11Body"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen">新增产能图</div>
+                            <ul id="proTabF" class="nav nav-tabs">
+                                <li class="active">
+                                    <a href="#proTabFOne" data-toggle="tab" class="proOneName" id="proTabFOneName"></a>
+                                </li>
+                                <li>
+                                    <a href="#proTabFTwo" data-toggle="tab" class="proTwoName" id="proTabFTwoName"></a>
+                                </li>
+                            </ul>
+                            <div id="proTabFContent" class="tab-content">
+                                <div class="tab-pane fade in active" id="proTabFOne">
+                                    <div class="echarsa" id="xzcn5"></div>
+                                </div>
+                                <div class="tab-pane fade" id="proTabFTwo">
+                                    <div class="echarsa" id="xzcn52"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="allTen11">
+                        <div class="allLeft left">
+                            <div class="nameCen">新增产能</div>
+                            <table class="table table-bordered">
+                                <thead id="allTen11Head"></thead>
+                                <tbody id="allTen11Body"></tbody>
+                            </table>
+
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen">新增产能图</div>
+                            <ul id="proTabTen" class="nav nav-tabs">
+                                <li class="active">
+                                    <a href="#proTabTenOne" data-toggle="tab" class="proOneName" id="proTabTenOneName"></a>
+                                </li>
+                                <li>
+                                    <a href="#proTabTenTwo" data-toggle="tab" class="proTwoName" id="proTabTenTwoName"></a>
+                                </li>
+                            </ul>
+                            <div id="proTabTenContent" class="tab-content">
+                                <div class="tab-pane fade in active" id="proTabTenOne">
+                                    <div class="echarsa" id="xzcn10"></div>
+                                </div>
+                                <div class="tab-pane fade" id="proTabTenTwo">
+                                    <div class="echarsa" id="xzcn102"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--资本市场融资-->
+            <div class="tab-pane fade in" id="scrz">
+                <div class="conTop clearfix">
+                    <ul id="scrzTab" class="nav nav-pills left">
+                        <li><a href="#scrzThird" data-toggle="tab">3期</a></li>
+                        <li class="active"><a href="#scrzFive" data-toggle="tab">5期</a></li>
+                        <li><a href="#scrzTen" data-toggle="tab">10期</a></li>
+                    </ul>
+                    <span style="margin-left: 14px;font-weight: 400;">单位:亿元</span>
+                    <p class="tool right">
+                        <span id="scrzOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai16')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div id="scrzTabContent" class="tab-content">
+                    <div class="tab-pane fade" id="scrzThird">
+                        <div class="allLeft left">
+                            <div class="nameCen">资本市场融资</div>
+                            <table class="table table-bordered" id="xiazai16">
+                                <thead id="scrzThirdHead"></thead>
+                                <tbody id="scrzThirdBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen">资本市场融资图</div>
+                            <div class="echarsa" id="scrzThirdLine"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade in active clearfix" id="scrzFive">
+                        <div class="allLeft left">
+                            <div class="nameCen">资本市场融资</div>
+                            <table class="table table-bordered">
+                                <thead id="scrzFiveHead"></thead>
+                                <tbody id="scrzFiveBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen">资本市场融资图</div>
+                            <div class="echarsa" id="scrzFiveLine"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="scrzTen">
+                        <div class="allLeft left">
+                            <div class="nameCen">资本市场融资</div>
+                            <table class="table table-bordered">
+                                <thead id="scrzTenHead"></thead>
+                                <tbody id="scrzTenBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="allRight right">
+                            <div class="nameCen">资本市场融资图</div>
+                            <div class="echarsa" id="scrzTenLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--财务表现-->
+    <div class="tab-pane fade" id="money">
+        <ul id="myTab1b" class="nav nav-tabs">
+            <li class="active"><a href="#jjzb" data-toggle="tab">主要经济指标</a></li>
+            <li><a href="#cwzb" data-toggle="tab">行业财务指标</a></li>
+            <li><a href="#pjbz" data-toggle="tab">企业绩效评价标准值</a></li>
+        </ul>
+        <div id="moneyTabContent" class="tab-content">
+            <!--主要经济指标-->
+            <div class="tab-pane fade in active" id="jjzb">
+                <div class="conTop clearfix">
+                    <ul id="jjzbTab1" class="nav nav-pills left" style="width: 92px !important;">
+                        <li class="active"><a href="#month1" data-toggle="tab">年度</a></li>
+                        <li><a href="#year1" data-toggle="tab">月度</a></li>
+                    </ul>
+                    <span class="sjly"><a href="#">数据来源</a></span>
+                    <span style="margin-left: 14px;font-weight: 400;">单位:亿元</span>
+                    <p class="tool right">
+                        <span id="jjzbOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai17')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div id="jjzbTabContent11" class="tab-content">
+                    <div class="tab-pane fade in active clearfix" id="month1">
+                        <table class="table table-striped tablesorter" id="xiazai17">
+                            <thead id="jjzbYear"></thead>
+                            <tbody id="jjzbYearBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="year1">
+                        <table class="table table-striped tablesorter">
+                            <thead id="jjzbMonth"></thead>
+                            <tbody id="jjzbMonthBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--行业财务指标-->
+            <div class="tab-pane fade" id="cwzb">
+                <div class="conTop clearfix">
+                    <ul id="cwzbTab1" class="nav nav-pills left" style="width: 92px !important;">
+                        <li class="active"><a href="#month11" data-toggle="tab">年度</a></li>
+                        <li><a href="#year11" data-toggle="tab">月度</a></li>
+                    </ul>
+                    <span class="sjly"><a href="#">数据来源</a></span>
+                    <span style="margin-left: 14px;font-weight: 400;">单位:亿元</span>
+                    <p class="tool right">
+                        <span id="cwzbOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai18')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div id="cwzbTabContent11" class="tab-content">
+                    <div class="tab-pane fade in active clearfix" id="month11">
+                        <table class="table table-striped tablesorter" id="xiazai18">
+                            <thead id="cwzbYearHead"></thead>
+                            <tbody id="cwzbYearBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="year11">
+                        <table class="table table-striped tablesorter">
+                            <thead id="cwzbMonthHead"></thead>
+                            <tbody id="cwzbMonthBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--企业绩效评价指标值-->
+            <div class="tab-pane fade" id="pjbz">
+                <div class="conTop clearfix">
+                    <ul id="pjbzTab1" class="nav nav-pills left" style="width: 92px !important;">
+                        <li class="active"><a href="#pjbzmonth11" data-toggle="tab">年度</a></li>
+                        <li><a href="#pjbzyear11" data-toggle="tab">月度</a></li>
+                    </ul>
+                    <span class="sjly"><a href="#">数据来源</a></span>
+                    <span style="margin-left: 14px;font-weight: 400;">单位:亿元</span>
+                    <p class="tool right">
+                        <span id="pjbzOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai19')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div id="pjbzTabContent11" class="tab-content">
+                    <div class="tab-pane fade in active clearfix" id="pjbzmonth11">
+                        <table class="table table-striped tablesorter" id="xiazai19">
+                            <thead id="pjbzHeader"></thead>
+                            <tbody id="pjbzBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="pjbzyear11">
+                        <table class="table table-striped tablesorter">
+                            <thead id="pjbzMonthHeader"></thead>
+                            <tbody id="pjbzMonthBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--风险特征-->
+    <div class="tab-pane fade" id="danger">
+        <ul id="myTab1a" class="nav nav-tabs">
+            <li class="active"><a href="#jjyx" data-toggle="tab">世界经济影响</a></li>
+            <li><a href="#jzd" data-toggle="tab">行业集中度</a></li>
+            <li><a href="#zqx" data-toggle="tab">周期性</a></li>
+            <li><a href="#bgfx" data-toggle="tab">技术变革风险</a></li>
+            <li><a href="#mgx" data-toggle="tab">风险事件敏感性</a></li>
+            <li><a href="#blv" data-toggle="tab">银监会和主要银行平均不良率</a></li>
+        </ul>
+        <div id="myTabContent1a" class="tab-content">
+            <!--世界经济影响-->
+            <div class="tab-pane fade in active" id="jjyx">
+                <div class="conTop clearfix">
+                    <span style="margin-left: 14px;font-weight: 400;">单位:亿元</span>
+                    <p class="tool right">
+                        <span id="influenceOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai20')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div class="liVal-table skf-tab fl">
+                    <table id="Table xiazai20" class="table table-striped tablesorter">
+                        <thead id="jjyxHeader"></thead>
+                        <tbody id="jjyxBody"></tbody>
+                    </table>
+                </div>
+                <div class="world-right fr">
+                    <div class="worldright-bt">
+                        <p>世界经济影响图</p>
+                    </div>
+                    <div class="echarsa" id="fxtz"></div>
+                </div>
+            </div>
+            <!--集中度-->
+            <div class="tab-pane fade" id="jzd">
+                <div class="conTop clearfix">
+                    <span style="margin-left: 14px;font-weight: 400;">单位:亿元</span>
+                    <p class="tool right">
+                        <span id="focusOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai21')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div class="liVal-table skf-tab fl">
+                    <table class="table table-striped tablesorter" id="xiazai21">
+                        <thead id="jzdHeader"></thead>
+                        <tbody id="jzdBody"></tbody>
+                    </table>
+                </div>
+                <div class="world-right fr">
+                    <div class="worldright-bt">
+                        <p>行业集中度统计图</p>
+                    </div>
+                    <div class="echarsa" id="jzdksh"></div>
+                </div>
+            </div>
+            <!--周期性-->
+            <div class="tab-pane fade" id="zqx">
+                <div class="conTop clearfix">
+                    <input id="dateZqx1" type="text" runat="server" value="2015" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style="width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                    <span class="left" style="margin-left: 2px;">-</span>
+                    <input id="dateZqx2" type="text" runat="server" value="2016" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style="width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                    <button class="sure" id="zqxSure">确定</button>
+                    <select style="margin-left: 13px;" id="indusSelect" name="行业总量指标">
+                        <!--<option value ="volvo"></option>-->
+                    </select>
+                    <select style="margin-left: 13px;" id="finalSelect" name="宏观经济总量指标">
+                        <!--<option value ="volvo"></option>-->
+                    </select>
+                    <span style="margin-left: 14px;font-weight: 400;">单位:亿元</span>
+                    <p class="tool right">
+                        <span id="cycleOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai22')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div class="liVal-table skf-tab fl">
+                    <table class="table table-striped" id="xiazai22">
+                        <thead id="zqxHead"></thead>
+                        <tbody id="zqxBody"></tbody>
+                    </table>
+                </div>
+                <div class="world-right fr">
+                    <div class="worldright-bt">
+                        <p>与GDP相关系数图</p>
+                    </div>
+                    <div class="echarsa" id="zqxksh"></div>
+                </div>
+            </div>
+            <!--技术变革风险-->
+            <div class="tab-pane fade" id="bgfx">
+                <div class="conTop clearfix">
+                    <p class="tool right">
+                        <span id="tecnOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai23')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div class="liVal-table bg-tab fl">
+                    <table class="table table-striped tablesorter" id="xiazai23">
+                        <thead id="bgfxHead"></thead>
+                        <tbody id="bgfxBody"></tbody>
+                    </table>
+                </div>
+            </div>
+            <!--风险事件敏感性-->
+            <div class="tab-pane fade" id="mgx">
+                <div class="conTop clearfix">
+                    <p class="tool right">
+                        <span id="sensitiveOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai24')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div class="zcTitle"><p>行业风险事件敏感性<span class="dangerTip">较低</span></p></div>
+                <div class="liVal-table bg-tab fl">
+                    <table class="table table-striped tablesorter" id="xiazai24">
+                        <thead>
+                        <tr>
+                            <th>发生时间</th>
+                            <th>风险事件名称</th>
+                            <th>影响</th>
+                        </tr>
+                        </thead>
+                        <tbody id="dangerSensitive"></tbody>
+                    </table>
+                </div>
+            </div>
+            <!--商业银行不良率-->
+            <div class="tab-pane fade" id="blv">
+                <div class="conTop clearfix">
+                    <p class="tool right">
+                        <span id="badOut" class="out">导出</span><span class="print" onclick="PrintTable('#xiazai25')">打印</span>
+                        <span class="copy">复制</span>
+                        <!--<span class="share">分享</span>-->
+                    </p>
+                </div>
+                <div class="liVal-table skf-tab fl">
+                    <table class="table table-striped tablesorter" id="xiazai25">
+                        <thead id="blvHeader"></thead>
+                        <tbody id="blvBody"></tbody>
+                    </table>
+                    <p class="blmd">点击年份即可统计对应不良率银行名单
+                        <!--<span class="fr blzdy">自定义</span>-->
+                    </p>
+                    <table class="table table-bordered bgjz">
+                        <tbody id="badBank">
+                            <!--<td>中国工商银行股份有限公司</td>-->
+                            <!--<td>中国工商银行股份有限公司</td>-->
+                            <!--<td>中国工商银行股份有限公司</td>-->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="world-right fr">
+                    <div class="worldright-bt">
+                        <p>主要银行平均不良率（%）</p>
+                    </div>
+                    <div class="echarsa" id="pjblv"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--行业百强排名-->
+    <div class="tab-pane fade" id="grade">
+        <div class="gradeConent">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th style="display: none">ID</th>
+                    <th>百强排名榜单名称</th>
+                    <th>年份</th>
+                    <th>操作</th>
+                    <th>采集网址</th>
+                    <th>功能</th>
+                </tr>
+                </thead>
+                <tbody id="gradeFirstBody"></tbody>
+            </table>
+        </div>
+        <!--统计各省市数据-->
+        <ul id="gradeTab" class="nav nav-tabs">
+            <li class="active"><a href="#gradeProvince" data-toggle="tab" id="gradeTitle">行业各省占比</a></li>
+            <li class="city" style="display: none;"><a href="#gradeCity" data-toggle="tab">行业各市占比</a></li>
+            <li><a href="#gradeBillboard" data-toggle="tab">百强榜单集中度(CR8)</a></li>
+        </ul>
+        <div id="gradeTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="gradeProvince">
+                <div class="conTop clearfix">
+                    <div class="liVal-topBack right" id="gradeList">返回列表</div>
+                </div>
+                <div id="gradeProvinceTabContent" class="tab-content">
+                    <div class="clearfix" id="gradeProvinceFive">
+                        <div class="gradeLeft left" id="provinceBox">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>省</th>
+                                    <th>排名依据数值</th>
+                                    <th>占比</th>
+                                </tr>
+                                </thead>
+                                <tbody id="provinceBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="gradeRight right">
+                            <div class="nameCen">行业各省市占比图</div>
+                            <div class="map" id="provinceFive"></div>
+                        </div>
+                        <div class="gradeLeft left" id="cityBox">
+                            <div class="liVal-topBack right" id="cityList">返回省列表</div>
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>市</th>
+                                    <th>排名依据数值</th>
+                                    <th>占比</th>
+                                </tr>
+                                </thead>
+                                <tbody id="cityBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="gradeBillboard">
+                <!--<div class="conTop clearfix">-->
+                <!--<div class="liVal-topBack right" id="gradeList1">返回列表</div>-->
+                <!--</div>-->
+                <div class="clearfix" id="billboardList">
+                    <div class="gradeBillboardLeft left">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>排名</th>
+                                <th>企业名称</th>
+                                <th>排名依据数值</th>
+                                <th>排名占比</th>
+                            </tr>
+                            </thead>
+                            <tbody id="billboardBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="gradeBillboardLeft right">
+                        <div class="billboardEchar" id="billboardEchar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="../../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/My97DatePicker/WdatePicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/url.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/industry/strategicSpecific.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/build/dist/echarts.js"></script>
+<script src="../../js/industry/map1.js"></script>
+<script src="../../js/jquery-migrate-1.2.1.min.js"></script>
+<script src="../../js/jquery.jqprint-0.3.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('#myTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#myTab1 a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#myTab11 a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $("#echarsTab a").click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#myTab11a a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#myTab11b a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#myTab11c a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+
+
+        <!--运行信息-->
+        $('#runInfoTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#runInfoTab1 a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#runInfoAddTab1 a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+
+
+        $('#echarTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        <!--价格库存-->
+        $('#priceTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#priceTab1 a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#repertoryTab1 a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#transportTab1 a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        <!--上下游影响-->
+        $('#upDownTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $("#upDownCompareTab a").click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#upTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#downTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#replaceTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        <!--资本市场融资-->
+        $('#indusInfoTab1 a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#xzcnInfoTab1 a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#scrzTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        <!--财务表现-->
+        $('#myTab1b a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#jjzbTab1 a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#cwzbTab1 a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#pjbzTab1 a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        <!--风险特征-->
+        $('#myTab1a a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        //行业百强排名
+        $('#gradeTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#gradeProvinceTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+
+    })
+//局部打印
+    function PrintTable(select) {
+      $(select).jqprint({
+        debug: false, //如果是true则可以显示iframe查看效果（iframe默认高和宽都很小，可以再源码中调大），默认是false
+        importCSS: true, //true表示引进原来的页面的css，默认是true。（如果是true，先会找$("link[media=print]")，若没有会去找$("link")中的css文件）
+        printContainer: true, //表示如果原来选择的对象必须被纳入打印（注意：设置为false可能会打破你的CSS规则）。
+        operaSupport: false//表示如果插件也必须支持歌opera浏览器，在这种情况下，它提供了建立一个临时的打印选项卡。默认是true
+      });
+    }
+
+</script>
+</html>

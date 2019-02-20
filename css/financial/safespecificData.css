@@ -1,0 +1,84 @@
+/*业务结构*/
+.business-TableOne{
+    border: solid 2px #fcfcfc;
+    border-radius: 10px;
+}
+.business-TableOne .businessTable-title {
+    width: 98%;
+    height: 42px;
+    line-height: 42px;
+    border-bottom: 1px solid #ccc;
+    padding-left: 15px;
+}
+.business-TableOne .businessTable {
+    width: 96%;
+    height: 254px;
+    margin: 2%;
+    border: 1px solid #ddd;
+    overflow-y: auto;
+}
+.business-TableTwo{
+    margin: 8px;
+    height: 300px;
+}
+.business-TableTwoL{
+    width: 59%;
+    height: 310px;
+}
+.business-TableTwoR{
+    width: 39%;
+    height: 310px;
+}
+.business-TableTwoL1{
+    width: 38%;
+    height: 310px;
+    border: solid 2px #fcfcfc;
+    border-radius: 10px;
+}
+.business-TableTwoL1 .TableTwoL1-title{
+    width: 98%;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+.TableTwoL1-cen{
+    height: 220px;
+}
+.TableTwoL1-cen span{
+    display: inline-block;
+    width: 48%;
+    height: 220px;
+    text-align: center;
+    padding-top: 38%;
+}
+.speNum,.spePersent{
+    font-size: 16px;
+    color: #f68b45;
+}
+.TableTwoL1-cen .TableTwoL1-cenL{
+    border-right: 1px solid #ccc;;
+}
+.business-TableTwoL2{
+    width: 59%;
+    height: 310px;
+    border: solid 2px #fcfcfc;
+    border-radius: 10px;
+}
+.businessTableTwoL2-title,.businessTableTwoR-title{
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #ccc;
+    padding-left: 10px;
+}
+.businessTableTwoL2,.businessTableTwoR{
+    width: 96%;
+    height: 250px;
+    margin: 2%;
+    border: 1px solid #ddd;
+    overflow: auto;
+}
+.business-TableTwoR{
+    border: solid 2px #fcfcfc;
+    border-radius: 10px;
+}

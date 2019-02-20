@@ -1,0 +1,337 @@
+.fl{float: left;}
+.fr{float: right;}
+button{border:none;outline:none;}
+
+.my-nav{
+	width:100%;
+	height: 54px;
+	background: #FFF;
+	padding: 0 14px 0 14px;
+	line-height: 54px;
+}
+.my-nav .my-ul{
+	margin-bottom: 0;
+	float: right;
+}
+.my-nav ul li{
+	background: url(../../img/industry/nav-img.png) no-repeat 0% 50%;
+	float: left;
+	margin-left: 13px;
+    padding-left: 19px;
+}
+.main-nr{width: 98.55%;margin: 0 auto;min-height: 844px;background: #FFF;margin: 14px;padding: 25px;}
+.main-nr .table>tbody>tr>td{padding: 9px;border-top:none;}
+.main-nr .table>tbody>tr>th{border-top:none;}
+.main-nr .table>tbody>tr>td>a{color: #0086e8;font-weight:bold;}
+.main-nr .table>tbody>tr>td>.bt1{background-color: #ff9417;color: #FFF;width: 81px;height: 25px;border-radius: 50px;font-size: 12px;}
+.main-nr .table>tbody>tr>td>.bt1:hover{background-color: #f48502; transition:0.5s;}
+.main-nr .table>tbody>tr>td>.bt2{background-color: #1ec89e;color: #FFF;width: 81px;height: 25px;border-radius: 50px;font-size: 12px;}
+.main-nr .table>tbody>tr>td>.bt2:hover{background-color: #00b287; transition:0.5s;}
+.main-nr .table-striped>tbody>tr:nth-of-type(odd){background-color:#fcfcfc;}
+
+
+
+
+/* 各省占比样式   */
+.main-nr1{width: 98.55%;margin: 0 auto;min-height: 844px;background: #FFF;margin: 14px;}
+#tabs{
+	width: 100%;;
+	margin: 0 auto;
+}
+#tabs ul{
+	background: #fafbfd;
+	margin-bottom: 0px;
+}
+#tabs li{
+	float: left;
+}
+
+#tabs li a{
+	display: block;
+	padding: 14px 30px;
+	text-decoration: none;
+	font-weight:bold;
+	color: #666666;
+}
+#tabs_container {
+	padding: 40px;
+	position: relative;
+	background: white;
+}
+
+.make_transist {
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+.hidescale {
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	-o-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+	transform: scale(0.9);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	filter: alpha(opacity=0);
+	opacity: 0;
+}
+
+.showscale {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+
+	-webkit-transition-delay: .3s;
+	-moz-transition-delay: .3s;
+	-o-transition-delay: .3s;
+	-ms-transition-delay: .3s;
+	transition-delay: .3s;
+}
+.tabulous_active {
+	background: white !important;
+	color: #2399f0 !important;
+	border-top:4px solid #2399f0;
+}
+
+.tabulousclear {
+	display: block;
+	clear: both;
+}
+
+.main-nr1 .table>tbody>tr>td{padding: 11px;border-top:none;}
+.main-nr1 .table>tbody>tr>th{border-top:none;}
+.main-nr1 .table>tbody>tr>td>a{color: #0086e8;font-weight:bold;}
+.main-nr1 .table-striped>tbody>tr:nth-of-type(odd){background-color:#fcfcfc;}
+#tabs-1{position: initial !important;}
+#tabs-1 tbody{width:150px;height:150px;overflow:scroll;overflow-y:scroll}
+
+#demo{
+	width: 35%; height: 700px; overflow: hidden;
+}
+.box{
+	height:300px;
+	width:500px;
+}
+.zUIpanelScrollBox,.zUIpanelScrollBar{
+	width:5px;
+	top:4px;
+	right:0px;
+	border-radius:5px;
+}
+.zUIpanelScrollBar{
+	background:#999999;opacity:0.8;
+	filter:alpha(opacity=80);
+}
+
+.skf-tab{width: 60%;}
+.world-left{
+    width: 60%;
+}
+.world-right{width: 38%;}
+.worldright-bt{width: 100%;height: 43px;background-color: #fafbfd;padding: 0 20px;}
+.worldright-bt p{line-height: 43px;font-size: 14px;color: #666666;}
+
+.echarsa{
+	width: 100%;
+	/*height: 400px;*/
+	margin: 0 auto;
+	padding-top: 20px;
+}
+#myTab11a,#myTab11b{
+    width: 134px;
+    height: 32px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#myTab11a,#myTab11b>li{
+    width: 65px;
+    height: 32px;
+}
+#myTab11a,#myTab11b>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #67bce1;
+}
+#myTab11a,#myTab11b li a {
+    position: relative;
+    display: block;
+    padding: 0px;
+    text-align: center;
+}
+
+#myTab1a,#myTab1b,#myTab1c{
+    background: #fafbfd;
+    border-bottom: none;
+    height: 48px;
+}
+#indusTabContent{
+	overflow: hidden;
+}
+#myTabContent1a,#myTabContent1b,#indusTabContent,#moneyTabContent{
+    width: 98%;
+	height: 100%;
+    min-height:598px;
+    margin: 18px 1%;
+}
+select{
+	width: 110px;
+	height: 32px;
+	outline: none;
+	border:1px solid #d0d0d0;
+	border-radius:3px;
+	appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    padding: 0 10px;
+    background: url(../../img/industry/select-img.png) no-repeat right 50%;
+}
+option{border: 1px solid red;}
+.bg-tab{width: 100%}
+
+.blmd{color: #0084d8;margin-bottom: 25px !important;}
+
+.bgjz{
+	display: inline-block;
+	min-width: 602px;
+	overflow: auto;
+	text-align: center;
+	border: none;
+}
+.blzdy{
+	color: #FFF;
+	background: #0597f4;
+	width: 84px;
+	height: 27px;
+	line-height: 27px;
+	border-radius: 3px;
+	text-align: center;
+}
+.sjly a{
+	background: #53b4dd;
+	color: #FFF;
+	padding: 6px 14px;
+	border-radius: 3px;
+	margin-left: 13px;
+}
+.sjly a:hover{
+	background-color: #4ca5cb;
+	transition:0.5s;
+}
+/*资本市场融资*/
+#indusInfoTab1,#xzcnInfoTab1,#scrzTab{
+    width: 138px;
+    height: 32px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#indusInfoTab1 li,#xzcnInfoTab1 li,#scrzTab li{
+	width: 44px;
+    height: 32px;
+}
+#indusInfoTab1>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+	color: #fff;
+    background-color: #67bce1;
+
+}
+#xzcnInfoTab1>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+    color: #fff;
+    background-color: #67bce1;
+
+}
+#scrzTab>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+    color: #fff;
+    background-color: #67bce1;
+
+}
+#indusInfoTab1 li a{
+    position: relative;
+    display: block;
+    padding: 0px;
+    text-align: center;
+}
+#xzcnInfoTab1 li a,#scrzTab li a{
+    position: relative;
+    display: block;
+    padding: 0px;
+    text-align: center;
+}
+#indusInfoTabContent11,#xzcnInfoTabContent11,#scrzTabContent{
+	width: 100%;
+	height: 100%;
+    min-height: 534px;
+    /*overflow-y: auto;*/
+}
+/*财务表现*/
+
+#jjzbTab1,#cwzbTab1,#pjbzTab1{
+    width: 90px;
+    height: 32px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#jjzbTab1 li,#cwzbTab1 li,#pjbzTab1 li{
+    width: 44px;
+    height: 32px;
+}
+#jjzbTab1>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+    color: #fff;
+    background-color: #67bce1;
+
+}
+#cwzbTab1>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+    color: #fff;
+    background-color: #67bce1;
+
+}
+#pjbzTab1>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+    color: #fff;
+    background-color: #67bce1;
+
+}
+#jjzbTab1 li a,#cwzbTab1 li a,#pjbzTab1 li a{
+    position: relative;
+    display: block;
+    padding: 0px;
+    text-align: center;
+}
+#jjzbTabContent11,#cwzbTabContent11,#pjbzTabContent11{
+	width: 100%;
+	height: 100%;
+    min-height: 534px;
+    /*overflow-y: auto;*/
+}
+/*风险特征*/
+#jjyx,#jzd,#zqx,#bgfx,#mgx,#blv{
+	width: 100%;
+	height: 100%;
+    min-height: 534px;
+    /*overflow-y: auto;*/
+}
+#mydatepickerZqx1,#mydatepickerZqx2{
+	width:143px;
+	height:32px;
+	margin-left:4px;
+	border:1px solid #d0d0d0;
+	border-radius:3px;
+}
+
+
+/*#my-InfoTab{
+	width: 91px !important;
+}
+.my-allLeft{
+	width: 100%;
+    background: #fff;
+}
+.my-allLeft table{
+	width: 59%;
+	float: left;
+    margin-top: 10px;
+}*/

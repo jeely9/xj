@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全国</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/area/allCountry.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/area/awesome.css"/>
+</head>
+<body>
+<div class="titlt">
+    <ul class="left">
+        <li id="first"><a href="../../home.html">首页</a></li>
+        <li id="currentParName"><a href="javascript:void(0)">宏观经济</a></li>
+        <li id="currentName" class="activeTitle"><a href="javascript:void(0)">全国</a></li>
+    </ul>
+</div>
+<div class="countryContainer">
+    <div class="cen">
+        <div class="cenTop clearfix">
+            <div class="cenTopL left clearfix">
+                <div class="left cenTopLeft">
+                    <span>区域查询：</span>
+                    <input class="s-input" type="search" placeholder="请输入关键字进行搜索..." id="seName">
+                    <button class="s-button" id="countrySearch"><img src="../../img/censearch.png"></button>
+                    <button class="s-button" id="countryTallSearch" data-toggle="modal" data-target="#countrySuperSearch">高级搜索</button>
+                    <!-- 模态框（Modal） -->
+                    <div class="modal fade" id="countrySuperSearch" tabindex="-1" role="dialog" aria-labelledby="countrySuperSearchLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="countrySuperSearchLabel">高级搜索</h4>
+                                </div>
+                                <div class="modal-body box">
+                                    <div class="modalTable">
+                                        <ul id="searchTallTab" class="nav nav-tabs">
+                                            <li class="active">
+                                                <a href="#areaChoose" data-toggle="tab">地区选择</a>
+                                            </li>
+                                            <li><a href="#dateChoose" data-toggle="tab">日期选择</a></li>
+                                            <li><a href="#indexChoose" data-toggle="tab">指标选择</a></li>
+                                        </ul>
+                                        <div id="searchTallTabContent" class="tab-content">
+                                            <div class="tab-pane fade in active" id="areaChoose">
+                                                <div class="menuBox left">
+                                                    <div data-options="iconCls:'icon-save'">
+                                                        <ul id="areaTree" class="ztree"></ul>
+                                                    </div>
+                                                </div>
+                                                <div class="areaContent right">
+                                                    <input class="s-input contentRightSearch" type="search" placeholder="请输入你想查询的地区..."><span class="searchIcon glyphicon glyphicon-search"></span>
+                                                    <div class="searchList">
+                                                        <div class="searchListTitle">已选:</div>
+                                                        <div class="searchListBox">
+                                                            <span>山东省</span><span>烟台市</span><span>天津</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="dateChoose">
+                                                <div class="dateContent">
+                                                    <div class="chooseYear">
+                                                        <div class="dateTitle">按年份</div>
+                                                    </div>
+                                                    <div class="chooseMonth">
+                                                        <div class="dateTitle">按月份</div>
+                                                    </div>
+                                                    <div class="chooseSeason">
+                                                        <div class="dateTitle">按季度</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="indexChoose">
+                                                <div class="menuBox left">
+                                                    <div data-options="iconCls:'icon-save'">
+                                                        <ul id="indexTree" class="ztree"></ul>
+                                                    </div>
+                                                </div>
+                                                <div class="areaContent right">
+                                                    <input class="s-input contentRightSearch" type="search" placeholder="请输入你想查询的指标..."><span class="searchIcon glyphicon glyphicon-search"></span>
+                                                    <div class="searchList">
+                                                        <div class="searchListTitle">已选:</div>
+                                                        <div class="searchListBox">
+                                                            <span>指标1</span><span>指标2</span><span>指标3</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                    <button id="superSearch" type="button" class="btn btn-primary" data-dismiss="modal">确认</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right cenTopLeftR">
+                    <span>选择区域：</span>
+                    <span id="city">
+                        <select id="area">
+                            <option value="">选择区域</option>
+                        </select>
+                        <select id="province">
+                            <option value="">选择省份</option>
+                        </select>
+                        <select id="citys">
+                            <option value="">选择城市</option>
+                        </select>
+                        <select id="county">
+                            <option value="">选择地区</option>
+                        </select>
+                    </span>
+                    <span>季度：</span>
+                    <span class="season">
+                        <input id="season" type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy年第M季度',disabledDates:['....-0[5-9]-..','....-1[0-2]-..']})" class="Wdate" style=" width:100px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                    </span>
+                    <button class="sure">统计</button>
+                </div>
+            </div>
+        </div>
+        <div class="navOne clearfix">
+            <div class="navOneL left">
+                <div class="navtitle clearfix">
+                    <span class="titleLine">累计增长(区域)</span>
+                    <p class="tool right">
+                        <span class="out">导出</span><span class="print">打印</span>
+                    </p>
+                </div>
+                <div class="navTable">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>区域</th>
+                                <th>国内生产...</th>
+                                <th>工业增长...</th>
+                                <th>固定资产...</th>
+                                <th>房地产开...</th>
+                                <th>社会消费...</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="countryDetail.html">全国</a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>东北地区</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>东部地区</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>中部地区</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>西部地区</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="navOneR right">
+                <div class="navtitle clearfix">
+                    <span class="titleLine">累计增长(省) <a class="titleLineMore" data-toggle="modal" data-target="#provinceMore">更多>></a></span>
+                    <!-- 模态框（Modal） -->
+                    <div class="modal fade" id="provinceMore" tabindex="-1" role="dialog" aria-labelledby="provinceMoreLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="provinceMoreLabel">更多内容</h4>
+                                </div>
+                                <div class="modal-body box">
+                                    <div class="modalTable">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>区域</th>
+                                                <th>国内生产...</th>
+                                                <th>工业增长...</th>
+                                                <th>固定资产...</th>
+                                                <th>房地产开...</th>
+                                                <th>社会消费...</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>全国</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>东北地区</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>东部地区</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>中部地区</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>西部地区</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">确认</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tool right">
+                        <span class="out">导出</span><span class="print">打印</span>
+                    </p>
+                </div>
+                <div class="navTable">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>区域</th>
+                            <th>国内生产...</th>
+                            <th>工业增长...</th>
+                            <th>固定资产...</th>
+                            <th>房地产开...</th>
+                            <th>社会消费...</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><a href="provinceDetail.html">山东省</a></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>河南省</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>吉林省</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>黑龙江省</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>河北省</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="navTwo clearfix">
+            <div class="navTwoL left">
+                <div class="navtitle clearfix">
+                    <span class="titleLine">累计值(地级市) <a class="titleLineMore" data-toggle="modal" data-target="#cityMore">更多>></a></span>
+                    <!-- 模态框（Modal） -->
+                    <div class="modal fade" id="cityMore" tabindex="-1" role="dialog" aria-labelledby="cityMoreMoreLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="cityMoreLabel">更多内容</h4>
+                                </div>
+                                <div class="modal-body box">
+                                    <div class="modalTable">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>地级市</th>
+                                                <th>国内生产...</th>
+                                                <th>工业增长...</th>
+                                                <th>固定资产...</th>
+                                                <th>房地产开...</th>
+                                                <th>社会消费...</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td><a href="cityDetail.html">北京</a></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>天津</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>南京</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>沈阳</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>大连</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>北京</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>天津</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>南京</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>沈阳</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>大连</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">确认</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tool right">
+                        <span class="out">导出</span><span class="print">打印</span>
+                    </p>
+                </div>
+                <div class="navTable">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>地级市</th>
+                            <th>国内生产...</th>
+                            <th>工业增长...</th>
+                            <th>固定资产...</th>
+                            <th>房地产开...</th>
+                            <th>社会消费...</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><a href="cityDetail.html">北京</a></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>天津</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>南京</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>沈阳</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>大连</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>北京</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>天津</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>南京</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>沈阳</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>大连</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="navTwoR right">
+                <div class="navtitle clearfix">
+                    <span class="titleLine">累计值(区县) <a class="titleLineMore" data-toggle="modal" data-target="#areaMore">更多>></a></span>
+                    <!-- 模态框（Modal） -->
+                    <div class="modal fade" id="areaMore" tabindex="-1" role="dialog" aria-labelledby="areaMoreMoreLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="areaMoreLabel">更多内容</h4>
+                                </div>
+                                <div class="modal-body box">
+                                    <div class="modalTable">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>区县</th>
+                                                <th>国内生产...</th>
+                                                <th>工业增长...</th>
+                                                <th>固定资产...</th>
+                                                <th>房地产开...</th>
+                                                <th>社会消费...</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td><a href="cityDetail.html">北京</a></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>天津</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>南京</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>沈阳</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>大连</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>北京</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>天津</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>南京</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>沈阳</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>大连</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">确认</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tool right">
+                        <span class="out">导出</span><span class="print">打印</span>
+                    </p>
+                </div>
+                <div class="navTable">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>区县</th>
+                            <th>国内生产...</th>
+                            <th>工业增长...</th>
+                            <th>固定资产...</th>
+                            <th>房地产开...</th>
+                            <th>社会消费...</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><a href="cityDetail.html">北京</a></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>天津</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>南京</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>沈阳</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>大连</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>北京</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>天津</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>南京</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>沈阳</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>大连</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="searchResult" style="display: none">
+            <div class="navtitle clearfix">
+                <span class="titleLine">高级查询结果</span>
+
+                <p class="tool right">
+                    <span class="backList" id="backList">返回列表</span>
+                    <span class="out">导出</span><span class="print">打印</span>
+                </p>
+            </div>
+            <div class="navTable">
+                <div class="conTop clearfix">
+                    <ul class="yearList nav nav-pills left">
+                        <li class="active"><a data-toggle="tab">时间维度</a></li>
+                        <li><a data-toggle="tab">指标维度</a></li>
+                    </ul>
+                </div>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>对象</th>
+                        <th>国内生产...</th>
+                        <th>工业增长...</th>
+                        <th>固定资产...</th>
+                        <th>房地产开...</th>
+                        <th>社会消费...</th>
+                    </tr>
+                    <tr>
+                        <th>2015</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><a href="countryDetail.html">全国</a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>东北地区</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>东部地区</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>中部地区</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>西部地区</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/My97DatePicker/WdatePicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/area/jquery.ztree.core.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/area/jquery.ztree.excheck.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/url.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/area/allCountry.js" type="text/javascript" charset="utf-8"></script>
+</html>

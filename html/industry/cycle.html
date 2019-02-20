@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>周期性</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/industry/cycle.css"/>
+</head>
+<body>
+    <div class="title clearfix">
+        <ul class="left">
+            <li id="first"><a href="../../home.html">首页</a></li>
+            <li id="currentParName"><a href="javascript:void(0)">行业风险</a></li>
+            <li id="currentName" class="activeTitle"><a href="javascript:void(0)">周期性</a></li>
+        </ul>
+        <img class="fresh right" src="../../img/shuaxin.png"/>
+    </div>
+    <div class="content">
+        <div class="content-top clearfix">
+            <div class="content-topLeft clearfix left">
+                <div class="topT">
+                    <div class="clearfix left">
+                        <span>行业查询：</span>
+                        <input class="s-input" type="search" placeholder="请输入关键字进行搜索..." id="seName"/>
+                        <button class="s-button" id="senameSeach" data-toggle="modal" data-target="#searchModal"><img src="../../img/censearch.png"/></button>
+                        <!-- 模态框（Modal） -->
+                        <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="searchModalLabel">搜索到如下行业</h4>
+                                    </div>
+                                    <div class="modal-body box">
+                                        <div class="modalTable">
+                                            <table class="table table-striped">
+                                                <tbody id="orgList"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">确认</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <button class="indexBtn btn" id="indexBth">指标选择▼</button>
+                        <div id="index" class="indexBox">
+                            <div class="indexTitle">指标名称:</div>
+                            <div class="indexList">
+                                <label>
+                                    <input type="checkbox" value="">
+                                    <i>电子票</i><span></span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" checked="" value="">
+                                    <i>会议提醒</i><span></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <span>月度：</span>
+                        <input id="yearDate" type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy-M月'})" class="Wdate" style=" width:120px;"/>
+                        <button class="sure" id="count">统计</button>
+                    </div>
+                </div>
+                <div class="topC clearfix">
+                    <p class="foc left">搜索历史：</p>
+                    <span class="history left"></span>
+                    <span class="btnEmpty right">清空历史搜索</span>
+                </div>
+            </div>
+            <div class="content-topRight right">
+                <p class="count"><a href="http://www.stats.gov.cn/" target="_Blank">国家统计局国家数据库</a></p>
+                <p class="company"><a href="#" data-toggle="modal" data-target="#comModal">企业绩效评价指标</a></p>
+                <!-- 模态框（Modal） -->
+                <div class="modal fade" id="comModal" tabindex="-1" role="dialog" aria-labelledby="comModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="comModalLabel">评价指标</h4>
+                            </div>
+                            <div class="modal-body box">
+                                <div class="modalTop clearfix">
+                                    <div class="clearfix left">
+                                        <span>行业查询：</span>
+                                        <input class="s-input" type="search" placeholder="请输入关键字进行搜索..." id="industryName"/>
+                                        <button class="s-button" id="industryNameSearch" data-toggle="modal" data-target="#searchModal"><img src="../../img/censearch.png"/></button>
+                                    </div>
+                                    <div class="right">
+                                        <span>年份：</span>
+                                        <input id="assessYear" type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate" style=" width:72px;"/>
+                                        <button class="sure" id="assessCount">统计</button>
+                                    </div>
+                                </div>
+                                <div class="modalTable">
+                                    <div class="navTitle clearfix">
+                                        <span class="titleLine">农林</span>
+                                        <div class="tool right" id="tool">
+                                            <span class="out">导出</span><span id="print">打印</span>
+                                        </div>
+                                    </div>
+                                    <div class="navTable">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>行业代码</th>
+                                                <th colspan="4">全行业(2016)</th>
+                                                <th colspan="4">全行业(2016)</th>
+                                                <th colspan="4">全行业(2016)</th>
+                                            </tr>
+                                            <tr>
+                                                <th>农林牧鱼业</th>
+                                                <th>优秀值</th>
+                                                <th>良好值</th>
+                                                <th>平均值</th>
+                                                <th>较差值</th>
+                                                <th>优秀值</th>
+                                                <th>良好值</th>
+                                                <th>平均值</th>
+                                                <th>较差值</th>
+                                                <th>优秀值</th>
+                                                <th>良好值</th>
+                                                <th>平均值</th>
+                                                <th>较差值</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>一、盈利能力状况</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>净资产收益率(%)</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>总资产报酬率(%)</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>成本费用利润率(%)</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>资本收益率(%)</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">确认</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-cen clearfix">
+            <div class="content-cenLeft left">
+                <div class="navtitle clearfix">
+                    <span class="speciaIndex" id="speciaIndex">
+                        <select name="" id="priceQuarter" class="priceQuarter left">
+                            <!--<option value=""></option>-->
+                        </select>
+                    </span>
+                </div>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade in active">
+                    	<div class="conTop clearfix">
+		                    <ul id="indexOneTab" class="nav nav-pills right">
+		                        <li class="active">
+		                        	<a href="#twelve" data-toggle="tab">12个月</a></li>
+		                        <li><a href="#twenty" data-toggle="tab">24个月</a></li>
+		                        <li><a href="#third" data-toggle="tab">36个月</a></li>
+		                    </ul>
+
+		                </div>
+		                <div id="indexOneTabContent" class="tab-content">
+		                	<div class="tab-pane fade in active" id="twelve">
+		                		<div class="line" id="line"></div>
+		                	</div>
+		                	<div class="tab-pane fade" id="twenty">
+		                		<div class="line" id="twentyLine"></div>
+		                	</div>
+		                	<div class="tab-pane fade" id="third">
+		                		<div class="line" id="thirdLine"></div>
+		                	</div>
+		                </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-cenRight right">
+                <div class="navtitle clearfix">
+                        <span>核心监测数据</span>
+                        <a class="curTime"></a>
+                    <p class="right" style="margin-right: 20px;">
+                        <button class="print " onclick="PrintTable('#xiazai3')"><i class="glyphicon glyphicon-print"></i>打印</button>
+                        <button class="down "><i class="glyphicon glyphicon-save"></i>下载数据</button>
+                        <!--<button class="share">分享</button>-->
+                    </p>
+                </div>
+                <div class="cenRtable">
+                    <table class="table table-striped" id="xiazai3">
+                        <thead id="mointerHead"></thead>
+                        <tbody id="mointerBody" class="cycleBody"></tbody>
+                    </table>
+                    <!--<div class="page pagination right" id="Page">-->
+                        <!--<li class="active"><a href="#">上一页</a></li>-->
+                        <!--<li><a href="#">下一页</a></li>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+        <div class="content-foot">
+            <div class="navtitle clearfix">
+                <span>行业运行点评</span>
+                <a class="curTime"></a>
+                <p class="right" style="margin-right: 20px;">
+                    <button class="print" onclick="PrintTable('#xiazai4')"><i class="glyphicon glyphicon-print"></i>打印</button>
+                    <button class="down"><i class="glyphicon glyphicon-save"></i><i id="talkDown">下载数据</i></button>
+                    <!--<button class="share">分享</button>-->
+                </p>
+            </div>
+            <div id="xiazai4">
+            	<ul class="addBox" id="commentBox"></ul>
+            </div>
+            <!--<div class="page pagination right">-->
+                <!--<li class="active"><a href="#">上一页</a></li>-->
+                <!--<li><a href="#">下一页</a></li>-->
+            <!--</div>-->
+        </div>
+    </div>
+</body>
+    <script src="../../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/My97DatePicker/WdatePicker.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/url.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/industry/cycle.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="../../js/jquery.jqprint-0.3.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            function show(){
+                var mydate = new Date();
+                mydate.setMonth(mydate.getMonth()-2);
+                var str = "" + mydate.getFullYear() + "年";
+                str += (mydate.getMonth()+1) + "月";
+//                str += mydate.getDate() + "日";
+                return str;
+            }
+            $("#yearDate").val(show());
+            $(".curTime").html(show());
+        });
+    	$("#myTab a").click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $("#indexOneTab a").click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $("#indexTwoTab a").click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+//局部打印
+    function PrintTable(select) {
+      $(select).jqprint({
+        debug: false, //如果是true则可以显示iframe查看效果（iframe默认高和宽都很小，可以再源码中调大），默认是false
+        importCSS: true, //true表示引进原来的页面的css，默认是true。（如果是true，先会找$("link[media=print]")，若没有会去找$("link")中的css文件）
+        printContainer: true, //表示如果原来选择的对象必须被纳入打印（注意：设置为false可能会打破你的CSS规则）。
+        operaSupport: false//表示如果插件也必须支持歌opera浏览器，在这种情况下，它提供了建立一个临时的打印选项卡。默认是true
+      });
+    }
+    </script>
+</html>

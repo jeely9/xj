@@ -1,0 +1,3469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>省详情页</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/area/provinceDetail.css"/>
+</head>
+<body>
+    <div class="title clearfix">
+        <ul class="left">
+            <li id="first"><a href="../../home.html">首页</a></li>
+            <li id="currentParName"><a href="allCountry.html">宏观经济</a></li>
+            <li id="currentName" class="activeTitle"><a href="javascript:void(0)">山东省</a></li>
+        </ul>
+        <img class="fresh right" src="../../img/shuaxin.png"/>
+    </div>
+    <div class="header clearfix">
+        <div class="headerL left">
+            <img class="left" src="../../img/industry/home.png" alt="正在加载"><p class="right"><span class="currentIndusName">国民经济合算</span></p>
+        </div>
+        <div class="headerR right">
+            <div class="box">
+                <ul id="myTab" class="breadcrumb nav-pills navbar-nav mainlist">
+                    <li class="active"><a href="#peopleCount" data-toggle="tab">国民经济合算</a></li>
+                    <li><a href="#life" data-toggle="tab">城乡人民生活</a></li>
+                    <li><a href="#product" data-toggle="tab">工业生产</a></li>
+                    <li><a href="#fixedInvestment" data-toggle="tab">固定资产投资和房地产</a></li>
+                    <li><a href="#peoplePrice" data-toggle="tab">人口物价</a></li>
+                    <li><a href="#trade" data-toggle="tab">内外贸易</a></li>
+                    <li><a href="#financial" data-toggle="tab">财政金融</a></li>
+                    <li><a href="#protection" data-toggle="tab">节能环保</a></li>
+                    <li><a href="#technology" data-toggle="tab">科学技术</a></li>
+                    <li><a href="#service" data-toggle="tab">资源服务</a></li>
+                    <li><a href="#areaHundred" data-toggle="tab">区域经济百强企业</a></li>
+                    <li><a href="#platform" data-toggle="tab">融资平台</a></li>
+                </ul>
+                <!--<ul class="piclist swaplist"></ul>-->
+            </div>
+        </div>
+        <!--<div class="og_prev"><<</div>-->
+        <!--<div class="og_next">>></div>-->
+    </div>
+    <!--中间部分-->
+    <div id="myTabContent" class="myTabContent tab-content">
+        <!--国民经济合算-->
+        <div class="tab-pane fade in active" id="peopleCount">
+            <ul id="peopleCountTab" class="areaTab nav nav-tabs">
+                <li class="active"><a href="#all" data-toggle="tab">国内生产总值(GDP)总量和增速</a></li>
+                <li><a href="#third" data-toggle="tab">三次产业构成</a></li>
+                <li><a href="#perCapita" data-toggle="tab">人均GDP总量和增速</a></li>
+            </ul>
+            <div id="peopleCountTabContent" class="areaTabContent tab-content">
+                <div class="tab-pane fade in active" id="all">
+                    <div class="conTop clearfix">
+                        <ul id="allYearList" class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="countChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="yearChoose" class="left" style="display: none">
+                            <input id="ljTime1" type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy年'})" class="Wdate left" style=" width:140px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input id="ljTime2" type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy年'})" class="Wdate left" style=" width:140px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button id="allSure" class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead id="allTitle"></thead>
+                                <tbody id="allBox"></tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen" id="allName">国内生产总值(GDP)总量和增速</div>
+                            <div class="peopleCountLine" id="peopleCountLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="third">
+                    <div class="conTop clearfix">
+                        <ul id="thirdYearList" class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="thirdCountChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="thirdYearChoose" class="left" style="display: none">
+                            <input id="thirdpre" type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy年'})" class="Wdate left" style=" width:140px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input id="thirdNext" type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy年'})" class="Wdate left" style=" width:140px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button id="thirdSure" class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead id="thirdTitle"></thead>
+                                <tbody id="thirdBox"></tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div id="thirdName" class="nameCen">三次产业构成</div>
+                            <div class="peopleCountLine" id="thirdCountLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="perCapita">
+                    <div class="conTop clearfix">
+                        <ul id="perCapitaYear" class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="perCapitaChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="perCapitaYearChoose" class="left" style="display: none">
+                            <input id="perCapitaPre" type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy年'})" class="Wdate left" style=" width:140px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input id="perCapitaNext" type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy年'})" class="Wdate left" style=" width:140px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button id="perCapitaSure" class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead id="perCapitaTitle"></thead>
+                                <tbody id="perCapitaBox"></tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div id="perCapitaName" class="nameCen">人均GDP总量和增速</div>
+                            <div class="peopleCountLine" id="perCapitaLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--城乡人民生活-->
+        <div class="tab-pane fade" id="life">
+            <ul id="lifeTab" class="areaTab nav nav-tabs">
+                <li class="active"><a href="#lifeMoney" data-toggle="tab">居民人均可支配收入和增速</a></li>
+                <li><a href="#lifePay" data-toggle="tab">居民人均消费和增速</a></li>
+            </ul>
+            <div class="areaTabContent tab-content">
+                <div class="tab-pane fade in active" id="lifeMoney">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="lifeMoneyChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="lifeMoneyYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>居民人均可支配收入（元）</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>居民人均可支配收入累计增长（%）</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>城镇居民人均可支配收入(元)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>城镇居民人均可支配收入同比增长(%)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">居民人均可支配收入和增速</div>
+                            <div class="peopleCountLine" id="lifeMoneyLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="lifePay">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="lifePayChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="lifePayYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>居民人均消费支出</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>居民人均消费支出累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>城镇居民人均消费支出</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>城镇居民人均消费支出同比增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">居民人均消费和增速</div>
+                            <div class="peopleCountLine" id="lifePayLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--工业生产-->
+        <div class="tab-pane fade" id="product">
+            <ul id="productTab" class="areaTab nav nav-tabs">
+                <li class="active"><a href="#productValue" data-toggle="tab">工业产值</a></li>
+                <li><a href="#productAssets" data-toggle="tab">工业企业资产负债</a></li>
+                <li><a href="#productProfit" data-toggle="tab">工业企业收入利润</a></li>
+                <li><a href="#productIndex" data-toggle="tab">工业企业主要财务指标</a></li>
+            </ul>
+            <div class="areaTabContent tab-content">
+                <div class="tab-pane fade in active" id="productValue">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="productValueChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="productValueYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>工业增加值累计值</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>工业增加值累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>工业出口交货值累计值</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>工业出口交货值累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">工业产值和增速</div>
+                            <div class="peopleCountLine" id="productValueLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="productAssets">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="productAssetsChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="productAssetsYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>资产总计</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>资产总计累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>负债合计</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>负债合计累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">工业企业资产负债和增速</div>
+                            <div class="peopleCountLine" id="productAssetsLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="productProfit">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="productProfitChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="productProfitYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>主营业务收入</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>主营业务收入累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>利润总额</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>利润总额累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">工业企业收入利润</div>
+                            <div class="peopleCountLine" id="productProfitLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="productIndex">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="productIndexChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="productIndexYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>工业产品产销率</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>资产负债率</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>亏损企业占比</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">工业企业主要财务指标</div>
+                            <div class="peopleCountLine" id="productIndexLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--固定资产投资和房地产-->
+        <div class="tab-pane fade" id="fixedInvestment">
+            <ul id="fixedInvestmentTab" class="areaTab nav nav-tabs">
+                <li class="active"><a href="#fixInvestment" data-toggle="tab">固定资产投资</a></li>
+                <li><a href="#fixRealty" data-toggle="tab">房地产开发投资</a></li>
+                <li><a href="#fixFinish" data-toggle="tab">商品房施竣工面积</a></li>
+                <li><a href="#fixArea" data-toggle="tab">商品房销售面积</a></li>
+                <li><a href="#fixSales" data-toggle="tab">商品房销售额</a></li>
+                <li><a href="#fixBasics" data-toggle="tab">基础设施投资</a></li>
+            </ul>
+            <div class="areaTabContent tab-content">
+                <div class="tab-pane fade in active" id="fixInvestment">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="fixInvestmentChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="fixInvestmentYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>固定资产投资完成额</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>固定资产投资完成额累计增长(%)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>第一产业固定资产投资完成额</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>第一产业固定资产投资完成额累计增长(%)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">固定资产投资和增速</div>
+                            <div class="peopleCountLine" id="fixInvestmentLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="fixRealty">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="fixRealtyChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="fixRealtyYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>资产总计</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>资产总计累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>负债合计</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>负债合计累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">房地产开发投资和增速</div>
+                            <div class="peopleCountLine" id="fixRealtyLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="fixFinish">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="fixFinishChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="fixFinishYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>商品房施工面积</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>商品房施工面积累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>商品房竣工面积</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>商品房竣工面积累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">商品房施竣工面积和增速</div>
+                            <div class="peopleCountLine" id="fixFinishLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="fixArea">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="fixAreaChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="fixAreaYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>商品房施工面积</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>商品房施工面积累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>商品房竣工面积</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>商品房竣工面积累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">商品房销售面积和增速</div>
+                            <div class="peopleCountLine" id="fixAreaLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="fixSales">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="fixSalesChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="fixSalesYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>商品房销售额</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>商品房销售额累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>商品房平均销售价格</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">商品房销售额和增速</div>
+                            <div class="peopleCountLine" id="fixSalesLine"></div>
+                            <div class="nameCen"> 商品房平均销售价格</div>
+                            <div class="peopleCountLine" id="fixSalesPriceLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="fixBasics">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="fixBasicsChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="fixBasicsYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>基础设施投资</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>基础设施投资同比增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">基础设施投资</div>
+                            <div class="peopleCountLine" id="fixBasicsLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--人口物价-->
+        <div class="tab-pane fade" id="peoplePrice">
+            <ul id="peoplePriceTab" class="areaTab nav nav-tabs">
+                <li class="active"><a href="#peoplePriceMount" data-toggle="tab">人口</a></li>
+                <li><a href="#peoplePriceRatio" data-toggle="tab">人口抚养比</a></li>
+                <li><a href="#peoplePriceTown" data-toggle="tab">城镇登记失业人员及失业率</a></li>
+                <li><a href="#peoplePriceIndex" data-toggle="tab">价格指数</a></li>
+                <li><a href="#peoplePriceManager" data-toggle="tab">采购经理人指数</a></li>
+            </ul>
+            <div class="areaTabContent tab-content">
+                <div class="tab-pane fade in active" id="peoplePriceMount">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="peoplePriceMountChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="peoplePriceMountYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>常住人口（总人口）</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>常住人口增长率</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>人口平均预期寿命(不做图)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">人口和增速</div>
+                            <div class="peopleCountLine" id="peoplePriceMountLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="peoplePriceRatio">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="peoplePriceRatioChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="peoplePriceRatioYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>少年儿童抚养比(人口抽样调查）</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>老年人口抚养比(人口抽样调查)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">人口抚养比</div>
+                            <div class="peopleCountLine" id="peoplePriceRatioLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="peoplePriceTown">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="peoplePriceTownChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="peoplePriceTownYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>城镇登记失业人数</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>城镇登记失业率</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">城镇登记失业人员及失业率</div>
+                            <div class="peopleCountLine" id="peoplePriceTownLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="peoplePriceIndex">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="peoplePriceIndexChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="peoplePriceIndexYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>居民消费价格指数(上年同期=100)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>商品零售价格指数(上年同期=100)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>工业生产者购进价格指数(上年同期=100)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>工业生产者出厂价格指数(上年同期=100)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">价格指数</div>
+                            <div class="peopleCountLine" id="peoplePriceIndexLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="peoplePriceManager">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="peoplePriceManagerChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="peoplePriceManagerYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>制造业采购经理指数</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>非制造业商务活动指数</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>服务业生产指数(不做图)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">采购经理人指数</div>
+                            <div class="peopleCountLine" id="peoplePriceManagerLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--内外贸易-->
+        <div class="tab-pane fade" id="trade">
+            <ul id="tradeTab" class="areaTab nav nav-tabs">
+                <li class="active"><a href="#socialGoods" data-toggle="tab">社会消费品零售总额</a></li>
+                <li><a href="#tradeTotal" data-toggle="tab">进出口总额</a></li>
+                <li><a href="#tradeCapital" data-toggle="tab">利用外资</a></li>
+                <li><a href="#tradeRMB" data-toggle="tab">人民币汇率</a></li>
+            </ul>
+            <div class="areaTabContent tab-content">
+                <div class="tab-pane fade in active" id="socialGoods">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="socialGoodsChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="socialGoodsYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>社会消费品零售总额(亿元)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>社会消费品零售总额累计增长(%)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>批发和零售业零售额(亿元)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>批发和零售业零售额累计增长(%)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">社会消费品零售总额和增速</div>
+                            <div class="peopleCountLine" id="socialGoodsLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tradeTotal">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="tradeTotalChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="tradeTotalYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td> 进出口总额</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>进出口总额累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td> 出口总额</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>出口总额累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">进出口总额和增速</div>
+                            <div class="peopleCountLine" id="tradeTotalLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tradeCapital">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="tradeCapitalChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="tradeCapitalYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>主营业务收入</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>主营业务收入累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>利润总额</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>利润总额累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">利用外资和增速</div>
+                            <div class="peopleCountLine" id="tradeCapitalLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tradeRMB">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="tradeRMBChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="tradeRMBYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>人民币兑美元汇率中间价</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">人民币汇率</div>
+                            <div class="peopleCountLine" id="tradeRMBLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--财政金融-->
+        <div class="tab-pane fade" id="financial">
+            <ul id="financialTab" class="areaTab nav nav-tabs">
+                <li class="active"><a href="#financialRevenue" data-toggle="tab">财政收入</a></li>
+                <li><a href="#financialFund" data-toggle="tab">政府性基金收入</a></li>
+                <li><a href="#financialOut" data-toggle="tab">财政支出</a></li>
+                <li><a href="#financialDebt" data-toggle="tab">政府债务</a></li>
+                <li><a href="#financialDeposit" data-toggle="tab">金融机构存贷款</a></li>
+                <li><a href="#financialCompany" data-toggle="tab">境内上市公司筹资额</a></li>
+            </ul>
+            <div class="areaTabContent tab-content">
+                <div class="tab-pane fade in active" id="financialRevenue">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="financialRevenueChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="financialRevenueYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>社会消费品零售总额(亿元)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>社会消费品零售总额累计增长(%)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>批发和零售业零售额(亿元)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>批发和零售业零售额累计增长(%)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>税收收入占一般公共预算收入的比重(不做图)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">财政收入和增速</div>
+                            <div class="peopleCountLine" id="financialRevenueLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="financialFund">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="financialFundChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="financialFundYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>政府性基金收入</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>政府性基金收入累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td> 出口总额</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>出口总额累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">政府性基金收入和增速</div>
+                            <div class="peopleCountLine" id="financialFundLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="financialOut">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="financialOutChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="financialOutYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>财政支出</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>财政支出和增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">财政支出和增速</div>
+                            <div class="peopleCountLine" id="financialOutLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="financialDebt">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="financialDebtChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="financialDebtYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>政府债务限额</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>政府债务限额累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>政府债务率</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">政府债务和增速</div>
+                            <div class="peopleCountLine" id="financialDebtLine"></div>
+                            <div class="nameCen">政府债务和增速</div>
+                            <div class="peopleCountLine" id="financialDebtRadioLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="financialDeposit">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="financialDepositChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="financialDepositYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td> 金融机构本外币存款余额</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>金融机构本外币存款余额增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td> 出口总额</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>出口总额累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">金融机构存贷款和增速</div>
+                            <div class="peopleCountLine" id="financialDepositLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="financialCompany">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="financialCompanyChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="financialCompanyYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td> 境内上市公司数量</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>境内上市公司筹资额</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">境内上市公司筹资额和增速</div>
+                            <div class="peopleCountLine" id="financialCompanyLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--节能环保-->
+        <div class="tab-pane fade" id="protection">
+            <ul id="protectionTab" class="areaTab nav nav-tabs">
+                <li class="active"><a href="#electricity" data-toggle="tab">用电量</a></li>
+                <li><a href="#protectionEnvironmental" data-toggle="tab">环保投资</a></li>
+                <li><a href="#protectionEnergy" data-toggle="tab">能耗</a></li>
+            </ul>
+            <div class="areaTabContent tab-content">
+                <div class="tab-pane fade in active" id="electricity">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="electricityChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="electricityYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>全社会用电量</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>全社会用电量累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>工业用电量</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>工业用电量累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">用电量和增速</div>
+                            <div class="peopleCountLine" id="electricityLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="protectionEnvironmental">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="protectionEnvironmentalChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="protectionEnvironmentalYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td> 工业污染源治理投资总额（环保投入）</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>工业污染源治理投资总额增长率</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td> 出口总额</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>出口总额累计增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">环保投资和增速</div>
+                            <div class="peopleCountLine" id="protectionEnvironmentalLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="protectionEnergy">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="protectionEnergyChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="protectionEnergyYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>能源消费总量</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>单位地区生产总值能耗同比增长</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">能耗和增速</div>
+                            <div class="peopleCountLine" id="protectionEnergyLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--科学技术-->
+        <div class="tab-pane fade" id="technology">
+            <ul id="technologyTab" class="areaTab nav nav-tabs">
+                <li class="active"><a href="#technologyResearch" data-toggle="tab">研发经费和占比</a></li>
+                <li><a href="#technologyNew" data-toggle="tab">新产品销售收入和占比</a></li>
+                <li><a href="#technologyPatent" data-toggle="tab">专利申请受理量和授权量</a></li>
+                <li><a href="#technologyContract" data-toggle="tab">技术合同成交额</a></li>
+            </ul>
+            <div class="areaTabContent tab-content">
+                <div class="tab-pane fade in active" id="technologyResearch">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="technologyResearchChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="technologyResearchYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>研究与试验发展（R&D）经费支出</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>规模以上工业企业研究与试验发展(R&D)经费</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>R&D经费占地区生产总值比重</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">研发经费和占比</div>
+                            <div class="peopleCountLine" id="technologyResearchLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="technologyNew">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="technologyNewChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="technologyNewYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>规模以上工业企业新产品销售收入</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>规模以上工业企业新产品出口销售收入</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>工业企业新产品销售收入占比</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">新产品销售收入和占比</div>
+                            <div class="peopleCountLine" id="technologyNewLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="technologyPatent">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="technologyPatentChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="technologyPatentYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>国内专利申请受理量</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>国内发明专利申请受理量</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td> 境内有效发明专利(不做图)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>每万人口发明专利拥有量(不做图)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">专利申请受理量和授权量</div>
+                            <div class="peopleCountLine" id="technologyPatentLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="technologyContract">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="technologyContractChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="technologyContractYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>签订各类技术合同数量</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>技术市场成交额</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">技术合同成交额</div>
+                            <div class="peopleCountLine" id="technologyContractLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--资源服务-->
+        <div class="tab-pane fade" id="service">
+            <ul id="serviceTab" class="areaTab nav nav-tabs">
+                <li class="active"><a href="#agriculture" data-toggle="tab">特色农业</a></li>
+                <li><a href="#traffic" data-toggle="tab">交通邮电</a></li>
+                <li><a href="#traval" data-toggle="tab">旅游文化</a></li>
+                <li><a href="#education" data-toggle="tab">教育医疗</a></li>
+            </ul>
+            <div class="areaTabContent tab-content">
+                <div class="tab-pane fade in active" id="agriculture">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="agricultureChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="agricultureYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <!--只有表格的内容作图-->
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>农林牧渔业总产值</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>农林牧渔业增加值</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>农林牧渔业总产值指数</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">农林牧渔总产值和增速</div>
+                            <div class="peopleCountLine" id="agricultureLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="traffic">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="trafficChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="trafficYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <!--只有表格的内容作图-->
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>货物运输总量</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>货物运输周转量</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>旅客运输总量 </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td> 旅客运输周转量 </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">货物运输量和周转量</div>
+                            <div class="peopleCountLine" id="trafficLine"></div>
+                            <div class="nameCen">旅客运输量和周转量</div>
+                            <div class="peopleCountLine" id="trafficTravelLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="traval">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="travalChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="travalYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>旅游总收入</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>接待境内外游客</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">旅游总收入和接待境内外游客</div>
+                            <div class="peopleCountLine" id="travalLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="education">
+                    <div class="conTop clearfix">
+                        <ul class="yearList nav nav-pills left">
+                            <li class="active"><a data-toggle="tab">年度</a></li>
+                            <li><a data-toggle="tab">季度</a></li>
+                            <li><a data-toggle="tab">月度</a></li>
+                        </ul>
+                        <ul class="choose left"><input class="countChoose" type="radio" name="choose" value='0' checked="checked"/>期数</ul>
+                        <ul id="educationChoose" class="yearList nav nav-pills left">
+                            <li><a data-toggle="tab">3期</a></li>
+                            <li class="active"><a data-toggle="tab">5期</a></li>
+                            <li><a data-toggle="tab">10期</a></li>
+                        </ul>
+                        <ul class="choose left">
+                            <input class="yearChoose" type="radio" name="choose" value='1'/>年份
+                        </ul>
+                        <ul id="educationYearChoose" class="left" style="display: none">
+                            <input type="text" runat="server" value=""  onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                            <span class="left" style="margin-left: 2px;">-</span>
+                            <input type="text" runat="server" value="" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy'})" class="Wdate left" style=" width:120px;height:32px;margin-left:4px;border:1px solid #ccc;border-radius:4px"/>
+                        </ul>
+                        <button class="sure">确定</button>
+                        <p class="tool right">
+                            <span class="out">导出</span>
+                            <span class="print">打印</span>
+                            <span class="copy">复制</span>
+                        </p>
+                    </div>
+                    <div class="conContent clearfix">
+                        <div class="conContentL left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>2016</th>
+                                    <th>2015</th>
+                                    <th>2014</th>
+                                    <th>2013</th>
+                                    <th>2012</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>每十万人口高等学校平均在校生数</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td> 每万人拥有卫生技术人员数</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>教育经费</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>卫生总费用</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conContentR right">
+                            <div class="nameCen">教育医疗水平指标</div>
+                            <div class="peopleCountLine" id="educationLine"></div>
+                            <div class="nameCen">教育医疗经费</div>
+                            <div class="peopleCountLine" id="educationHospitalLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--区域经济百强企业-->
+        <div class="tab-pane fade" id="areaHundred">
+            <div class="gradeConent">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th style="display: none">ID</th>
+                        <th>百强排名榜单名称</th>
+                        <th>年份</th>
+                        <th>操作</th>
+                        <th>功能</th>
+                        <th>采集网址</th>
+                    </tr>
+                    </thead>
+                    <tbody id="gradeFirstBody">
+                    <tr>
+                        <td>1</td>
+                        <td class="rankName">2016广东省百强企业名单</td>
+                        <td>2016</td>
+                        <td><span class="reportDown">下载报告</span></td>
+                        <td style="display: none;">12</td>
+                        <td><a href="javascript:void(0)" class="addUp">生成统计</a></td>
+                        <td><a href="http://www.qianzhan.com"  target="_Blank">http://www.qianzhan.com</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--统计各省市数据-->
+            <ul id="gradeTab" class="areaTab nav nav-tabs">
+                <li class="active"><a href="#areaIndustry" data-toggle="tab">区域各行业占比</a></li>
+                <li><a href="#areaCity" data-toggle="tab">区域各市占比</a></li>
+                <div class="gradeTop right">
+                    <div class="liVal-topBack right" id="gradeList">返回列表</div>
+                </div>
+            </ul>
+            <div id="gradeTabContent" class="tab-content">
+                <div class="tab-pane fade in active" id="areaIndustry">
+                    <div class="areaIndustryBox">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>析鲸行业</th>
+                                <th>排名依据数值</th>
+                                <th>占比</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>煤炭</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>钢铁</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>房地产</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="areaCity">
+                    <div class="clearfix" id="billboardList">
+                        <div class="gradeBillboardLeft left">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>省</th>
+                                    <th>市</th>
+                                    <th>排名依据数值</th>
+                                    <th>各市省内占比</th>
+                                </tr>
+                                </thead>
+                                <tbody id="billboardBody">
+                                <tr>
+                                    <td>广东</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>山东</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>江西</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="gradeBillboardR right">
+                            <div class="nameCen">区域各市占比</div>
+                            <div class="billboardEchar" id="billboardEchar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--融资平台-->
+        <div class="tab-pane fade" id="platform">
+            <ul id="platformTab" class="areaTab nav nav-tabs">
+                <li class="active"><a href="#platformList" data-toggle="tab">地方融资平台名单</a></li>
+            </ul>
+            <div class="platformTabContent tab-content">
+                <div class="tab-pane fade in active" id="platformList">
+                    <div class="platformList">
+                        <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>平台名称</th>
+                                    <th>成立时间</th>
+                                    <th>注册资本</th>
+                                    <th>控股股东</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>12</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>23</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>34</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/My97DatePicker/WdatePicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/url.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/area/provinceDetail.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(function() {
+        $('#myTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+            var preName = $(this).html();
+            $(".currentIndusName").html(preName);
+        });
+        <!--国民经济合算-->
+        $('#peopleCountTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        <!--城乡人民生活-->
+        $('#lifeTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $("#productTab a").click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#fixedInvestmentTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#peoplePriceTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#tradeTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#financialTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#protectionTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#technologyTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#serviceTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        //行业百强排名
+        $('#gradeTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#platformTab a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+
+    })
+    //局部打印
+    function PrintTable(select) {
+        $(select).jqprint({
+            debug: false, //如果是true则可以显示iframe查看效果（iframe默认高和宽都很小，可以再源码中调大），默认是false
+            importCSS: true, //true表示引进原来的页面的css，默认是true。（如果是true，先会找$("link[media=print]")，若没有会去找$("link")中的css文件）
+            printContainer: true, //表示如果原来选择的对象必须被纳入打印（注意：设置为false可能会打破你的CSS规则）。
+            operaSupport: false//表示如果插件也必须支持歌opera浏览器，在这种情况下，它提供了建立一个临时的打印选项卡。默认是true
+        });
+    }
+
+</script>
+</html>
